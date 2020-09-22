@@ -1,9 +1,9 @@
 .sliderTop{
   background: #454343;
   .carousel-inner{
-    height: 32rem;
+    height: 26rem;
     @media(max-width:991px) {
-      height: 26rem;
+      height: 24rem;
     }
   }
   .carousel-item{
@@ -48,6 +48,8 @@
     left: 1rem;
     bottom: 3rem;
     z-index: 2;
+    width: auto;
+    right: auto;
     li {
       border-radius: 100%;
       width: 0.8rem;

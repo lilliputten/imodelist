@@ -32,7 +32,7 @@ $(function () {
     $(this).thousandSeparateString();
   });
 
-  var slider = $('.row-scroll-always');
+  var slider = $('.custom-scroll');
   var isDown = false;
   var startX;
   var scrollLeft;

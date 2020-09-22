@@ -185,6 +185,24 @@ ul {
   height: 3rem;
   margin-right: 1rem;
 }
+.custom-scroll {
+  overflow: hidden;
+  width: 100%;
+  padding-bottom: 3rem!important;
+}
+.ps__rail-x {
+  background: #fff!important;
+  display: block!important;;
+  opacity: 1!important;;
+  border-radius: 10px!important;;
+  .ps__thumb-x {
+    background: $red!important;;
+    height: 13px!important;;
+    border: 3px solid #fff!important;;
+    margin-bottom: -1px!important;;
+  }
+}
+
 .row-scroll-always {
   overflow-x: auto;
   white-space: nowrap;
@@ -193,6 +211,8 @@ ul {
   @extend %anim;
   will-change: transform;
   cursor: pointer;
+  scrollbar-color: $c-red;
+  scrollbar-width: 10px;
   >div{
     @extend %anim;
     display: inline-block;

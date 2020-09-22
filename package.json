@@ -24,6 +24,7 @@
     "@fancyapps/fancybox": "^3.5.7",
     "ion-rangeslider": "^2.3.0",
     "jquery-mask-plugin": "^1.14.15",
+    "perfect-scrollbar": "^1.5.0",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
