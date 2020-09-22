@@ -13,14 +13,14 @@ $(function () {
   //fancybox
   $("[data-fancybox]").fancybox();
   //toggle mobile menu
-  $("a[href='#toggle-main-left-menu']").click(function(e){
+  $("[data-toggle-main-left-menu]").click(function(e){
     e.preventDefault();
     $(this).toggleClass('active');
     $('.main-left-menu').toggleClass('active');
     $('body, html').toggleClass('scroll-lock');
   });
   //toggle mobile cata menu
-  $("a[href='#toggle-cata-left-menu']").click(function(e){
+  $("[data-toggle-cata-left-menu]").click(function(e){
     e.preventDefault();
     $(this).toggleClass('active');
     $('.cata-left-menu').toggleClass('active');
