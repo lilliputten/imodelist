@@ -1,0 +1,27 @@
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+@import "~@fancyapps/fancybox/dist/jquery.fancybox.css";
+
+@import "fonts";
+
+@import "./common.scss";
+
+@import "./elements/button.scss";
+@import "./elements/animations.scss";
+@import "./elements/slider.scss";
+@import "./elements/text-color.scss";
+@import "./elements/form-inputs.scss";
+@import "./elements/icons.scss";
+@import "./elements/prod-item.scss";
+@import "./elements/news-item.scss";
+@import "./elements/modal.scss";
+@import "./elements/pagination.scss";
+@import "./elements/radio.scss";
+@import "./elements/item-detail.scss";
+@import "./elements/cart.scss";
+
+@import "./header.scss";
+@import "./menu.scss";
+@import "./footer.scss";
+
+@import "./pages/main.scss";

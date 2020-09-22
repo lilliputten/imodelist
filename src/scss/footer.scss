@@ -1,0 +1,21 @@
+.footer{
+  padding: 2rem 0;
+  .logo{
+    width: 5rem;
+  }
+  .icon-holder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $c-red;
+    border-radius: 100%;
+    width: 1.8rem;
+    height: 1.8rem;
+    margin: 0.2rem 1rem 0rem;
+    i{
+      &:before{
+        color: #fff;
+      }
+    }
+  }
+}

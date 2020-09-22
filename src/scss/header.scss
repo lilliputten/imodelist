@@ -1,0 +1,39 @@
+.alert-top{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  border-radius: 0;
+  margin-bottom: 0;
+  @media(max-width:767px) {
+    display: none;
+  }
+}
+
+.header{
+  .icon-holder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $c-gray;
+    border-radius: 100%;
+    width: 1.8rem;
+    height: 1.8rem;
+    position: absolute;
+    bottom: 0.15rem;
+    left: -1.8rem;
+    @media(max-width:1199px) {
+      display: none;
+    }
+  }
+}
+
+.menu-item{
+  text-decoration: none;
+  color: $c-black;
+  font-size: $txt_14px;
+  text-transform: uppercase;
+  &:hover{
+    color: $c-red!important;
+  }
+}
+

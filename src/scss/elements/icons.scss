@@ -1,0 +1,28 @@
+$icons: (
+  ('close' '\e908' 1.25rem #fff),
+  ('phone' '\e901' 1rem $c-black),
+  ('time' '\e903' 1rem $c-black),
+  ('user' '\e904' 1rem $c-black),
+  ('cart' '\e907' 1rem $c-black),
+  ('vk' '\e905' 1rem $c-red),
+  ('yt' '\e906' 1rem $c-red),
+  ('in' '\e900' 1rem $c-red),
+  ('burger' '\e909' 1rem $c-black),
+);
+
+.icon {
+  font-family: 'icomoon';
+  font-size: 1rem;
+  font-style: normal;
+
+  @each $icon in $icons {
+    &_#{nth($icon, 1)} {
+      font-size: nth($icon, 3);
+      color: nth($icon, 4);
+
+      &:before{
+        content: nth($icon, 2);
+      }
+    }
+  }
+}

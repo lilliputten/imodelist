@@ -1,0 +1,258 @@
+body {
+  font-family: $font-family-sans-serif;
+  color: $c-black;
+  font-size: $txt-16px;
+  line-height: normal;
+  text-align: left;
+  @extend %anim;
+  p, a, input, textarea, li, td {
+    font-size: $txt-16px;
+    font-family: $font-family-sans-serif;
+    color: $c-black;
+    font-weight: normal;
+    line-height: normal;
+  }
+
+  a {
+    color: $c-red; text-decoration: underline;
+    @extend %anim;
+    outline: none!important;
+    &:hover{
+      text-decoration: none!important;
+      color: darken($c-red, 30%);
+    }
+    &.txt-c-yellow:hover{
+      color: #fff;
+    }
+  }
+}
+.scroll-lock{
+  overflow: hidden;
+}
+
+h1, .h1{
+  font-weight: bold;
+  color: $c-black;
+  font-size: $txt-36px;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 2.15rem;
+}
+h2, .h2{
+  font-weight: normal;
+  color: $c-black;
+  text-transform: uppercase;
+  font-size: $txt-22px;
+  letter-spacing: 0.265em;
+  margin-bottom: 1.5rem;
+}
+h3, .h3{
+  font-weight: bold;
+  color: $c-black;
+  font-size: $txt-24px;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 2.15rem;
+}
+
+hr{
+  margin: 1.5rem 0;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+.breadcrumbs{
+  width: 100%;
+  color: $gray-500;
+  margin-bottom: 2.5rem;
+  a{
+    color: $c-black;
+  }
+}
+.container{position: relative;}
+
+.bg-black {
+  background: $c-black;
+}
+.bg-red {
+  background: $c-red;
+}
+.bg-gradient {
+  background: $c-gradient;
+}
+.bg-gray {
+  background: $c-gray;
+}
+
+.menu-list-item{
+  font-size: $txt_12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $c-black;
+  &.active, &:hover {
+    color: $c-red;
+  }
+}
+
+.nav {
+  flex-wrap: nowrap;
+  overflow: auto;
+  li {
+    a{
+      white-space: nowrap!important;
+    }
+    &:before {
+      display: none;
+    }
+  }
+}
+
+ul {
+  list-style-position: inside;
+  list-style-type: none;
+  padding-left: 0;
+  li {
+    margin-bottom: 0.5rem;
+    &:before {
+      content: '» ';
+      display: inline-block;
+      margin-right: 0.47rem;
+      color: inherit;
+    }
+    ul {
+      padding: 1rem 1rem 0.5rem;
+      li {
+        margin-bottom: 0.5rem;
+        &:before {
+          display: none;
+        }
+      }
+      ul {
+        padding: 1rem 0 0.5rem;
+        margin: 1rem 0 0 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        li {
+          a {
+            color: $gray-500!important;
+            &.active, &:hover {
+              color: $c-red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.list-styled{
+  li{
+    padding-left: 1.3rem;
+    &:before {
+      content: '\2014';
+      position: absolute;
+      margin-left: -20px;
+    }
+  }
+}
+.rub-icon-holder{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 100%;
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+}
+.row-scroll-always {
+  overflow-x: auto;
+  white-space: nowrap;
+  display: block;
+  user-select: none;
+  @extend %anim;
+  will-change: transform;
+  cursor: pointer;
+  &.active {
+    cursor: grabbing;
+    >div{
+      opacity: 0.7;
+      transform: scale(1.08);
+    }
+  }
+  >div{
+    @extend %anim;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    &:first-child{
+      padding-left: 0;
+    }
+    &:last-child{
+      padding-right: 0;
+    }
+  }
+}
+
+.object-fit-cover{
+  object-fit: cover;
+}
+
+@media(max-width:992px) {
+  h1, .h1{
+    font-size: $txt_30px;
+  }
+  h2, .h2{
+    font-size: $txt-18px;
+  }
+  h3, .h3{
+    font-size: $txt-18px;
+  }
+  .row-scroll{
+    overflow-x: auto;
+    white-space: nowrap;
+    display: block;
+
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translateZ(0px);
+
+    >div{
+      display: inline-block;
+      vertical-align: top;
+      white-space: normal;
+    }
+    &.align-items-center {
+      >div{
+        vertical-align: middle;
+      }
+    }
+
+    &.row-visible-next{
+      > div {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media(min-width:991px) {
+  /* scrollbar */
+  ::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: none;
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $c-red;
+    border: 2px solid #fff;
+    border-radius: 10px;
+  }
+}
+

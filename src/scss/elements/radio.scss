@@ -1,0 +1,60 @@
+.custom-control-label {
+  cursor: pointer;
+  &:hover{
+    color: $c-red;
+    text-decoration: none;
+  }
+}
+.custom-control-label::before {
+  position: absolute;
+  top: 2px;
+  left: -1.5rem;
+  display: block;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  content: "";
+  background-color: #fff;
+  border: $c-red solid 2px;
+  flex-shrink: 0;
+}
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+  background-image: none;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: $c-red;
+  background-color: $c-red;
+}
+.custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: none;
+}
+
+.no-inp{
+  .custom-control-label::before {
+    display: none;
+  }
+  .custom-control-label::after {
+    display: none;
+  }
+  &.custom-radio{
+    margin: 0 1rem 1rem 0;
+    display: inline-block;
+    padding-left: 0;
+    label {
+      text-decoration: underline;
+      cursor: pointer;
+      &:hover{
+        color: $c-red;
+        text-decoration: none;
+      }
+    }
+  }
+  &.custom-control {
+    input:checked ~ .custom-control-label {
+      color: $c-red;
+      text-decoration: none;
+    }
+  }
+}

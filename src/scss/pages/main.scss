@@ -1,0 +1,22 @@
+#tabsPaymentContent{
+  padding: 0 0 2rem;
+  img{
+    max-height: 5.5rem;
+    max-width: 8rem;
+    object-fit: contain;
+  }
+}
+
+#whyUs{
+  background: linear-gradient(353.29deg, rgba(255, 255, 255, 0.79) 36.28%, rgba(255, 255, 255, 0) 89.94%), #F2F2F2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15), 0px 1px 2px 1px rgba(0, 0, 0, 0.1), inset 5px 5px 22px rgba(0, 0, 0, 0.06), inset -5px -5px 33px 2px #FFFFFF;
+  border-radius: 6px;
+  overflow: hidden;
+  .small-icons{
+    display: block;
+    margin: 0 auto 1rem;
+  }
+  a{
+    color: $c-black;
+  }
+}

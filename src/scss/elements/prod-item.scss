@@ -1,0 +1,87 @@
+.bg-red, .bg-gradient {
+  .prod-item{
+    &__mark{
+      color: #fff;
+    }
+  }
+}
+.prod-item{
+  box-sizing: border-box;
+  position: relative;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  background: linear-gradient(338.78deg, rgba(255, 255, 255, 0.79) -11.81%, rgba(255, 255, 255, 0) 73.67%), #F8F8F8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15), 0px 1px 2px 1px rgba(0, 0, 0, 0.1), inset 5px 5px 22px rgba(0, 0, 0, 0.06), inset -5px -5px 33px 2px #FFFFFF;
+  border-radius: 3px;
+  padding: 1rem 1rem;
+  .img-holder{
+    display: flex;
+    background: #FFFFFF;
+    border: 1px solid #696969;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 11rem;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    img{
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+    }
+  }
+  .row{
+    height: 100%;
+  }
+  &__mark{
+    color: $c-red;
+    text-transform: uppercase;
+    top: -25px;
+    left: 0;
+    font-size: $txt_12px;
+    position: absolute;
+  }
+  &__name{
+    height: 4rem;
+    overflow: hidden;
+    a {
+      color: $c-black;
+    }
+  }
+  &__price{
+    font-weight: bold;
+    font-size: $txt-30px;
+    margin-bottom: 0;
+  }
+  &__compare{
+    margin-left: auto;
+    font-size: $txt_14px;
+    color: $gray-500;
+    background: url('#{$path-assets}/vectors/compare.svg') no-repeat left center;
+    padding-left: 1rem;
+  }
+  .stars{
+    background: url('#{$path-assets}/vectors/stars.svg') no-repeat 0 0;
+    width: 4rem;
+    height: 9px;
+    margin-left: 0.5rem;
+    &_1{
+      background-position: 0 0px;
+    }
+    &_2{
+      background-position: 0 -10px;
+    }
+    &_3{
+      background-position: 0 -20px;
+    }
+    &_4{
+      background-position: 0 -30px;
+    }
+    &_5{
+      background-position: 0 -40px;
+    }
+  }
+}
+
+
