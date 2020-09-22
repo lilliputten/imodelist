@@ -4,6 +4,7 @@ window.jQuery = $;
 window.$ = $;
 require ('@fancyapps/fancybox');
 require('../scss/styles.scss');
+require ('perfect-scrollbar/css/perfect-scrollbar.css');
 import PerfectScrollbar from 'perfect-scrollbar';
 
 $(function () {
