@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <section id="header">
+    <%- include modules/modal-loader.ejs %>
+    <%- include modules/preheader.ejs %>
+    <%- include modules/header.ejs %>
+  </section>
+  <section id="menu">
+    <%- include modules/menu.ejs %>
+  </section>
+
+  <div class="sliderInner">
+    <div class="carousel-inner">
+      <div class="container">
+        <div class="bread">
+          <a href="/">Главная</a>  »  ПРЕДЗАКАЗ Советская ЗСУ-23-4М Шилка от фирмы "Звезда" + ПОДАРОК
+        </div>
+        <h1 class="slider-text">
+          ПРЕДЗАКАЗ Советская ЗСУ-23-4М Шилка от фирмы "Звезда" + ПОДАРОК
+        </h1>
+      </div>
+      <img class="d-block w-100" src="./assets/example/news.png" alt="">
+    </div>
+  </div>
+
+
+
+
+  <section id="content">
+    <div class="bg-gray py-3 mobile-menu d-md-none">
+      <div class="container">
+        <div class="row">
+          <div class="col-auto">
+            <a href="#toggle-cata-left-menu" class="d-flex align-items-center">
+              <i class="icon icon_burger"></i>
+              <div class="ml-3 txt_22px text-uppercase font-weight-bold txt-c-black">Каталог</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 cata-left-menu">
+            <div class="holder">
+              <a href="#toggle-cata-left-menu" class="icon icon_close"></a>
+              <p class="h1">Каталог</p>
+              <%- include elements/left-menu.ejs %>
+              <p class="h3 mt-5">Важная информация</p>
+              <%- include elements/left-info.ejs %>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <a href="./assets/example/news.png" data-fancybox>
+              <img class="w-100 img-fluid mb-5" src="./assets/example/news.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+            </a>
+            <p>Как известно, классика всегда в моде. Похоже, руководствуясь именно этим тезисом отечественные умельцы из “Звезды”, в очередной раз решив порадовать нас новым релизом, подготовили элегантное переосмысление нестареющей модельной классики.</p>
+            <p>Господа, встречайте ту самую советскую рабочую лошадку ЗСУ-23-4 , легендарную “Шилку”, которую за ее многолетнюю историю боевой эксплуатации по достоинству оценили не только советские солдаты, но и вооруженные силы союзных государств по всему земному шару.</p>
+            <p>Смогли оценить и ее в свое время и моделисты, успевшие поработать с раритетным ныне набором от Dragon. А теперь такая возможность появилась и у современного поколения модельных мастеров.</p>
+            <p>А чтобы первое знакомство с этим реликтовым набором прошло еще интереснее, мы как всегда любовно подготовили отличные, и главное, совершенно бесплатные бонусы, которые будут входить в комплект с каждым набором.</p>
+            <p>На этот раз мы решили, что для того, чтобы изваять настоящий пластиковый мини-шедевр, Вам будет совершенно необходим роскошный комплект из четырех высококачественных детализированных копийных точеных металлических стволов фирмы "Zedval", благодаря которым даже самый искушенный военный эксперт издалека не отличит Вашу модель от настоящей грозной боевой машины. А для перестраховки, чтобы спецоперация по сборке прошла успешно несмотря ни на какие сопутствующие обстоятельства, мы также добавили в дополнение к набору надежного помощника любого бывалого моделиста – универсальную шпатлевку от японской фирмы Tamiya. Успейте сделать заказ на это уникальное предложение на нашем сайте, и своими руками прикоснуться к истории.</p>
+            <hr>
+            <a href="#">Ко всем новостям »</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="footer">
+    <%- include modules/footer.ejs %>
+  </section>
+
+</body>
+</html>

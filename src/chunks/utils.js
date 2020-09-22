@@ -22,7 +22,8 @@ $(function () {
   $body.on('click', '.ajax-modal', function(e){
     e.preventDefault();
     var $obj = $(this).data("target");
-    $($obj+' .modal-content').load($(this).data("remote"),function(){
+    $($obj+' .modal-body').load($(this).data("remote"),function(){
+      $(".modal-backdrop").remove();
       $($obj).modal({show:true});
     });
   });
@@ -41,7 +42,6 @@ $(function () {
     slider.addClass('active');
     startX = e.pageX - slider.offset().left;
     scrollLeft = slider.scrollLeft();
-    console.log(slider.scrollLeft());
   });
   slider.on('mouseleave', () => {
     isDown = false;

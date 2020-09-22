@@ -11,7 +11,15 @@
 .txt_22px {font-size: $txt_22px;}
 .txt_24px {font-size: $txt_24px;}
 .txt_30px {font-size: $txt_30px;}
+.txt_32px {font-size: $txt_32px;}
 .txt_36px {font-size: $txt_36px;}
 .txt_48px {font-size: $txt_48px;}
 .txt_58px {font-size: $txt_58px;}
 
+@media(max-width:991px) {
+  .txt_30px {font-size: $txt_24px;}
+  .txt_32px {font-size: $txt_24px;}
+  .txt_36px {font-size: $txt_24px;}
+  .txt_48px {font-size: $txt_24px;}
+  .txt_58px {font-size: $txt_48px;}
+}

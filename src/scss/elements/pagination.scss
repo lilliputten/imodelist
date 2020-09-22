@@ -1,11 +1,13 @@
 .pagination{
   margin: 2rem 0 0;
   align-items: center;
-  background: $c-gray;
   padding: 0 0.3rem;
   .page-item{
     margin: 0.2rem;
     @extend %anim;
+    &:before{
+      display: none;
+    }
     &:hover, &.active{
       a{
         color: $c-red;
@@ -19,7 +21,7 @@
       outline: none;
       box-shadow: none;
       color: $c-black;
-      font-size: $txt_18px;
+      font-size: $txt_24px;
     }
   }
   &__start{

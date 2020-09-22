@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <section id="header">
+    <%- include modules/modal-loader.ejs %>
+    <%- include modules/preheader.ejs %>
+    <%- include modules/header.ejs %>
+  </section>
+  <section id="menu">
+    <%- include modules/menu.ejs %>
+  </section>
+
+  <div class="sliderInner">
+    <div class="carousel-inner">
+      <div class="container">
+        <div class="bread">
+          <a href="/">Главная</a>  »  Способы доставки
+        </div>
+        <h1 class="slider-text">
+          Новости
+        </h1>
+      </div>
+      <img class="d-block w-100" src="./assets/img/headers/news.jpg" alt="">
+    </div>
+  </div>
+
+
+
+
+  <section id="content">
+    <div class="bg-gray py-3 mobile-menu d-md-none">
+      <div class="container">
+        <div class="row">
+          <div class="col-auto">
+            <a href="#toggle-cata-left-menu" class="d-flex align-items-center">
+              <i class="icon icon_burger"></i>
+              <div class="ml-3 txt_22px text-uppercase font-weight-bold txt-c-black">Каталог</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 cata-left-menu">
+            <div class="holder">
+              <a href="#toggle-cata-left-menu" class="icon icon_close"></a>
+              <p class="h1">Каталог</p>
+              <%- include elements/left-menu.ejs %>
+              <p class="h3 mt-5">Важная информация</p>
+              <%- include elements/left-info.ejs %>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="row row-scroll">
+              <% for(var i = 0; i < 9; i++){ %>
+                <div class="col-auto col-md-12">
+                  <%- include elements/news.ejs %>
+                  <hr class="my-5 d-none d-md-block">
+                </div>
+              <% } %>
+            </div>
+            <%- include elements/paginator.ejs %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="footer">
+    <%- include modules/footer.ejs %>
+  </section>
+
+</body>
+</html>

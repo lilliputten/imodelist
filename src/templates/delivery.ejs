@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <section id="header">
+    <%- include modules/modal-loader.ejs %>
+    <%- include modules/preheader.ejs %>
+    <%- include modules/header.ejs %>
+  </section>
+  <section id="menu">
+    <%- include modules/menu.ejs %>
+  </section>
+
+  <div class="sliderInner">
+    <div class="carousel-inner">
+      <div class="container">
+        <div class="bread">
+          <a href="/">Главная</a>  »  Способы доставки
+        </div>
+        <h1 class="slider-text">
+          Способы доставки
+        </h1>
+      </div>
+      <img class="d-block w-100" src="./assets/img/headers/delivery.jpg" alt="">
+    </div>
+  </div>
+
+
+
+
+  <section id="content">
+    <div class="bg-gray py-3 mobile-menu d-md-none">
+      <div class="container">
+        <div class="row">
+          <div class="col-auto">
+            <a href="#toggle-cata-left-menu" class="d-flex align-items-center">
+              <i class="icon icon_burger"></i>
+              <div class="ml-3 txt_22px text-uppercase font-weight-bold txt-c-black">Каталог</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 cata-left-menu">
+            <div class="holder">
+              <a href="#toggle-cata-left-menu" class="icon icon_close"></a>
+              <p class="h1">Каталог</p>
+              <%- include elements/left-menu.ejs %>
+              <p class="h3 mt-5">Важная информация</p>
+              <%- include elements/left-info.ejs %>
+            </div>
+          </div>
+          <div class="col-lg-9">
+
+            <p class="font-weight-bold">Доставка заказа осуществляется следующими способами:</p>
+            <p>Вы можете получить бесплатную* доставку при заказе товаров торговой марки "Звезда"﻿ на сумму от 3000 до 6000 рублей, указав промокод "ZVEZDA" и внеся предоплату. Данное предложение предусмотрено для пользователей, оформивших свой заказ на нашем сайте впервые.</p>
+            <p>Бесплатная доставка по РФ производится во все регионы, за исключением Дальнего Востока и труднодоступных городов.</p>
+            <p><p>По г. Москва доставка так же осуществляется бесплатно в пределах МКАД при условии заказа на торговую марку "Звезда" на сумму от 3000 до 6000 рублей и указании промокода "ZVEZDA".</p>
+            <p>Отправка производится СДЭК до пункта выдачи, а так же Почтой России на усмотрение администрации магазина.</p>
+            <p>Внимание! Другие торговые марки в специальном предложении не участвуют!  В заказе должны быть позиции только этой торговой марки.</p>
+            <p>АКЦИЯ не объединяется с другими проводимыми акциями магазина.</p>
+
+            <div class="accordion" id="accordion">
+
+              <div class="accordion__card">
+                <div class="accordion__card__header" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                  <div class="icon">
+                    <img src="./assets/img/delivery-types/kurier.png" alt="">
+                  </div>
+                  Курьером<br>(г.Москва и города ближайшего Подмосковья)
+                </div>
+                <div id="collapse1" class="accordion__card__body collapse show" data-parent="#accordion">
+                  <p>Дата и время&nbsp; доставки обговаривается менеджером интернет-магазина с покупателем по телефону или по электронной почте.&nbsp; <strong>Оператор связывается с покупателем в течении суток с момента оформления Вами заказа, как правило, доставка возможна уже на следующий день после согласования деталей Вашей заявки.</strong></p>
+                  <p>Встретиться с курьером Вы можете не только по конкретному адресу, но и у ближайшего для Вас метро.</p>
+                  <p>Стоимость доставки по г. Москва ( в пределах МКАД) составляет 310 руб.</p>
+                  <p>Стоимость доставки по г. Москва ( до метро) составляет 210 руб.﻿</p>
+                  <p>При стоимости заказа свыше 3000 руб по г.Москва ( в пределах МКАД) стоимость доставки составляет 150 руб.</p>
+                  <p>*Данное предложение действует только для розничных клиентов. Оптовые представители в нем не участвуют.&nbsp;</p>
+                  <p>Стоимость доставки в ближайшее Подмосковье зависит от удаленности Вашего города от МКАД, если Ваш город отсутствует в прейскуранте Вы можете уточнить ее у оператора по телефону или электронной почте.</p>
+                  <p><a class="afancy" href="/courier_price.html?iframe"><span>Тарифы на доставку</span>﻿</a>&nbsp;</p>
+                </div>
+              </div>
+
+              <div class="accordion__card">
+                <div class="accordion__card__header" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse1">
+                  <div class="icon">
+                    <img src="./assets/img/delivery-types/pochta.png" alt="">
+                  </div>
+                  Почтой РФ, EMS- Почта России<br>
+                  (мы отправляем заказы за пределы РФ).
+                </div>
+                <div id="collapse2" class="accordion__card__body collapse" data-parent="#accordion">
+                  <p>Отправка заказов Почтой России осуществляется как в пределах Российской Федерации, так и за ее пределами.&nbsp;</p>
+                  <p>Существует возможность отправки Вашего заказа наложенным платежом по территории Российской Федерации. Заграницу отправка производится только после полной оплаты заказа.</p>
+                  <p>Как правило, Ваш заказ передается на сортировочный пункт "Почты России" на следующий <span style="text-decoration: underline;">рабочий</span>&nbsp; день после его подтверждения.</p>
+                  <p>Номер отправления и статус заказа меняется в Вашем личном кабинете через 2 рабочих дня после отправки.</p>
+                  <p><strong>К стоимости расходов по отправке интернет-магазин сборных масштабных моделей </strong></p>
+                  <p><strong>&laquo;Я-Моделист&raquo; дополнительно взимает плату за упаковку груза.</strong></p>
+                  <p><strong>ОБРАЩАЕМ ВАШЕ ВНИМАНИЕ! ПОСЫЛКИ ХРАНЯТСЯ НА ПОЧТЕ 14 ДНЕЙ С МОМЕНТА ПОСТУПЛЕНИЯ ГРУЗА НА ОТДЕЛЕНИЕ!</strong></p>
+                  <p>В упаковку включено :</p>
+                  <p>-обертывание груза воздушно-пузырчатой пленкой</p>
+                  <p>-использование гофротары</p>
+                  <p>-использование фирменного скотча ( за исключением отправки посылок в населенные пункты, ограниченные использованием исключительно &laquo;Авиа-почты&raquo;, и отправлений &laquo;1 класса&raquo;)</p>
+                  <p>-использование тканевого &nbsp;мешка ( при отправке тяжеловесных посылок, нестандартных грузов, а так же при отправке посылок в населенные пункты, ограниченные использованием исключительно &laquo;Авиа-почты&raquo;,&nbsp; при отправке методом &laquo;Комбинированный&raquo;).</p>
+                  <p>Тариф стоимости упаковки варьируется от 50 руб&nbsp; до 80 руб , в зависимости от веса, объема и пункта назначения груза.</p>
+                  <p>Стоимость упаковки включена в общую стоимость доставки груза.</p>
+                  <p>Страховка груза &ndash; очень важный элемент доставки.</p>
+                  <p>Мы не занижаем оценочную стоимость Вашей посылки, т.к. несем ответственность за сохранность груза.</p>
+                  <p>В случае утери посылки сотрудниками почты, мы заботимся о том , чтобы груз был получен получателем в полном объеме.</p>
+                </div>
+              </div>
+
+              <div class="accordion__card">
+                <div class="accordion__card__header" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse1">
+                  <div class="icon">
+                    <img src="./assets/img/delivery-types/delovie.png" alt="">
+                  </div>
+                  Транспортной компанией "Деловые Линии"
+                </div>
+                <div id="collapse3" class="accordion__card__body collapse" data-parent="#accordion">
+                  <p>Список городов, доступных для отгрузки товара данной ТК , смотрите на сайте <a href="http://www.dellin.ru/contacts/">http://www.dellin.ru/contacts/</a></p>
+                </div>
+              </div>
+
+              <div class="accordion__card">
+                <div class="accordion__card__header" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse1">
+                  <div class="icon">
+                    <img src="./assets/img/delivery-types/sdek.png" alt="">
+                  </div>
+                  Транспортной компанией СДЭК.
+                </div>
+                <div id="collapse4" class="accordion__card__body collapse" data-parent="#accordion">
+                  <p>СДЭК - это очень быстрый и современный&nbsp; вариант доставки заказов, более 300 городов в обслуживании.Средний срок доставки составляет 2- 4 дня.</p>
+                  <p>Возможность оплаты заказа наложенным платежом , как у "Почты России".</p>
+                  <p>Вы можете забрать свой заказ на терминале в Вашем городе, а так же заказать курьерскую доставку до двери.</p>
+                  <p>Оператор магазина "Я-Моделист" с удовольствием рассчитает Вам стоимость доставки и проконсультирует,&nbsp; какой из способов будет более удобным и комфортным для Вас.</p>
+                  <p>Ссылка на сайт компании <a href="http://www.edostavka.ru/contacts/city-list.html">http://www.edostavka.ru/contacts/city-list.html</a></p>
+                </div>
+              </div>
+
+              <div class="accordion__card">
+                <div class="accordion__card__header" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse1">
+                  <div class="icon">
+                    <img src="./assets/img/delivery-types/samovivoz.png" alt="">
+                  </div>
+                  Самовывоз
+                </div>
+                <div id="collapse5" class="accordion__card__body collapse" data-parent="#accordion">
+                  <p>Так же Вы можете забрать Ваш заказ самостоятельно из пункта выдачи.&nbsp;</p>
+                  <p>Адрес :&nbsp;</p>
+                  <p>Московска обл. г. Электросталь ул. Ялагина д 3 ТЦ Дельта вход магазина Перекресток. (Цокольный этаж)&nbsp;</p>
+                </div>
+              </div>
+
+            </div>
+
+            <hr class="mt-5">
+
+            <div class="pt-3">
+              <%- include modules/payment.ejs %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="footer">
+    <%- include modules/footer.ejs %>
+  </section>
+
+</body>
+</html>
