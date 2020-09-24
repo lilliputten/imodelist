@@ -12,6 +12,34 @@
     }
   }
 }
+.blackmenu{
+  .bg-gray{
+    background: #444;
+    a{
+      color: #fff;
+      &.txt-c-gray-500{
+        color: rgba(255, 255, 255, 0.6)!important;
+      }
+      &:hover{
+        color: $c-yellow!important;
+      }
+    }
+  }
+}
+.darkred{
+  .bg-gray{
+    background: #841316;
+    a{
+      color: #fff;
+      &.txt-c-gray-500{
+        color: rgba(255, 255, 255, 0.6)!important;
+      }
+      &:hover{
+        color: $c-yellow!important;
+      }
+    }
+  }
+}
 .mobile-menu {
   a{
     text-decoration: none;

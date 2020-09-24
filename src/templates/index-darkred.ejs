@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <section id="header">
+    <%- include modules/modal-loader.ejs %>
+    <%- include modules/preheader.ejs %>
+    <%- include modules/header.ejs %>
+  </section>
+  <section id="menu" class="darkred">
+    <%- include modules/menu.ejs %>
+  </section>
+  <section id="slider">
+    <%- include modules/slider.ejs %>
+  </section>
+
+  <section id="content">
+    <%- include modules/actions.ejs %>
+    <div class="bg-gray py-3 mobile-menu d-md-none">
+      <div class="container">
+        <div class="row">
+          <div class="col-auto">
+            <a href="#" data-toggle-cata-left-menu class="d-flex align-items-center">
+              <i class="icon icon_burger"></i>
+              <div class="ml-3 txt_22px text-uppercase font-weight-bold txt-c-black">Каталог</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 cata-left-menu">
+            <div class="holder">
+              <a href="#" data-toggle-cata-left-menu class="icon icon_close"></a>
+              <p class="h1">Каталог</p>
+              <%- include elements/left-menu.ejs %>
+              <p class="h3 mt-5">Важная информация</p>
+              <%- include elements/left-info.ejs %>
+              <%- include elements/left-news.ejs %>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="row align-items-center">
+              <div class="col-12 col-md-auto">
+                <p class="h2 mb-0">Спецпредложения</p>
+              </div>
+              <div class="col-12 col-md-auto">
+                <a href="#" class="txt-c-black">Посмотреть все акции »</a>
+              </div>
+            </div>
+            <div class="row row-scroll pt-4">
+              <% for(var i = 0; i < 9; i++){ %>
+                <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
+                  <%- include elements/item.ejs %>
+                </div>
+              <% } %>
+            </div>
+
+            <hr class="mt-4">
+
+            <div class="pt-3">
+              <p class="h2">Магазин сборных<br>моделей для склеивания</p>
+              <p>Если Ваше сердце учащенно бьётся каждый раз, когда Вы собираете очередную модель самолета или автомобиля, то «Я – моделист» - именно тот магазин, который Вам нужен. Богатый ассортимент позволяет подобрать подходящую модель и новичку, и профессионалу моделизма по самой привлекательной цене.</p>
+              <p>Богатый ассортимент позволяет подобрать подходящую модель и новичку, и профессионалу моделизма по самой привлекательной цене.</p>
+            </div>
+
+            <div class="pt-4 my-5" id="whyUs">
+              <div class="p-4">
+                <p class="h2 text-md-center">Почему мы?</p>
+                <div class="row row-scroll py-4">
+                  <div class="col-auto col-md-4 text-center">
+                    <img class="small-icons" src="./assets/vectors/why_us/1.svg" alt="">
+                    <a href="#">Доставляем быстрее всех,<br>
+                      удобным Вам способом</a>
+                  </div>
+                  <div class="col-auto col-md-4 text-center">
+                    <img class="small-icons" src="./assets/vectors/why_us/2.svg" alt="">
+                    <a href="#">Очень большой выбор<br>
+                      способов оплаты
+                    </a>
+                  </div>
+                  <div class="col-auto col-md-4 text-center">
+                    <img class="small-icons" src="./assets/vectors/why_us/3.svg" alt="">
+                    <a href="#">Большой ассортимент<br>
+                      качественной продукции</a>
+                  </div>
+                </div>
+              </div>
+              <%- include modules/cata-scroll.ejs %>
+            </div>
+
+            <div class="pt-3">
+              <p class="h2">ООО "Я-МОДЕЛИСТ"</p>
+              <p>Является официальным представителем следующих фирм</p>
+              <div class="row row-scroll">
+                <img class="col-auto py-3 px-2" src="./assets/img/company/1.png" alt="">
+                <img class="col-auto py-3 px-2" src="./assets/img/company/2.png" alt="">
+                <img class="col-auto py-3 px-2" src="./assets/img/company/3.png" alt="">
+                <img class="col-auto py-3 px-2" src="./assets/img/company/4.png" alt="">
+                <img class="col-auto py-3 px-2" src="./assets/img/company/5.png" alt="">
+                <img class="col-auto py-3 px-2" src="./assets/img/company/6.png" alt="">
+                <img class="col-auto py-3 px-2" src="./assets/img/company/7.png" alt="">
+                <img class="col-auto py-3 px-2" src="./assets/img/company/8.png" alt="">
+                <img class="col-auto py-3 px-2" src="./assets/img/company/9.png" alt="">
+                <img class="col-auto py-3 px-2" src="./assets/img/company/10.png" alt="">
+                <img class="col-auto py-3 px-2" src="./assets/img/company/11.png" alt="">
+                <img class="col-auto py-3 px-2" src="./assets/img/company/12.png" alt="">
+                <img class="col-auto py-3 px-2" src="./assets/img/company/13.png" alt="">
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="pt-3">
+              <%- include modules/payment.ejs %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="youtube">
+    <%- include modules/youtube.ejs %>
+  </section>
+  <section id="footer">
+    <%- include modules/footer.ejs %>
+  </section>
+
+</body>
+</html>
