@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <section id="header">
+    <%- include modules/modal-loader.ejs %>
+    <%- include modules/preheader.ejs %>
+    <%- include modules/header.ejs %>
+  </section>
+  <section id="menu">
+    <%- include modules/menu.ejs %>
+  </section>
+
+  <div class="sliderInner">
+    <div class="carousel-inner">
+      <div class="container">
+        <div class="bread">
+          <a href="/">Главная</a>  »  12327 Academy 1/48 Focke-Wulf Ta183 Huckebein
+        </div>
+        <h1 class="slider-text">
+          12327 Academy 1/48 Focke-Wulf Ta183 Huckebein
+        </h1>
+      </div>
+      <img class="d-block w-100" src="./assets/example/bigproduct.png" alt="">
+    </div>
+  </div>
+
+
+
+
+  <section id="content">
+    <div class="bg-gray py-3 mobile-menu d-lg-none">
+      <div class="container">
+        <div class="row">
+          <div class="col-auto">
+            <a href="#" data-toggle-cata-left-menu class="d-flex align-items-center">
+              <i class="icon icon_burger"></i>
+              <div class="ml-3 txt_22px text-uppercase font-weight-bold txt-c-black">Каталог</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 cata-left-menu">
+            <div class="holder">
+              <a href="#" data-toggle-cata-left-menu class="icon icon_close"></a>
+              <p class="h1">Каталог</p>
+              <%- include elements/left-menu.ejs %>
+              <p class="h3 mt-5">Важная информация</p>
+              <%- include elements/left-info.ejs %>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="row align-items-center">
+              <div class="col-lg-6 mb-4">
+                <a href="./assets/example/bigproduct.png" data-fancybox="gallery">
+                  <img class="w-100 img-fluid" src="./assets/example/bigproduct.png" alt="12327 Academy 1/48 Focke-Wulf Ta183 Huckebein">
+                </a>
+              </div>
+              <div class="col-lg-6 mb-4">
+                <p class="txt_18px font-weight-bold mb-3">12327 Academy 1/48 Focke-Wulf Ta183 Huckebein</p>
+                <div class="d-flex align-items-center">
+                  <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                  <button class="btn red ml-3" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> купить</button>
+                </div>
+                <div class="d-flex my-3 align-items-center">
+                  <div class="bigstars bigstars_3" data-id="1">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <a href="#" class="txt_14px txt-c-black ml-3" data-notify data-id="1">Уведомить</a>
+                  <a href="#" class="link-compare" data-compare data-id="1">Сравнить</a>
+                </div>
+                <div>
+                  <p class="mb-2">Артикул: <span class="txt-c-gray-500">3601</span></p>
+                  <p class="mb-2">Производитель: <span class="txt-c-gray-500">Звезда</span></p>
+                  <p class="mb-2">Наличие: <span class="txt-c-gray-500">Есть в наличии</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 bg-gray">
+              <div class="d-flex row-scroll custom-scroll mb-0">
+                <% for(var i = 0; i < 12; i++){ %>
+                  <div class="col-auto d-flex align-items-center rub-model">
+                    <a href="./assets/example/bigproduct.png" data-fancybox="gallery" class="rub-model-holder">
+                      <img src="./assets/example/bigproduct.png" alt="">
+                    </a>
+                  </div>
+                <% } %>
+              </div>
+            </div>
+
+            <p class="txt_24px mt-5">Дополнительная информация</p>
+            <p>Как известно, классика всегда в моде. Похоже, руководствуясь именно этим тезисом отечественные умельцы из “Звезды”, в очередной раз решив порадовать нас новым релизом, подготовили элегантное переосмысление нестареющей модельной классики.</p>
+            <p>Господа, встречайте ту самую советскую рабочую лошадку ЗСУ-23-4 , легендарную “Шилку”, которую за ее многолетнюю историю боевой эксплуатации по достоинству оценили не только советские солдаты, но и вооруженные силы союзных государств по всему земному шару.</p>
+            <p>Смогли оценить и ее в свое время и моделисты, успевшие поработать с раритетным ныне набором от Dragon. А теперь такая возможность появилась и у современного поколения модельных мастеров.</p>
+            <p>А чтобы первое знакомство с этим реликтовым набором прошло еще интереснее, мы как всегда любовно подготовили отличные, и главное, совершенно бесплатные бонусы, которые будут входить в комплект с каждым набором.</p>
+            <p>На этот раз мы решили, что для того, чтобы изваять настоящий пластиковый мини-шедевр, Вам будет совершенно необходим роскошный комплект из четырех высококачественных детализированных копийных точеных металлических стволов фирмы "Zedval", благодаря которым даже самый искушенный военный эксперт издалека не отличит Вашу модель от настоящей грозной боевой машины. А для перестраховки, чтобы спецоперация по сборке прошла успешно несмотря ни на какие сопутствующие обстоятельства, мы также добавили в дополнение к набору надежного помощника любого бывалого моделиста – универсальную шпатлевку от японской фирмы Tamiya. Успейте сделать заказ на это уникальное предложение на нашем сайте, и своими руками прикоснуться к истории.</p>
+            <hr>
+            <p class="txt_24px">С этим товаром покупают</p>
+            <div class="row row-scroll pt-4">
+              <% for(var i = 0; i < 3; i++){ %>
+                <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
+                  <%- include elements/item.ejs %>
+                </div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="footer">
+    <%- include modules/footer.ejs %>
+  </section>
+
+</body>
+</html>

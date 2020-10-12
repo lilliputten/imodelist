@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <section id="header">
+    <%- include modules/modal-loader.ejs %>
+    <%- include modules/preheader.ejs %>
+    <%- include modules/header.ejs %>
+  </section>
+  <section id="menu">
+    <%- include modules/menu.ejs %>
+  </section>
+  <div class="sliderInner">
+      <div class="carousel-inner">
+          <div class="container">
+              <div class="bread">
+                  <a href="/">Главная</a>  »  Способы доставки
+              </div>
+              <h1 class="slider-text">
+                  Личный кабинет
+              </h1>
+          </div>
+          <img class="d-block w-100" src="./assets/img/headers/reg.jpg" alt="">
+      </div>
+  </div>
+
+  <%- include cart/cart-top.ejs %>
+
+  <div class="bg-gray py-3 mobile-menu d-lg-none">
+      <div class="container">
+          <div class="row">
+              <div class="col-auto">
+                  <a href="#" data-toggle-cata-left-menu class="d-flex align-items-center">
+                      <i class="icon icon_burger"></i>
+                      <div class="ml-3 txt_22px text-uppercase font-weight-bold txt-c-black">Меню</div>
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <section id="content">
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-2 cata-left-menu">
+                <div class="holder">
+                    <a href="#" data-toggle-cata-left-menu class="icon icon_close"></a>
+                    <p class="h1">Меню</p>
+                    <%- include cart/cart-list.ejs %>
+                </div>
+            </div>
+            <div class="col-lg-10">
+                <h3>Настройка профиля</h3>
+                <form>
+                    <div class="d-flex flex-wrap align-items-center text-nowrap">
+                        <div class="avatar mr-4 mb-3">
+                            <img src="./assets/img/face.jpg" alt="">
+                        </div>
+                        <div class="flex-shrink-0 mr-4 mb-3">
+                            <div class="custom-file" id="customFile">
+                                <input type="file" class="custom-file-input" id="editphoto" aria-describedby="fileHelp">
+                                <label class="custom-file-label" for="editphoto">
+                                    Редактировать фото
+                                </label>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 mr-4 mb-3">
+                            <input type="submit" class="btn red cart w-auto" value="Сохранить данные">
+                        </div>
+                    </div>
+
+                    <div class="accordion__card">
+                        <p class="txt_18px mb-3 font-weight-bold">ФИО</p>
+                        <div class="row">
+                            <div class="mb-3 col-md-4">
+                                <div class="mb-2">Ваше Имя <span class="txt-c-red">*</span></div>
+                                <input class="w-100" type="text" name="fio-i" required>
+                            </div>
+                            <div class="mb-3 col-md-4">
+                                <div class="mb-2">Фамилия <span class="txt-c-red">*</span></div>
+                                <input class="w-100" type="text" name="fio-f" required>
+                            </div>
+                            <div class="mb-3 col-md-4">
+                                <div class="mb-2">Отчество <span class="txt-c-red">*</span></div>
+                                <input class="w-100" type="text" name="fio-o" required>
+                            </div>
+                        </div>
+                        <p class="txt_18px mb-3 font-weight-bold mt-3">Данные</p>
+                        <div class="row">
+                            <div class="mb-3 col-md-4">
+                                <div class="mb-2">Дата рождения</div>
+                                <input class="w-100 dpicker" type="text" name="date">
+                            </div>
+                            <div class="mb-3 col-md-4">
+                                <div class="mb-2">E-mail <span class="txt-c-red">*</span></div>
+                                <input class="w-100" type="email" name="mail" required>
+                            </div>
+                            <div class="mb-3 col-md-4">
+                                <div class="mb-2">Телефон</div>
+                                <input class="w-100" type="phone" name="phone">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion__card">
+                        <p class="txt_18px mb-3 font-weight-bold">Доставка</p>
+                        <div class="row">
+                            <div class="mb-3 col-md-4">
+                                <div class="mb-2">Почтовый индекс <span class="txt-c-red">*</span></div>
+                                <input class="w-100" type="text" name="ind" required>
+                            </div>
+                            <div class="mb-3 col-md-8">
+                                <div class="mb-2">Адрес <span class="txt-c-red">*</span></div>
+                                <input class="w-100" type="text" name="adr" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion__card">
+                        <p class="txt_18px mb-3 font-weight-bold">Изменение пароля</p>
+                        <div class="row">
+                            <div class="mb-3 col-md-4">
+                                <div class="mb-2">Пароль <span class="txt-c-red">*</span></div>
+                                <input class="w-100" type="password" name="pass" required>
+                            </div>
+                            <div class="mb-3 col-md-8">
+                                <div class="mb-2">Подтверждение пароля <span class="txt-c-red">*</span></div>
+                                <input class="w-100" type="password" name="repass" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion__card">
+                        <p class="txt_18px mb-3 font-weight-bold">Подписать на новости</p>
+                        <div class="row">
+                            <div class="mb-3 col-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" name="checkadd" type="radio" id="checkadd1" value="1" checked>
+                                    <label class="form-check-label" for="checkadd1">Да, я хочу подписаться</label>
+                                </div>
+                            </div>
+                            <div class="mb-3 col-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" name="checkadd" type="radio" id="checkadd2" value="0">
+                                    <label class="form-check-label" for="checkadd2">Нет, спасибо</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="submit" class="btn red cart" value="Сохранить данные">
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="footer">
+    <%- include modules/footer.ejs %>
+  </section>
+
+</body>
+</html>

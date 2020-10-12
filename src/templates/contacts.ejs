@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+<section id="header">
+  <%- include modules/modal-loader.ejs %>
+  <%- include modules/preheader.ejs %>
+  <%- include modules/header.ejs %>
+</section>
+<section id="menu">
+  <%- include modules/menu.ejs %>
+</section>
+
+<div class="sliderInner">
+  <div class="carousel-inner">
+    <div class="container">
+      <div class="bread">
+        <a href="/">Главная</a>  »  Способы доставки
+      </div>
+      <h1 class="slider-text">
+        ОПТОВИКАМ
+      </h1>
+    </div>
+    <img class="d-block w-100" src="./assets/img/headers/contacts.jpg" alt="">
+  </div>
+</div>
+
+<section id="content">
+  <div class="bg-gray py-3 mobile-menu d-lg-none">
+    <div class="container">
+      <div class="row">
+        <div class="col-auto">
+          <a href="#" data-toggle-cata-left-menu class="d-flex align-items-center">
+            <i class="icon icon_burger"></i>
+            <div class="ml-3 txt_22px text-uppercase font-weight-bold txt-c-black">Каталог</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 cata-left-menu">
+          <div class="holder">
+            <a href="#" data-toggle-cata-left-menu class="icon icon_close"></a>
+            <p class="h1">Каталог</p>
+            <%- include elements/left-menu.ejs %>
+            <p class="h3 mt-5">Важная информация</p>
+            <%- include elements/left-info.ejs %>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.4689222299266!2d38.431003516145296!3d55.76772728055738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414adc66ef95d76f%3A0xd06f4ad5c75415f!2z0YPQuy4g0K_Qu9Cw0LPQuNC90LAsIDMsINCt0LvQtdC60YLRgNC-0YHRgtCw0LvRjCwg0JzQvtGB0LrQvtCy0YHQutCw0Y8g0L7QsdC7LiwgMTQ0MDEw!5e0!3m2!1sru!2sru!4v1581314508248!5m2!1sru!2sru" frameborder="0" width="100%" height="350"></iframe>
+
+          <div class="mt-5">
+            <p class="txt_30px font-weight-bold text-uppercase d-flex align-items-center">
+              <i class="icon icon_c-phone mr-3"></i> Телефоны:
+            </p>
+            <p class="txt_18px">+7 (800) 333-04-41﻿</p>
+            <p class="txt_18px">+7 (499) 322-14-09</p>
+            <p class="txt_30px font-weight-bold text-uppercase d-flex align-items-center">
+              <i class="icon icon_c-map mr-3"></i>  Фактический адрес:
+            </p>
+            <p>144010, Московская область, город Электросталь, ул. Ялагина, д.3. Мы находимся в бизнес-центре "Дельта", ориентир магазин "Перекрёсток" - цокольный этаж.</p>
+            <hr>
+            <p class="txt_18px font-weight-bold text-uppercase d-flex align-items-center">
+              <i class="icon icon_c-time font-weight-normal mr-3"></i> График работы интернет-магазина:
+            </p>
+            <p class="mb-2">понедельник- пятница: с 9.00 до 19.00,</p>
+            <p class="mb-2">суббота, воскресенье: с 9.00 до 18.00.</p>
+            <p class="mt-4 txt_18px font-weight-bold text-uppercase d-flex align-items-center">
+              <i class="icon icon_c-time font-weight-normal mr-3"></i> График работы розничного магазина:
+            </p>
+            <p class="mb-2">понедельник- пятница: с 9.00 до 19.00,</p>
+            <p class="mb-2">суббота, воскресенье: с 9.00 до 18.00,</p>
+            <p>без перерыва на обед.</p>
+            <hr>
+            <p class="txt_18px font-weight-bold text-uppercase d-flex align-items-center">
+              <i class="icon icon_c-bank font-weight-normal mr-3"></i> Наши банковские реквизиты:
+            </p>
+            <p class="mb-2">Филиал №7701 Банка ВТБ (ПАО)﻿</p>
+            <p class="mb-2">Р/с 40802810400000047479﻿</p>
+            <p class="mb-2">к/с 30101810345250000745﻿</p>
+            <p class="mb-2">БИК 044525745﻿</p>
+            <p>ИНН 7710353606</p>
+            <p class="txt_18px font-weight-bold text-uppercase d-flex align-items-center mt-5">
+              <i class="icon icon_c-mail font-weight-normal mr-3"></i> Почтовый адрес:
+            </p>
+            <p>144010, Московская область, город Электросталь, а/я 1356</p>
+            <p class="txt_18px font-weight-bold text-uppercase d-flex align-items-center mt-5">
+              <i class="icon icon_c-email font-weight-normal mr-3"></i> Электронный адрес:
+            </p>
+            <p class="mb-2"><a href="mailto:zakaz@i-modelist.ru">zakaz@i-modelist.ru</a> (круглосуточно).</p>
+            <p>Внимание, при регистрации на Ваш адрес электронной почты обязательно должно прийти письмо подтверждение. Если Вы не можете его найти, пожалуйста, проверьте свою папку Спам.</p>
+            <p class="txt_18px font-weight-bold text-uppercase d-flex align-items-center mt-5">
+              <i class="icon icon_vk font-weight-normal mr-3"></i> Наша группа в Вконтакте:
+            </p>
+            <p><a href="https://vk.com/imodelistshop" target="_blank">i-modelist.ru</a></p>
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section id="footer">
+  <%- include modules/footer.ejs %>
+</section>
+
+</body>
+</html>

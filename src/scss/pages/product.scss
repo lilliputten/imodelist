@@ -1,0 +1,55 @@
+.bigstars{
+  background: url('#{$path-assets}/vectors/stars.svg') no-repeat 0 0;
+  width: 115px;
+  height: 22px;
+  background-size: 100%;
+  display: flex;
+  opacity: 0.5;
+  div{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  &_1{
+    background-position: 0 2px;
+  }
+  &_2{
+    background-position: 0 -20px;
+  }
+  &_3{
+    background-position: 0 -42px;
+  }
+  &_4{
+    background-position: 0 -64px;
+  }
+  &_5{
+    background-position: 0 -86px!important;
+  }
+  &_hover_1{
+    background-position: 0 2px!important;
+  }
+  &_hover_2{
+    background-position: 0 -20px;
+  }
+  &_hover_3{
+    background-position: 0 -42px!important;
+  }
+  &_hover_4{
+    background-position: 0 -64px!important;
+  }
+  &_hover_5{
+    background-position: 0 -86px!important;
+  }
+  &.active {
+    opacity: 1;
+  }
+}
+.link-compare{
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: $txt_14px;
+  color: $gray-500;
+  background: url('#{$path-assets}/vectors/compare.svg') no-repeat left center;
+  padding-left: 1rem;
+}

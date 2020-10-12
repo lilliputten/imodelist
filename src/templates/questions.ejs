@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <section id="header">
+    <%- include modules/modal-loader.ejs %>
+    <%- include modules/preheader.ejs %>
+    <%- include modules/header.ejs %>
+  </section>
+  <section id="menu">
+    <%- include modules/menu.ejs %>
+  </section>
+
+  <div class="sliderInner">
+    <div class="carousel-inner">
+      <div class="container">
+        <div class="bread">
+          <a href="/">Главная</a>  »  ПРЕДЗАКАЗ Советская ЗСУ-23-4М Шилка от фирмы "Звезда" + ПОДАРОК
+        </div>
+        <h1 class="slider-text">
+          ВОПРОСЫ И ОТВЕТЫ
+        </h1>
+      </div>
+      <img class="d-block w-100" src="./assets/img/headers/questions.jpg" alt="">
+    </div>
+  </div>
+
+
+
+
+  <section id="content">
+    <div class="bg-gray py-3 mobile-menu d-lg-none">
+      <div class="container">
+        <div class="row">
+          <div class="col-auto">
+            <a href="#" data-toggle-cata-left-menu class="d-flex align-items-center">
+              <i class="icon icon_burger"></i>
+              <div class="ml-3 txt_22px text-uppercase font-weight-bold txt-c-black">Каталог</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 cata-left-menu">
+            <div class="holder">
+              <a href="#" data-toggle-cata-left-menu class="icon icon_close"></a>
+              <p class="h1">Каталог</p>
+              <%- include elements/left-menu.ejs %>
+              <p class="h3 mt-5">Важная информация</p>
+              <%- include elements/left-info.ejs %>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <p class="txt_30px font-weight-bold text-uppercase">Задать вопрос</p>
+            <form class="my-4">
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <input type="text" name="name" class="form-control" required placeholder="Имя *">
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <input type="text" name="email" class="form-control" required placeholder="Email *">
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <input type="text" name="phone" class="form-control" placeholder="Телефон">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <textarea type="text" name="text" class="form-control" required placeholder="Текст *"></textarea>
+                  </div>
+                </div>
+              </div>
+              <input type="submit" class="btn red d-inline-block w-auto" value="Отправить">
+            </form>
+            <hr>
+            <% for(var i = 0; i < 7; i++){ %>
+            <div class="mb-4">
+              <div class="mb-3"><span class="font-weight-bold txt_24px">МАРИЯ</span> 12.02.2020</div>
+              <div class="mb-3">Рыночная информация изоморфна. Стиль менеджмента ригиден. Стимулирование коммьюнити определяет лист Мёбиуса, явно демонстрируя всю чушь вышесказанного.</div>
+              <div class="mb-3 ml-lg-5 txt-c-gray-500">Рациональное число нейтрализует многомерный PR, полагаясь на инсайдерскую информацию. Точечное воздействие стабилизирует социометрический жизненный цикл продукции. Лидерство в продажах не критично. Критерий интегрируемости иррационален. Асимптота восстанавливает интеграл от функции, имеющий конечный разрыв.</div>
+            </div>
+            <hr>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="footer">
+    <%- include modules/footer.ejs %>
+  </section>
+
+</body>
+</html>

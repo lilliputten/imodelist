@@ -1,13 +1,20 @@
 $icons: (
-  ('close' '\e908' 1.25rem #fff),
-  ('phone' '\e901' 1rem $c-black),
-  ('time' '\e903' 1rem $c-black),
-  ('user' '\e904' 1rem $c-black),
-  ('cart' '\e907' 1rem $c-black),
-  ('vk' '\e905' 1rem $c-red),
-  ('yt' '\e906' 1rem $c-red),
-  ('in' '\e900' 1rem $c-red),
-  ('burger' '\e909' 1rem $c-black),
+  ('close' '\e908' 1.25rem #fff #fff),
+  ('phone' '\e901' 1rem $c-black $c-black),
+  ('time' '\e903' 1rem $c-black $c-black),
+  ('user' '\e904' 1rem $c-black $c-black),
+  ('cart' '\e907' 1rem $c-black $c-black),
+  ('vk' '\e905' 1rem $c-red $c-red),
+  ('yt' '\e906' 1rem $c-red $c-red),
+  ('in' '\e900' 1rem $c-red $c-red),
+  ('burger' '\e909' 1rem $c-black $c-black),
+  ('c-time' '\e90a' 1.8rem $c-black $c-black),
+  ('c-bank' '\e90b' 1.8rem $c-black $c-black),
+  ('c-email' '\e90c' 1.8rem $c-black $c-black),
+  ('c-mail' '\e90d' 1.8rem $c-black $c-black),
+  ('c-map' '\e90e' 1.7rem $c-black $c-black),
+  ('c-phone' '\e90f' 1.7rem $c-black $c-black),
+  ('trash' '\e910' 1.4rem $c-black $c-red),
 );
 
 .icon {
@@ -22,6 +29,9 @@ $icons: (
 
       &:before{
         content: nth($icon, 2);
+      }
+      &:hover{
+        color: nth($icon, 5);
       }
     }
   }

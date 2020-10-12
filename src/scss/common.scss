@@ -66,7 +66,11 @@ hr{
 iframe {
   max-width: 100%;
 }
-
+.hidden{
+  visibility: hidden;
+  opacity: 0;
+  @extend %anim;
+}
 .breadcrumbs{
   width: 100%;
   color: $gray-500;
@@ -107,7 +111,9 @@ iframe {
     color: $c-red;
   }
 }
-
+hr {
+  margin: 2.5rem 0;
+}
 .nav {
   flex-wrap: nowrap;
   overflow: auto;
@@ -185,10 +191,33 @@ ul {
   height: 3rem;
   margin-right: 1rem;
 }
+.col-auto{
+  &.rub-model{
+    width: 9rem;
+  }
+}
+.rub-model-holder{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 4px;
+  padding: 0.5rem;
+  width: 7rem;
+  height: 5rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
 .custom-scroll {
   overflow: hidden;
   width: 100%;
-  padding-bottom: 3rem!important;
+  padding-bottom: 2rem!important;
   position: relative;
 }
 .ps__rail-x {

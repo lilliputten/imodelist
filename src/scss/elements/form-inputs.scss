@@ -1,27 +1,32 @@
 select,
 input,
-textarea, .inputlike{
-  font-family: 'Roboto',Helvetica Neue,Arial,sans-serif;
-  font-size: $txt_12px;
-  background: #FFFFFF;
-  border: 1px solid $c-black;
+textarea, .inputlike, .form-control, .custom-file-label{
+  font-family: $font-family-sans-serif;
+  font-size: $txt_14px!important;
+  background-color: $c-gray!important;
   box-sizing: border-box;
-  padding: 0.25rem 0.7rem;
   outline: none;
-  min-height: 2rem!important;
-  line-height: 1.2rem!important;
-  border-radius: 4px;
+  box-shadow: none!important;
+  min-height: 1rem!important;
   text-align: left;
-  &.white{
-    border-color: #fff;
-    color: #fff;
-    background: transparent;
-    &::placeholder{
-      color: #fff;
-    }
-  }
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid $c-gray!important;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-
+.form-check-input{
+  width: 17px;
+  height: 0;
+}
+.form-check-label{
+  margin: 3px 0 0 6px;
+}
 .w-100 {
   select,
   input,
@@ -30,35 +35,39 @@ textarea, .inputlike{
   }
 }
 
-.inputlike {
-  input {
-    border: 0;
-    padding: 0;
-    min-height: 0;
-    line-height: 1rem;
+.custom-checkbox {
+  &.red{
+    .custom-control-label {
+      &::before {
+        border: $c-red solid 2px!important;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+      &::after {
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+    .custom-control-input:checked ~ .custom-control-label::before {
+      background: $c-red!important;
+    }
+  }
+  .custom-control-label {
+    &::before {
+      background-color: transparent!important;
+      border: #ffffff solid 2px!important;
+      top: 1px!important;
+      width: 16px!important;
+      height: 16px!important;
+    }
+  }
+  .custom-control-input:checked ~ .custom-control-label::after {
+    top: 1px!important;
   }
 }
 
-.select_wrapper {
-  position: relative;
-  select {
-    position: relative;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    padding-right: 2rem;
-    cursor: pointer;
-  }
-  &:after {
-    font-family: icomoon;
-    content: "\e90a";
-    position: absolute;
-    right: 0.8rem;
-    pointer-events: none;
-    font-size: 5.5px;
-    top: 50%;
-    margin-top: 2px;
-    line-height: 0;
-    color: $c-black;
-  }
+.custom-file-input ~ .custom-file-label::after {
+  content: "Загрузить";
 }

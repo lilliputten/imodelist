@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <section id="header">
+    <%- include modules/modal-loader.ejs %>
+    <%- include modules/preheader.ejs %>
+    <%- include modules/header.ejs %>
+  </section>
+  <section id="menu">
+    <%- include modules/menu.ejs %>
+  </section>
+  <div class="sliderInner">
+      <div class="carousel-inner">
+          <div class="container">
+              <div class="bread">
+                  <a href="/">Главная</a>  »  Способы доставки
+              </div>
+              <h1 class="slider-text">
+                  Личный кабинет
+              </h1>
+          </div>
+          <img class="d-block w-100" src="./assets/img/headers/reg.jpg" alt="">
+      </div>
+  </div>
+
+  <%- include cart/cart-top.ejs %>
+
+  <div class="bg-gray py-3 mobile-menu d-lg-none">
+      <div class="container">
+          <div class="row">
+              <div class="col-auto">
+                  <a href="#" data-toggle-cata-left-menu class="d-flex align-items-center">
+                      <i class="icon icon_burger"></i>
+                      <div class="ml-3 txt_22px text-uppercase font-weight-bold txt-c-black">Меню</div>
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <section id="content">
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-2 cata-left-menu">
+                <div class="holder">
+                    <a href="#" data-toggle-cata-left-menu class="icon icon_close"></a>
+                    <p class="h1">Меню</p>
+                    <%- include cart/cart-list.ejs %>
+                </div>
+            </div>
+            <div class="col-lg-10">
+                <h3>Мои заказы</h3>
+                <%- include cart/cart-orders.ejs %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="footer">
+    <%- include modules/footer.ejs %>
+  </section>
+
+</body>
+</html>

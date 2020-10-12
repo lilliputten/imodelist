@@ -42,12 +42,11 @@
     }
   }
   &.red{
-    background: $c-red;
-    border-color: $c-red;
+    background: $c-red!important;
+    border: 0!important;
     color: #fff;
     &:hover {
-      background: darken($c-red, 25%);
-      border-color: darken($c-red, 25%);
+      background: darken($c-red, 25%)!important;
     }
   }
 }
@@ -85,4 +84,12 @@ button{
       }
     }
   }
+}
+
+.badge{
+  background: $c-gradient;
+  border-radius: 8px;
+  color: #fff;
+  font-size: $txt_18px;
+  padding: 1rem 2rem 1rem 1rem;
 }

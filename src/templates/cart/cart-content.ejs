@@ -1,0 +1,109 @@
+
+<div class="blank-cart">
+  <i class="icon icon_cart"></i> Ваша корзина пуста
+</div>
+<div data-cart-table data-url="/count">
+  <table class="cart-table table-responsive">
+    <tr>
+      <th>ТОВАР</th>
+      <th></th>
+      <th>Стоимость</th>
+      <th>Кол-во</th>
+      <th>Сумма</th>
+      <th></th>
+    </tr>
+    <% for(var i = 0; i < 3; i++){ %>
+      <tr data-id="44">
+        <td class="cart-table__img">
+          <img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+        </td>
+        <td class="cart-table__name">
+          <a href="#" class="txt-c-black">MSD851724 Модель-Сервис Короб для кораблей 850х170х240</a>
+          <p class="txt-c-gray-500">Артикул: MSD851724</p>
+        </td>
+        <td class="cart-table__price">
+          <p class="mb-0 text-nowrap txt_18px font-weight-bold"><span class="txt_24px" data-thousand-separate data-price="9200">9200</span> руб.</p>
+        </td>
+        <td class="cart-table__quantity">
+          <div class="quantity">
+            <i class="quantity__icon minus" data-type="minus">-</i><input name="quantity" pattern="\d*" value="1"><i class="quantity__icon plus" data-type="plus">+</i>
+          </div>
+        </td>
+        <td class="cart-table__summ">
+          <p class="mb-0 text-nowrap txt_18px font-weight-bold"><span class="txt_24px" data-thousand-separate data-summ="9200">9200</span> руб.</p>
+        </td>
+        <td class="cart-table__trash">
+          <a data-trash href="#" class="icon icon_trash text-decoration-none"></a>
+        </td>
+      </tr>
+    <% } %>
+
+  </table>
+  <div class="p-3 my-4 bg-gray">
+    <div class="txt_18px">
+      Итого: <span class="txt_22px font-weight-bold" data-totalcount>0</span> товаров на сумму <span class="font-weight-bold txt_22px" data-thousand-separate data-totalsumm>0</span> р. <span class="txt-c-gray-500"> Сумма заказа без учёта доставки</span>
+    </div>
+  </div>
+  <form data-action="/" class="cart_form">
+    <div class="d-flex align-items-center mb-4">
+      <img src="./assets/vectors/gift.svg" alt="">
+      <div class="custom-control custom-checkbox ml-3 red mt-1">
+        <input name="exist" type="checkbox" class="custom-control-input" id="exist">
+        <label class="custom-control-label" for="exist">Обернуть в подарочную упаковку</label>
+      </div>
+    </div>
+    <div class="accordion__card">
+      <p class="txt_18px mb-3 font-weight-bold">Покупатель</p>
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <div class="mb-2">Ваше Имя <span class="txt-c-red">*</span></div>
+          <input class="w-100" type="text" name="name" required>
+        </div>
+        <div class="mb-3 col-md-4">
+          <div class="mb-2">E-mail <span class="txt-c-red">*</span></div>
+          <input class="w-100" type="email" name="mail" required>
+        </div>
+        <div class="mb-3 col-md-4">
+          <div class="mb-2">Телефон</div>
+          <input class="w-100" type="phone" name="phone">
+        </div>
+        <div class="mb-3 col-12">
+          <div class="mb-2">Комментарий</div>
+          <textarea class="w-100 form-control" name="adress" rows="7"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="accordion__card">
+      <p class="txt_18px mb-3 font-weight-bold">Доставка</p>
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <div class="mb-2">Почтовый индекс <span class="txt-c-red">*</span></div>
+          <input class="w-100" type="text" name="ind" required>
+        </div>
+        <div class="mb-3 col-md-8">
+          <div class="mb-2">Адрес <span class="txt-c-red">*</span></div>
+          <input class="w-100" type="text" name="adr" required>
+        </div>
+      </div>
+    </div>
+    <div class="accordion__card">
+      <p class="txt_18px mb-3 font-weight-bold">Подтверждение заказа</p>
+      <p>Желаете ли Вы, чтобы менеджер связался с Вами для уточнения деталей заказа (а именно: стоимость почтовых расходов, выбор способов оплаты, сроков доставки заказа) по указанному Вами контактному телефону?</p>
+      <div class="row">
+        <div class="mb-3 col-auto">
+          <div class="form-check">
+            <input class="form-check-input" name="manager" type="radio" id="manager1" value="1" checked>
+            <label class="form-check-label" for="manager1">Да, я хочу переговорить с менеджером лично</label>
+          </div>
+        </div>
+        <div class="mb-3 col-auto">
+          <div class="form-check">
+            <input class="form-check-input" name="manager" type="radio" id="manager2" value="0">
+            <label class="form-check-label" for="manager2">Нет, я знаю условия доставки</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <input type="submit" class="btn red cart" value="ОФОРМИТЬ ЗАКАЗ">
+  </form>
+</div>

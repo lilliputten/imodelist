@@ -1,0 +1,37 @@
+<table class="cart-table table-responsive">
+  <tr>
+    <th>ТОВАР</th>
+    <th></th>
+    <th>Дата и время заказа</th>
+    <th>Сумма</th>
+    <th>ИНФОРМАЦИЯ</th>
+  </tr>
+  <% for(var i = 0; i < 3; i++){ %>
+    <tr data-id="44">
+      <td class="cart-table__img">
+        <img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+      </td>
+      <td class="cart-table__name">
+        <a href="#" class="txt-c-black">MSD851724 Модель-Сервис Короб для кораблей 850х170х240</a>
+        <p class="txt-c-gray-500">Артикул: MSD851724</p>
+      </td>
+      <td class="cart-table__date">
+        <div>12 июля 2020</div>
+        <div class="txt-c-gray-500">12:30</div>
+      </td>
+      <td class="cart-table__summ">
+        <p class="mb-0 text-nowrap txt_18px font-weight-bold"><span class="txt_24px" data-thousand-separate data-summ="9200">9200</span> руб.</p>
+      </td>
+      <td class="cart-table__info">
+        <div class="text-success">Заказ получен</div>
+        <div class="text-warning">Оплачен картой</div>
+        <div>Трек номер: 34fregg4r35</div>
+      </td>
+    </tr>
+  <% } %>
+</table>
+<div class="p-3 my-4 bg-gray">
+  <div class="txt_18px">
+    Общая сумма по всем заказам, руб: <span class="font-weight-bold txt_22px" data-thousand-separate>123</span> р. <span class="txt-c-gray-500"> Без учёта доставки</span>
+  </div>
+</div>
