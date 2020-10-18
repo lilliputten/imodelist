@@ -10,6 +10,8 @@
       align-items: center;
       font-weight: bold;
       font-size: $txt_18px;
+      height: 100%;
+      width: 100%;
       @media(max-width:991px) {
         display: block;
         img {
