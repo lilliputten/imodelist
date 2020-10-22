@@ -1,8 +1,18 @@
 .bg-red, .bg-gradient {
   .prod-item{
     &__mark{
-      color: #fff;
+      color: #fff!important;
     }
+  }
+}
+.prod-sert {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 1rem;
+  .size{
+    position: absolute;
+    right: 9%;
+    bottom: 10%;
   }
 }
 .prod-item{
@@ -41,6 +51,11 @@
     left: 0;
     font-size: $txt_12px;
     position: absolute;
+    &.right {
+      right: 0;
+      left: auto;
+      color: $blue;
+    }
   }
   &__name{
     height: 4rem;
@@ -65,7 +80,7 @@
     background: url('#{$path-assets}/vectors/stars.svg') no-repeat 0 0;
     width: 4rem;
     height: 9px;
-    margin-left: 0.5rem;
+    margin-left: 0.4rem;
     &_1{
       background-position: 0 0px;
     }

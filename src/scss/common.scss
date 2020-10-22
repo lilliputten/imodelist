@@ -71,6 +71,12 @@ iframe {
   opacity: 0;
   @extend %anim;
 }
+.white-pill {
+  background: #fff;
+  padding: 1px 8px 2px;
+  border-radius: 1rem;
+  text-decoration: none!important;
+}
 .breadcrumbs{
   width: 100%;
   color: $gray-500;
@@ -90,6 +96,9 @@ iframe {
 .bg-gradient {
   background: $c-gradient;
 }
+.bg-stripes {
+  background: url('#{$path-assets}/img/stripes.png');
+}
 .bg-gray {
   background: $c-gray;
 }
@@ -97,7 +106,7 @@ iframe {
   position: relative;
   color: #fff;
   a {
-    color: #fff;
+    color: #fff!important;
   }
   z-index: 1;
   margin-bottom: 2rem;
@@ -172,7 +181,7 @@ ul {
           a {
             color: $gray-500!important;
             &.active, &:hover {
-              color: $c-red;
+              color: $c-red!important;
             }
           }
         }
@@ -187,9 +196,16 @@ ul {
   justify-content: center;
   background: #fff;
   border-radius: 100%;
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   margin-right: 1rem;
+  border: 5px solid #F5F5F5;
+  box-shadow: 0 8px 9px rgba(0, 0, 0, 0.1);
+  img{
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+  }
 }
 .col-auto{
   &.rub-model{
