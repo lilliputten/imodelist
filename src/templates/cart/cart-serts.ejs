@@ -1,0 +1,35 @@
+
+<div class="blank-cart">
+  <i class="icon icon_cart"></i> Ваши сертификаты
+</div>
+<div data-cart-table data-url="/serts">
+  <table class="cart-table table-responsive">
+    <tr>
+      <th></th>
+      <th>Сертификат</th>
+      <th>Номер</th>
+      <th>Дата</th>
+      <th>Статус</th>
+    </tr>
+    <% for(var i = 0; i < 3; i++){ %>
+      <tr data-id="44">
+        <td class="sert">
+          <img class="sert img-fluid" src="./assets/img/SERT2.png" alt="">
+        </td>
+        <td class="cart-table__name">
+          <div class="txt-c-black">Сертификат на<br><span class="font-weight-bold">2 000 рублей</span></div>
+        </td>
+        <td class="cart-table__price">
+          <p class="mb-0 text-nowrap txt_18px font-weight-bold">345534634</p>
+        </td>
+        <td>
+          <div>12.05.20</div>
+        </td>
+        <td>
+          <div class="text-warning">Использован</div>
+        </td>
+      </tr>
+    <% } %>
+
+  </table>
+</div>

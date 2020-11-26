@@ -9,6 +9,8 @@
   display: inline-block;
   position: relative;
   margin-bottom: 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15), 0px 1px 2px 1px rgba(0, 0, 0, 0.1), inset 5px 5px 22px rgba(0, 0, 0, 0.06), inset -5px -5px 33px 2px #FFFFFF;
+  border-radius: 10px;
   .size{
     position: absolute;
     right: 9%;

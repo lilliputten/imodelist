@@ -3,32 +3,6 @@
   <i class="icon icon_cart"></i> Ваша корзина пуста
 </div>
 <div data-cart-table data-url="/count">
-  <div class="serts mb-4">
-    <p class="h2 mb-4">Ваши сертификаты</p>
-    <div class="row row-scroll">
-      <div class="col col-xl-3 col-lg-4 col-md-7 col-8 mb-3">
-        <div class="prod-sert">
-          <img class="img-fluid" src="./assets/img/SERT1.svg" alt="">
-          <div class="size white-pill font-weight-bold">x 4</div>
-        </div>
-        <a class="txt-c-black" href="#">Использовать сертификат</a>
-      </div>
-      <div class="col col-xl-3 col-lg-4 col-md-7 col-8 mb-3">
-        <div class="prod-sert">
-          <img class="img-fluid" src="./assets/img/SERT2.svg" alt="">
-          <div class="size white-pill font-weight-bold">x 3</div>
-        </div>
-        <a class="txt-c-black" href="#">Использовать сертификат</a>
-      </div>
-      <div class="col col-xl-3 col-lg-4 col-md-7 col-8 mb-3">
-        <div class="prod-sert">
-          <img class="img-fluid" src="./assets/img/SERT3.svg" alt="">
-          <div class="size white-pill font-weight-bold">x 1</div>
-        </div>
-        <a class="txt-c-black" href="#">Использовать сертификат</a>
-      </div>
-    </div>
-  </div>
   <table class="cart-table table-responsive">
     <tr>
       <th>ТОВАР</th>
@@ -77,6 +51,18 @@
         <input name="exist" type="checkbox" class="custom-control-input" id="exist">
         <label class="custom-control-label" for="exist">Обернуть в подарочную упаковку</label>
       </div>
+    </div>
+    <div class="accordion__card bg-stripes pb-0">
+      <p class="txt_18px mb-3 font-weight-bold">Сертификат</p>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <input class="bg-white border-dark" type="text" name="sert-code" required>
+        </div>
+        <div class="col-md-8 mb-4">
+          <p>Если вы хотите полностью или частично оплатить заказ подарочным сертификатом, введите в поле выше код сертификата и нажмите применить</p>
+        </div>
+      </div>
+
     </div>
     <div class="accordion__card">
       <p class="txt_18px mb-3 font-weight-bold">Покупатель</p>
