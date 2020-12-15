@@ -10,6 +10,27 @@
 }
 
 .header{
+  background: url('#{$path-assets}/img/stripes.svg') no-repeat top right;
+  background-size: 550px;
+  @media(max-width:575px) {
+    background-size: cover;
+  }
+  .social{
+    @media(max-width:575px) {
+      background: #fff;
+      margin: 0px auto;
+      padding: 10px 20px 0px;
+      line-height: 1;
+      display: inline-flex!important;
+      width: auto;
+      border-radius: 30px;
+    }
+  }
+  .social-holder{
+    @media(max-width:575px) {
+      text-align: center;
+    }
+  }
   .icon-holder{
     display: flex;
     align-items: center;
