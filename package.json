@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
+    "bootstrap-autocomplete": "^2.3.7",
     "bootstrap-datepicker": "^1.9.0",
     "i": "^0.3.6",
     "ion-rangeslider": "^2.3.0",

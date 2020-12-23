@@ -12,6 +12,11 @@
 .header{
   background: url('#{$path-assets}/img/stripes.svg') no-repeat top right;
   background-size: 550px;
+  .naming{
+    display: flex;
+    align-items: center;
+    height: 36px;
+  }
   @media(max-width:575px) {
     background-size: cover;
   }
@@ -56,4 +61,11 @@
   &:hover{
     color: $c-red!important;
   }
+}
+
+#my_city{
+  padding: 3px 10px;
+  border: 1px solid #444;
+  border-radius: 20px;
+  cursor: pointer;
 }

@@ -38,8 +38,7 @@
       sys.cart_form.on('submit', function (e) {
         e.preventDefault();
         e.stopPropagation();
-        console.log($(this).serialize() + '&itemList=' + JSON.stringify(sys.total_list));
-/*        $.ajax( {
+        $.ajax( {
           type: "POST",
           url: $(this).data( 'action' ),
           data: $(this).serialize() + '&itemList=' + JSON.stringify(sys.total_list),
@@ -51,7 +50,7 @@
               location.href='/';
             },2000);
           }
-        });*/
+        });
       });
       sys.total();
     }
@@ -109,15 +108,14 @@
         })
       }
 
-      console.log(sys.cart.data('url'));
-/*      $.ajax( {
+      $.ajax( {
         type: "POST",
-        url: sys.cart.data(url)',
+        url: sys.cart.data(url),
         data: JSON.stringify(sys.total_list),
         success: function( response ) {
           carttext.text('');
         }
-      });*/
+      });
     }
     return this.each(init);
   };
@@ -140,7 +138,7 @@ $(function () {
       $(".modal-backdrop").remove();
       $('#modal').modal({show:true});
     });
-/*    $.ajax( {
+    $.ajax( {
       type: "POST",
       url: '/add',
       data: JSON.stringify(add),
@@ -150,7 +148,7 @@ $(function () {
           $('#modal').modal({show:true});
         });
       }
-    });*/
+    });
   });
   $("[data-compare]").on('click', function(e){
     e.preventDefault();
@@ -158,7 +156,7 @@ $(function () {
     const add = {
       id: $(this).data('id'),
     };
-/*    $.ajax( {
+    $.ajax( {
       type: "POST",
       url: '/add-compare',
       data: JSON.stringify(add),
@@ -168,7 +166,7 @@ $(function () {
           $('#modal').modal({show:true});
         });
       }
-    });*/
+    });
   });
   $("[data-notify]").on('click', function(e){
     e.preventDefault();
@@ -176,7 +174,7 @@ $(function () {
     const add = {
       id: $(this).data('id'),
     };
-/*    $.ajax( {
+    $.ajax( {
       type: "POST",
       url: '/add-notify',
       data: JSON.stringify(add),
@@ -186,7 +184,7 @@ $(function () {
           $('#modal').modal({show:true});
         });
       }
-    });*/
+    });
   });
 
 });

@@ -17,7 +17,7 @@ $.fn.thousandSeparateString = function () {
 
 $(function () {
   var $body = $('body');
-
+  $('.autoComplete').autoComplete();
   //modal
   $body.on('click', '.ajax-modal', function(e){
     e.preventDefault();

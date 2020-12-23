@@ -6,10 +6,10 @@ require ('@fancyapps/fancybox');
 require('../scss/styles.scss');
 require ('perfect-scrollbar/css/perfect-scrollbar.css');
 import PerfectScrollbar from 'perfect-scrollbar';
-import mask from 'jquery-mask-plugin';
 require ('bootstrap-datepicker/dist/css/bootstrap-datepicker3.standalone.css');
 require ('bootstrap-datepicker');
 require ('bootstrap-datepicker/dist/locales/bootstrap-datepicker.ru.min.js');
+require ('bootstrap-autocomplete');
 
 $(function () {
   //tooltip
@@ -62,7 +62,7 @@ $(function () {
       id: $(this).closest('.bigstars').data('id'),
       ind: ind,
     };
-    /*    $.ajax( {
+        $.ajax( {
           type: "POST",
           url: '/add-notify',
           data: JSON.stringify(add),
@@ -72,7 +72,7 @@ $(function () {
               $('#modal').modal({show:true});
             });
           }
-        });*/
+        });
   });
   //datepicker
   $('.dpicker').datepicker({
