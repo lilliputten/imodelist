@@ -133,11 +133,6 @@ $(function () {
       id: $(this).data('id'),
       price: $(this).data('price'),
     };
-    carttext.text('12 шт.');
-    $('#modal .modal-body').load('./cart-notify.html',function(){
-      $(".modal-backdrop").remove();
-      $('#modal').modal({show:true});
-    });
     $.ajax( {
       type: "POST",
       url: '/add',
