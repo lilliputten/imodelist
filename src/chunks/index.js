@@ -10,8 +10,9 @@ require ('bootstrap-datepicker/dist/css/bootstrap-datepicker3.standalone.css');
 require ('bootstrap-datepicker');
 require ('bootstrap-datepicker/dist/locales/bootstrap-datepicker.ru.min.js');
 require ('bootstrap-autocomplete');
+require ('jquery-mask-plugin');
 
-$(function () {
+$(document).ready(function() {
   //tooltip
   $("body").tooltip({ selector: '[data-toggle=tooltip]' });
   //fancybox
@@ -80,5 +81,48 @@ $(function () {
     format: 'dd.mm.yyyy',
     autoclose:true,
     language: 'ru'
+  });
+  //img-loader
+  function imgLoaded(){
+    $('.img-loading').not('.loaded').each(function(){
+      var src = $(this).attr('src');
+      var loadImg = document.createElement("img");
+      loadImg.src=src;
+      var newImg = document.createElement("img");
+      newImg.src='/assets/img/blank.png';
+      newImg.className='blankimg';
+      $(this).closest('.img-holder')[0].appendChild(newImg);
+      var img = $(this).closest('.img-holder').find('.blankimg');
+      $(this).addClass('loaded');
+      loadImg.onload = function() {
+        img.addClass('destroyed');
+      };
+    })
+  }
+  imgLoaded();
+  //ajax-load
+  $('#content').on('click', '.next-page', function(e){
+    e.preventDefault();
+    var href = $(this).attr('href');
+    $(this).next('.next-page-loading').addClass('active');
+    $(this).addClass('loaded');
+    $.ajax({
+      url: href,
+      context: $(this)
+    }).done(function(data) {
+        $(this).closest('.page-holder').after(data);
+        $(this).next('.next-page-loading').removeClass('active');
+        $(this).closest('.page-holder').remove();
+        imgLoaded();
+      });
+  });
+  //presents
+  $('#content').on('change', '[name="present-wrapping"]', function(e){
+    e.preventDefault();
+    if ($(this).prop('checked')) {
+      $('.present-holder').addClass('active');
+    } else {
+      $('.present-holder').removeClass('active');
+    }
   });
 });

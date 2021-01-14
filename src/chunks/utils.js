@@ -15,7 +15,7 @@ $.fn.thousandSeparateString = function () {
   this.text(formatNumber(this.text()));
 };
 
-$(function () {
+$(document).ready(function() {
   var $body = $('body');
   $('.autoComplete').autoComplete();
   //modal

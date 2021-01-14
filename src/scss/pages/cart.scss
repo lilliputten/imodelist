@@ -8,6 +8,10 @@
   td {
     padding: 0 2rem 1rem 0;
   }
+  td.prod-border {
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+  }
   &__img{
     width: 12%;
     img{
@@ -116,4 +120,38 @@
       color: $gray-500;
     }
   }
+}
+.present-holder{
+  max-height: 0px;
+  overflow: hidden;
+  opacity: 0;
+  @extend %anim;
+  &.active{
+    max-height: 1000px;
+    opacity: 1;
+  }
+}
+
+.cart-choose-block{
+  display: flex;
+  align-items: center;
+  border: 2px solid #eee;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  @extend %anim;
+  &:hover{
+    border-color: $c-red;
+  }
+  img {
+    max-height: 32px;
+    max-width: 115px;
+    margin-right: 10px;
+  }
+}
+.cart-choose-block-inp{
+  display: none;
+}
+.cart-choose-block-inp:checked ~.cart-choose-block{
+  border-color: $c-red;
 }

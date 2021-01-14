@@ -71,7 +71,8 @@
       }
     }
     sys.rowDelete=function(row){
-      row.fadeOut(200, function() {
+      var id = row.data('id');
+      sys.cart.find('[data-id="'+id+'"]').fadeOut('slow').promise().done(function() {
         $(this).remove();
         sys.total();
       });
@@ -81,23 +82,28 @@
       let totalsumm = 0;
       sys.total_list = [];
       sys.cart.find("[data-id]").each(function(){
+        var exist = null;
         const row=$(this);
-        const inp=row.find("[name='quantity']");
-        const price=parseInt(row.find("[data-price]").data('price'), 10);
-        const count=parseInt(inp.val(), 10);
-        const summ=row.find("[data-summ]");
-        summ.text(price*count).thousandSeparateString();
-        totalcount+=count;
-        totalsumm+=price*count;
-        sys.total_list.push({
-          id: row.data('id'),
-          price: price,
-          count: count,
+        exist = sys.total_list.find(function(el){
+          return el.id === row.data('id');
         });
+        if (!exist) {
+          const inp=row.find("[name='quantity']");
+          const price=parseInt(row.find("[data-price]").data('price'), 10);
+          const count=parseInt(inp.val(), 10);
+          const summ=row.find("[data-summ]");
+          summ.text(price*count).thousandSeparateString();
+          totalcount+=count;
+          totalsumm+=price*count;
+          sys.total_list.push({
+            id: row.data('id'),
+            price: price,
+            count: count,
+          });
+        }
       });
       sys.totalcount.text(totalcount);
       sys.totalsumm.text(totalsumm).thousandSeparateString();
-      console.log(sys.total_list);
 
       if (!sys.total_list.length) {
         sys.cart.css({
@@ -107,7 +113,6 @@
           display: 'flex'
         })
       }
-
       $.ajax( {
         type: "POST",
         url: sys.cart.data(url),
