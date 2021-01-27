@@ -27,6 +27,9 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15), 0px 1px 2px 1px rgba(0, 0, 0, 0.1), inset 5px 5px 22px rgba(0, 0, 0, 0.06), inset -5px -5px 33px 2px #FFFFFF;
   border-radius: 3px;
   padding: 1rem 1rem;
+  > .d-flex.align-items-center {
+    padding-top: 1.2rem;
+  }
   .img-holder{
     display: flex;
     background: #FFFFFF;
@@ -74,7 +77,7 @@
     }
   }
   &__name{
-    height: 4rem;
+    height: 3rem;
     overflow: hidden;
     a {
       color: $c-black;
@@ -84,6 +87,14 @@
     font-weight: bold;
     font-size: $txt-30px;
     margin-bottom: 0;
+    position: relative;
+    .old_price{
+      font-size: $txt_14px;
+      position: absolute;
+      top: -12px;
+      text-decoration: line-through;
+      color: #000;
+    }
   }
   &__compare{
     margin-left: auto;

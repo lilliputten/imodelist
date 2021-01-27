@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <section id="header">
+    <%- include modules/modal-loader.ejs %>
+    <%- include modules/preheader.ejs %>
+    <%- include modules/header.ejs %>
+  </section>
+  <section id="menu">
+    <%- include modules/menu.ejs %>
+  </section>
+
+
+
+
+
+  <section id="content">
+    <div class="bg-gray py-3 mobile-menu d-lg-none">
+      <div class="container">
+        <div class="row">
+          <div class="col-auto">
+            <a href="#" data-toggle-cata-left-menu class="d-flex align-items-center">
+              <i class="icon icon_burger"></i>
+              <div class="ml-3 txt_22px text-uppercase font-weight-bold txt-c-black">Каталог</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 cata-left-menu">
+            <div class="holder">
+              <a href="#" data-toggle-cata-left-menu class="icon icon_close"></a>
+              <p class="h1">Каталог</p>
+              <%- include elements/left-menu.ejs %>
+              <p class="h3 mt-5">Важная информация</p>
+              <%- include elements/left-info.ejs %>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="row row-scroll pt-4">
+
+              <!--1.цена чёрная-->
+                <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
+                  <div class="prod-item">
+                    <div class="d-flex txt_14px align-items-center">
+                      Артикул: 6599
+                      <div class="stars stars_3"></div>
+                      <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
+                    </div>
+                    <a href="#" class="img-holder">
+                      <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                    </a>
+                    <div class="prod-item__name">
+                      <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                      <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> купить</button>
+                    </div>
+                  </div>
+                </div>
+
+              <!--2.цена красна с перечёркнутой чёрной-->
+              <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
+                <div class="prod-item">
+                  <div class="d-flex txt_14px align-items-center">
+                    Артикул: 6599
+                    <div class="stars stars_3"></div>
+                    <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
+                  </div>
+                  <a href="#" class="img-holder">
+                    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  </a>
+                  <div class="prod-item__name">
+                    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <p class="prod-item__price txt-c-red">
+                      <span class="old_price">9200р.</span>
+                      <span  data-thousand-separate>9200</span><span class="txt_14px">р.</span>
+                    </p>
+                    <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> купить</button>
+                  </div>
+                </div>
+              </div>
+
+              <!--3. Цена красная-->
+              <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
+                <div class="prod-item">
+                  <div class="d-flex txt_14px align-items-center">
+                    Артикул: 6599
+                    <div class="stars stars_3"></div>
+                    <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
+                  </div>
+                  <a href="#" class="img-holder">
+                    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  </a>
+                  <div class="prod-item__name">
+                    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <p class="prod-item__price txt-c-red">
+                      <span  data-thousand-separate>9200</span><span class="txt_14px">р.</span>
+                    </p>
+                    <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> купить</button>
+                  </div>
+                </div>
+              </div>
+
+              <!--4. Если предзаказ / то цена будет уточнена позже-->
+              <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
+                <div class="prod-item">
+                  <div class="d-flex txt_14px align-items-center">
+                    Артикул: 6599
+                    <div class="stars stars_3"></div>
+                    <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
+                  </div>
+                  <a href="#" class="img-holder">
+                    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  </a>
+                  <div class="prod-item__name">
+                    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <p class="prod-item__price align-items-center d-flex">
+                      <span class="txt_16px">ПРЕДЗАКАЗ</span>
+                    </p>
+                    <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> купить</button>
+                  </div>
+                </div>
+              </div>
+
+              <!--1. Новинка ( new )-->
+              <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
+                <div class="prod-item">
+                  <div class="prod-item__mark">Новинка ( new )</div>
+                  <div class="d-flex txt_14px align-items-center">
+                    Артикул: 6599
+                    <div class="stars stars_3"></div>
+                    <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
+                  </div>
+                  <a href="#" class="img-holder">
+                    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  </a>
+                  <div class="prod-item__name">
+                    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                    <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> купить</button>
+                  </div>
+                </div>
+              </div>
+
+              <!--2.предзаказ-->
+              <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
+                <div class="prod-item">
+                  <div class="prod-item__mark">Предзаказ</div>
+                  <div class="d-flex txt_14px align-items-center">
+                    Артикул: 6599
+                    <div class="stars stars_3"></div>
+                    <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
+                  </div>
+                  <a href="#" class="img-holder">
+                    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  </a>
+                  <div class="prod-item__name">
+                    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                    <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> купить</button>
+                  </div>
+                </div>
+              </div>
+
+              <!--3. Доставка 0-->
+              <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
+                <div class="prod-item">
+                  <div class="prod-item__mark right">БЕСПЛАТНЯ ДОСТАВКА 0</div>
+                  <div class="d-flex txt_14px align-items-center">
+                    Артикул: 6599
+                    <div class="stars stars_3"></div>
+                    <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
+                  </div>
+                  <a href="#" class="img-holder">
+                    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  </a>
+                  <div class="prod-item__name">
+                    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                    <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> купить</button>
+                  </div>
+                </div>
+              </div>
+
+              <!--4.хит ( тк будем делать рейтинг )-->
+              <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
+                <div class="prod-item">
+                  <div class="prod-item__mark">Хит продаж</div>
+                  <div class="d-flex txt_14px align-items-center">
+                    Артикул: 6599
+                    <div class="stars stars_3"></div>
+                    <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
+                  </div>
+                  <a href="#" class="img-holder">
+                    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  </a>
+                  <div class="prod-item__name">
+                    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                    <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> купить</button>
+                  </div>
+                </div>
+              </div>
+
+              <!--1. В корзину-->
+              <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
+                <div class="prod-item">
+                  <div class="d-flex txt_14px align-items-center">
+                    Артикул: 6599
+                    <div class="stars stars_3"></div>
+                    <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
+                  </div>
+                  <a href="#" class="img-holder">
+                    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  </a>
+                  <div class="prod-item__name">
+                    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                    <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> В корзину</button>
+                  </div>
+                </div>
+              </div>
+
+              <!--2. Уведомить-->
+              <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
+                <div class="prod-item">
+                  <div class="d-flex txt_14px align-items-center">
+                    Артикул: 6599
+                    <div class="stars stars_3"></div>
+                  </div>
+                  <a href="#" class="img-holder">
+                    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  </a>
+                  <div class="prod-item__name">
+                    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                    <button class="btn btn-secondary  ml-auto" data-notify data-id="1">Уведомить</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="footer">
+    <%- include modules/footer.ejs %>
+  </section>
+
+</body>
+</html>
