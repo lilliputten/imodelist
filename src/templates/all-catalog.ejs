@@ -16,59 +16,141 @@
   </section>
 
   <section id="content">
-    <div class="bg-stripes py-5">
+    <div class="py-5">
       <div class="container">
-        <p class="txt_48px font-weight-bold">
-          НАШ<br>
-          КАТАЛОГ<br>
-          ТОВАРОВ<br>
-        </p>
-        <div class="row row-scroll py-5">
-          <% for(var i = 0; i < 5; i++){ %>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/sb-model.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Сборные модели</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/kraski.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Краски</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/avd.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">AVD Models</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/smesi.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/kraski.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Краски</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/avd.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">AVD Models</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/smesi.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
-            </div>
-          <% } %>
-        </div>
+          <div class="row">
+              <div class="col-lg-3 cata-left-menu">
+                  <div class="holder">
+                      <a href="#" data-toggle-cata-left-menu="" class="icon icon_close"></a>
+                      <p class="h1">Каталог</p>
+                      <ul>
+                          <li><a class="menu-list-item active" href="#">Новинки</a> </li>
+                          <li><a class="menu-list-item" href="#">Спецпредложения</a> </li>
+                          <li><a class="menu-list-item" href="#">Сборные модели</a>
+                              <ul>
+                                  <li><a class="menu-list-item" href="#">Авиация (5401)</a>
+                                      <ul>
+                                          <li><a class="menu-list-item" href="#">Восточный экспресс (333)</a></li>
+                                          <li><a class="menu-list-item" href="#">Грань (1)</a></li>
+                                          <li><a class="menu-list-item" href="#">Звезда (100)</a></li>
+                                          <li><a class="menu-list-item" href="#">КомБриг (14)</a></li>
+                                          <li><a class="menu-list-item" href="#">Макет (14)</a></li>
+                                          <li><a class="menu-list-item" href="#">МикроМир (43)</a></li>
+                                          <li><a class="menu-list-item" href="#">Моделист (69)</a></li>
+                                          <li><a class="menu-list-item" href="#">УП НИКТА (1)</a></li>
+                                          <li><a class="menu-list-item" href="#">Южный фронт (2)</a></li>
+                                          <li><a class="menu-list-item" href="#">A&amp;A Models (14)</a></li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li><a class="menu-list-item" href="#">AVD Models</a> </li>
+                          <li><a class="menu-list-item" href="#">Клеи</a> </li>
+                          <li><a class="menu-list-item" href="#">Краски</a> </li>
+                          <li><a class="menu-list-item" href="#">Грунтовка, шпаклевка,</a> </li>
+                          <li><a class="menu-list-item" href="#">расходные материалы</a> </li>
+                          <li><a class="menu-list-item" href="#">Смеси для нанесения эффектов</a> </li>
+                          <li><a class="menu-list-item" href="#">Инструменты</a> </li>
+                          <li><a class="menu-list-item" href="#">Литература</a> </li>
+                          <li><a class="menu-list-item" href="#">Компрессоры, аэрографы</a> </li>
+                          <li><a class="menu-list-item" href="#">Декали</a> </li>
+                          <li><a class="menu-list-item" href="#">Фототравление</a> </li>
+                          <li><a class="menu-list-item" href="#">Металлические стволы</a> </li>
+                          <li><a class="menu-list-item" href="#">Сборные траки</a> </li>
+                          <li><a class="menu-list-item" href="#">Маски для моделей</a> </li>
+                          <li><a class="menu-list-item" href="#">Дополнения к моделям</a> </li>
+                          <li><a class="menu-list-item" href="#">Материалы для диорам</a> </li>
+                          <li><a class="menu-list-item" href="#">Футляры и подставки</a> </li>
+                          <li><a class="menu-list-item" href="#">Модели для сборки без клея</a> </li>
+                          <li><a class="menu-list-item" href="#">Собранные и покрашенные</a> </li>
+                          <li><a class="menu-list-item" href="#">модели</a> </li>
+                          <li><a class="menu-list-item" href="#">Леонардо Да Винчи</a> </li>
+                          <li><a class="menu-list-item" href="#">Настольные игры</a> </li>
+                          <li><a class="menu-list-item" href="#">World of tanks</a> </li>
+                          <li><a class="menu-list-item" href="#">Warhammer 40.000</a> </li>
+                          <li><a class="menu-list-item" href="#">Подарочная упаковка</a> </li>
+                          <li><a class="menu-list-item" href="#">Таблички для моделей</a> </li>
+                          <li><a class="menu-list-item" href="#">Таблички на заказ</a> </li>
+                          <li><a class="menu-list-item" href="#">Модели из бумаги</a> </li>
+                          <li><a class="menu-list-item" href="#">Модели из дерева</a> </li>
+                      </ul>
+
+                      <p class="h3 mt-5">Важная информация</p>
+                      <ul>
+                          <li><a class="menu-list-item" href="#">Скидки</a></li>
+                          <li><a class="menu-list-item" href="#">Статус заказа</a></li>
+                          <li><a class="menu-list-item" href="#">Трекинг или номер отправления</a></li>
+                          <li><a class="menu-list-item" href="#">Как ускорить отправку заказа</a></li>
+                          <li><a class="menu-list-item" href="#">ТК "СДЭК"</a></li>
+                          <li><a class="menu-list-item" href="#">Казахстан и Беларусь</a></li>
+                          <li><a class="menu-list-item" href="#">Как зарегистрироваться</a></li>
+                          <li><a class="menu-list-item" href="#">Как сделать заказ</a></li>
+                          <li><a class="menu-list-item" href="#">Как оплатить заказ</a></li>
+                          <li><a class="menu-list-item" href="#">Способы доставки</a></li>
+                          <li><a class="menu-list-item" href="#">Что такое "личный кабинет"</a></li>
+                          <li><a class="menu-list-item" href="#">Обзоры</a></li>
+                          <li><a class="menu-list-item" href="#">Гостевая книга</a></li>
+                          <li><a class="menu-list-item" href="#">Контакты, график работы</a></li>
+                      </ul>
+
+                  </div>
+              </div>
+              <div class="col-lg-9">
+                  <p class="txt_48px font-weight-bold">
+                      НАШ КАТАЛОГ<br>
+                      ТОВАРОВ
+                  </p>
+                  <div class="bord-block px-5">
+                      <div class="row row-scroll py-5">
+                          <% for(var i = 0; i < 5; i++){ %>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/sb-model.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Сборные модели</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/kraski.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Краски</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/avd.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">AVD Models</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/smesi.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/kraski.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Краски</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/avd.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">AVD Models</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/smesi.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
+                              </div>
+                          <% } %>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
       </div>
     </div>
   </section>

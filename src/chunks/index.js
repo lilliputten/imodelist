@@ -125,4 +125,11 @@ $(document).ready(function() {
       $('.present-holder').removeClass('active');
     }
   });
+  //slider
+  $('#sliderMain').on('slide.bs.carousel', function (e) {
+    var indicator = $('[data-target="#'+this.id+'"]');
+    var index = $(e.relatedTarget).index();
+    indicator.removeClass('active');
+    indicator.filter('[data-slide-to="'+ index +'"]').addClass('active');
+  })
 });

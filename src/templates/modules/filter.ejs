@@ -1,19 +1,18 @@
-<div class="filter bg-gradient">
-  <div class="container">
-
+<div class="container">
+  <div class="filter bg-gradient">
     <form>
-      <div class="row row-scroll row-visible-next">
-        <div class="col">
+      <div class="row">
+        <div class="col-12 col-md">
           <div class="form-group">
             <input type="text" name="name" class="form-control" placeholder="Название">
           </div>
         </div>
-        <div class="col">
+        <div class="col d-none d-md-block">
           <div class="form-group">
             <input type="text" name="art" class="form-control" placeholder="Артикул">
           </div>
         </div>
-        <div class="col">
+        <div class="col d-none d-md-block">
           <div class="form-group">
             <div class="input-group">
               <input type="text" name="price-start" class="form-control" placeholder="Цена от">
@@ -21,7 +20,7 @@
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col d-none d-md-block">
           <select name="producer" class="form-control">
             <option value="">Производитель</option>
             <option value="1">2</option>
@@ -30,7 +29,7 @@
             <option value="1">5</option>
           </select>
         </div>
-        <div class="col">
+        <div class="col d-none d-md-block">
           <select name="size" class="form-control">
             <option value="">Масштаб</option>
             <option value="1">2</option>
@@ -40,11 +39,11 @@
           </select>
         </div>
       </div>
-      <div class="row mx-0 align-items-center row-scroll">
-        <div class="mr-4 mb-2">
+      <div class="row mx-0 align-items-center">
+        <div class="mr-4 mb-3">
           <a class="txt_16px txt-c-yellow" href="#">Искать</a>
         </div>
-        <div class="mr-4 mb-2">
+        <div class="mr-4 mb-3">
           <a class="txt_16px text-white" href="#">Сбросить фильтры</a>
         </div>
         <div class="custom-control custom-checkbox">
@@ -53,6 +52,5 @@
         </div>
       </div>
     </form>
-
   </div>
 </div>

@@ -55,7 +55,7 @@
 
 .menu-item{
   text-decoration: none;
-  color: $c-black;
+  color: $c-black!important;
   font-size: $txt_12px;
   text-transform: uppercase;
   &:hover{

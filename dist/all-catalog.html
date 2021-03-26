@@ -4,7 +4,7 @@
   <title>Demo Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="index-6249cf0245930df2b7d1.min.css" rel="stylesheet"></head>
+<link href="index-a003f0864b79fa7deb3b.min.css" rel="stylesheet"></head>
 <body>
   <section id="header">
     <div class="modal fade" id="modal">
@@ -22,21 +22,45 @@
   <p class="h2 txt_18px text-white mb-0">Уже доступны новинки 2021 года. <a class="h2 txt_16px white-pill text-uppercase txt-c-black" href="#">Смотреть тут</a></p>
   <a href="#" data-dismiss="alert" aria-label="close"><i class="icon icon_close ml-3"></i></a>
 </div>
-<div class="bg-gray py-3 d-none d-md-block">
+<div class="bg-gray py-3">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-auto">
+      <div class="col-auto d-none d-lg-block">
         <img src="./assets/img/delivery/1.png" alt="">
       </div>
-      <div class="col-auto">
+      <div class="col-auto d-none d-lg-block">
         <img src="./assets/img/delivery/2.png" alt="">
       </div>
-      <div class="col-auto">
+      <div class="col-auto d-none d-lg-block">
         <img src="./assets/img/delivery/3.png" alt="">
       </div>
-      <div class="col-auto ml-auto">
-        <div id="my_city" class="font-weight-bold txt_14px ajax-modal" data-target="#modal" data-remote="./free-delivery-modal.html">
-          <span>Ваш город</span> Электросталь?
+      <div class="col-6 col-sm-auto">
+        <form action="" class="input-group header-search-form">
+          <input class="form-control py-2 bg-white" type="search" value="" placeholder="Поиск по сайту">
+          <span class="input-group-append">
+            <input type="image" src="./assets/vectors/loupe.svg">
+          </span>
+        </form>
+      </div>
+      <div class="col-6 col-sm-auto ml-md-auto mr-0">
+        <div class="d-flex align-items-center">
+          <div id="my_city" class="font-weight-bold txt_14px ajax-modal d-none d-md-block" data-target="#modal" data-remote="./free-delivery-modal.html">
+            <span>Ваш город</span> Электросталь?
+          </div>
+          <div class='lang ml-2'>
+            <div>
+              <div id="google_translate_element"></div>
+              <script type="text/javascript">
+                function googleTranslateElementInit() {
+                  new google.translate.TranslateElement({
+                    pageLanguage: 'ru',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                  }, 'google_translate_element');
+                }
+              </script>
+              <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -102,7 +126,7 @@
               </div>
               <a href="#" class="font-weight-bold txt-c-black">Личный кабинет</a>
               <div class="mt-3">
-                <div><a href="#" class="txt-c-black">Регистрация</a></div>
+                <div><a class="txt-c-red" href="#">Вход</a> / <a class="txt-c-black" href="#">Регистрация</a></div>
                 <div><a href="#" class="txt-c-gray-500">Забыли пароль?</a></div>
               </div>
             </div>
@@ -138,14 +162,15 @@
     <div class="bg-gray py-3 d-none d-lg-block">
     <div class="container">
         <div class="row row-scroll justify-content-between">
+            <div class="col-md-auto"><a class="menu-item" href="https://i-modelist.ru/">Главная</a></div>
             <div class="col-md-auto"><a class="menu-item" href="https://i-modelist.ru/catalog">Каталог</a></div>
             <div class="col-md-auto"><a class="menu-item" href="https://i-modelist.ru/special.html">Спецпредложения</a></div>
             <div class="col-md-auto"><a class="menu-item" href="https://i-modelist.ru/about.html">Доставка и оплата</a></div>
             <div class="col-md-auto"><a class="menu-item" href="https://i-modelist.ru/contacts.html">Контакты</a></div>
             <div class="col-md-auto"><a class="menu-item" href="https://i-modelist.ru/optovikam.html">Оптовикам</a></div>
-            <div class="col-md-auto"><a class="menu-item txt-c-gray-500" href="https://i-modelist.ru/question/">Вопрос-ответ</a></div>
-            <div class="col-md-auto"><a class="menu-item txt-c-gray-500" href="https://i-modelist.ru/pretenziya.html">Претензии</a></div>
-            <div class="col-md-auto"><a class="menu-item txt-c-gray-500" href="https://i-modelist.ru/news.html">Новости</a></div>
+            <div class="col-md-auto"><a class="menu-item" href="https://i-modelist.ru/question/">Вопрос-ответ</a></div>
+            <div class="col-md-auto"><a class="menu-item" href="https://i-modelist.ru/pretenziya.html">Претензии</a></div>
+            <div class="col-md-auto"><a class="menu-item" href="https://i-modelist.ru/news.html">Новости</a></div>
         </div>
     </div>
 </div>
@@ -176,6 +201,7 @@
         <a href="#" data-toggle-main-left-menu class="icon icon_close"></a>
         <p class="h1">Меню</p>
         <ul>
+            <li><a class="menu-list-item" href="https://i-modelist.ru/">Главная</a></li>
             <li><a class="menu-list-item" href="https://i-modelist.ru/catalog">Каталог</a></li>
             <li><a class="menu-list-item" href="https://i-modelist.ru/special.html">Спецпредложения</a></li>
             <li><a class="menu-list-item" href="https://i-modelist.ru/about.html">Доставка и оплата</a></li>
@@ -203,231 +229,313 @@
   </section>
 
   <section id="content">
-    <div class="bg-stripes py-5">
+    <div class="py-5">
       <div class="container">
-        <p class="txt_48px font-weight-bold">
-          НАШ<br>
-          КАТАЛОГ<br>
-          ТОВАРОВ<br>
-        </p>
-        <div class="row row-scroll py-5">
-          
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/sb-model.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Сборные модели</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/kraski.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Краски</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/avd.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">AVD Models</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/smesi.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/kraski.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Краски</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/avd.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">AVD Models</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/smesi.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
-            </div>
-          
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/sb-model.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Сборные модели</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/kraski.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Краски</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/avd.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">AVD Models</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/smesi.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/kraski.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Краски</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/avd.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">AVD Models</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/smesi.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
-            </div>
-          
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/sb-model.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Сборные модели</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/kraski.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Краски</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/avd.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">AVD Models</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/smesi.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/kraski.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Краски</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/avd.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">AVD Models</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/smesi.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
-            </div>
-          
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/sb-model.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Сборные модели</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/kraski.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Краски</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/avd.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">AVD Models</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/smesi.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/kraski.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Краски</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/avd.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">AVD Models</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/smesi.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
-            </div>
-          
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/sb-model.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Сборные модели</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/kraski.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Краски</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/avd.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">AVD Models</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/smesi.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/kraski.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Краски</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/avd.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">AVD Models</a>
-            </div>
-            <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
-              <a class="rub-icon-holder">
-                <img src="./assets/img/icons/smesi.svg" alt="">
-              </a>
-              <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
-            </div>
-          
-        </div>
+          <div class="row">
+              <div class="col-lg-3 cata-left-menu">
+                  <div class="holder">
+                      <a href="#" data-toggle-cata-left-menu="" class="icon icon_close"></a>
+                      <p class="h1">Каталог</p>
+                      <ul>
+                          <li><a class="menu-list-item active" href="#">Новинки</a> </li>
+                          <li><a class="menu-list-item" href="#">Спецпредложения</a> </li>
+                          <li><a class="menu-list-item" href="#">Сборные модели</a>
+                              <ul>
+                                  <li><a class="menu-list-item" href="#">Авиация (5401)</a>
+                                      <ul>
+                                          <li><a class="menu-list-item" href="#">Восточный экспресс (333)</a></li>
+                                          <li><a class="menu-list-item" href="#">Грань (1)</a></li>
+                                          <li><a class="menu-list-item" href="#">Звезда (100)</a></li>
+                                          <li><a class="menu-list-item" href="#">КомБриг (14)</a></li>
+                                          <li><a class="menu-list-item" href="#">Макет (14)</a></li>
+                                          <li><a class="menu-list-item" href="#">МикроМир (43)</a></li>
+                                          <li><a class="menu-list-item" href="#">Моделист (69)</a></li>
+                                          <li><a class="menu-list-item" href="#">УП НИКТА (1)</a></li>
+                                          <li><a class="menu-list-item" href="#">Южный фронт (2)</a></li>
+                                          <li><a class="menu-list-item" href="#">A&amp;A Models (14)</a></li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li><a class="menu-list-item" href="#">AVD Models</a> </li>
+                          <li><a class="menu-list-item" href="#">Клеи</a> </li>
+                          <li><a class="menu-list-item" href="#">Краски</a> </li>
+                          <li><a class="menu-list-item" href="#">Грунтовка, шпаклевка,</a> </li>
+                          <li><a class="menu-list-item" href="#">расходные материалы</a> </li>
+                          <li><a class="menu-list-item" href="#">Смеси для нанесения эффектов</a> </li>
+                          <li><a class="menu-list-item" href="#">Инструменты</a> </li>
+                          <li><a class="menu-list-item" href="#">Литература</a> </li>
+                          <li><a class="menu-list-item" href="#">Компрессоры, аэрографы</a> </li>
+                          <li><a class="menu-list-item" href="#">Декали</a> </li>
+                          <li><a class="menu-list-item" href="#">Фототравление</a> </li>
+                          <li><a class="menu-list-item" href="#">Металлические стволы</a> </li>
+                          <li><a class="menu-list-item" href="#">Сборные траки</a> </li>
+                          <li><a class="menu-list-item" href="#">Маски для моделей</a> </li>
+                          <li><a class="menu-list-item" href="#">Дополнения к моделям</a> </li>
+                          <li><a class="menu-list-item" href="#">Материалы для диорам</a> </li>
+                          <li><a class="menu-list-item" href="#">Футляры и подставки</a> </li>
+                          <li><a class="menu-list-item" href="#">Модели для сборки без клея</a> </li>
+                          <li><a class="menu-list-item" href="#">Собранные и покрашенные</a> </li>
+                          <li><a class="menu-list-item" href="#">модели</a> </li>
+                          <li><a class="menu-list-item" href="#">Леонардо Да Винчи</a> </li>
+                          <li><a class="menu-list-item" href="#">Настольные игры</a> </li>
+                          <li><a class="menu-list-item" href="#">World of tanks</a> </li>
+                          <li><a class="menu-list-item" href="#">Warhammer 40.000</a> </li>
+                          <li><a class="menu-list-item" href="#">Подарочная упаковка</a> </li>
+                          <li><a class="menu-list-item" href="#">Таблички для моделей</a> </li>
+                          <li><a class="menu-list-item" href="#">Таблички на заказ</a> </li>
+                          <li><a class="menu-list-item" href="#">Модели из бумаги</a> </li>
+                          <li><a class="menu-list-item" href="#">Модели из дерева</a> </li>
+                      </ul>
+
+                      <p class="h3 mt-5">Важная информация</p>
+                      <ul>
+                          <li><a class="menu-list-item" href="#">Скидки</a></li>
+                          <li><a class="menu-list-item" href="#">Статус заказа</a></li>
+                          <li><a class="menu-list-item" href="#">Трекинг или номер отправления</a></li>
+                          <li><a class="menu-list-item" href="#">Как ускорить отправку заказа</a></li>
+                          <li><a class="menu-list-item" href="#">ТК "СДЭК"</a></li>
+                          <li><a class="menu-list-item" href="#">Казахстан и Беларусь</a></li>
+                          <li><a class="menu-list-item" href="#">Как зарегистрироваться</a></li>
+                          <li><a class="menu-list-item" href="#">Как сделать заказ</a></li>
+                          <li><a class="menu-list-item" href="#">Как оплатить заказ</a></li>
+                          <li><a class="menu-list-item" href="#">Способы доставки</a></li>
+                          <li><a class="menu-list-item" href="#">Что такое "личный кабинет"</a></li>
+                          <li><a class="menu-list-item" href="#">Обзоры</a></li>
+                          <li><a class="menu-list-item" href="#">Гостевая книга</a></li>
+                          <li><a class="menu-list-item" href="#">Контакты, график работы</a></li>
+                      </ul>
+
+                  </div>
+              </div>
+              <div class="col-lg-9">
+                  <p class="txt_48px font-weight-bold">
+                      НАШ КАТАЛОГ<br>
+                      ТОВАРОВ
+                  </p>
+                  <div class="bord-block px-5">
+                      <div class="row row-scroll py-5">
+                          
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/sb-model.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Сборные модели</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/kraski.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Краски</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/avd.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">AVD Models</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/smesi.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/kraski.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Краски</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/avd.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">AVD Models</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/smesi.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
+                              </div>
+                          
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/sb-model.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Сборные модели</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/kraski.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Краски</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/avd.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">AVD Models</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/smesi.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/kraski.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Краски</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/avd.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">AVD Models</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/smesi.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
+                              </div>
+                          
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/sb-model.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Сборные модели</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/kraski.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Краски</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/avd.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">AVD Models</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/smesi.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/kraski.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Краски</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/avd.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">AVD Models</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/smesi.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
+                              </div>
+                          
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/sb-model.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Сборные модели</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/kraski.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Краски</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/avd.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">AVD Models</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/smesi.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/kraski.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Краски</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/avd.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">AVD Models</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/smesi.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
+                              </div>
+                          
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/sb-model.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Сборные модели</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/kraski.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Краски</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/avd.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">AVD Models</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/smesi.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/kraski.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Краски</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/avd.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">AVD Models</a>
+                              </div>
+                              <div class="col-auto col-md-4 col-lg-4 d-inline-flex align-items-center mb-4">
+                                  <a class="rub-icon-holder">
+                                      <img src="./assets/img/icons/smesi.svg" alt="">
+                                  </a>
+                                  <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
+                              </div>
+                          
+                      </div>
+                  </div>
+
+              </div>
+          </div>
       </div>
     </div>
   </section>
@@ -478,5 +586,5 @@
 
   </section>
 
-<script type="text/javascript" src="index-6249cf0245930df2b7d1.min.js"></script><script type="text/javascript" src="utils-6249cf0245930df2b7d1.min.js"></script><script type="text/javascript" src="cart-6249cf0245930df2b7d1.min.js"></script></body>
+<script type="text/javascript" src="index-a003f0864b79fa7deb3b.min.js"></script><script type="text/javascript" src="utils-a003f0864b79fa7deb3b.min.js"></script><script type="text/javascript" src="cart-a003f0864b79fa7deb3b.min.js"></script></body>
 </html>
