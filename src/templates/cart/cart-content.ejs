@@ -24,7 +24,9 @@
         <th></th>
         <th>Стоимость</th>
         <th>Кол-во</th>
+        <th>Скидка</th>
         <th>Сумма</th>
+        <th>со скидкой</th>
         <th></th>
       </tr>
       <% for(var i = 0; i < 3; i++){ %>
@@ -45,21 +47,58 @@
             </div>
           </td>
           <td class="cart-table__summ prod-border">
+            <p class="mb-0 text-nowrap txt_18px font-weight-bold"><span class="txt_24px">20</span> %</p>
+          </td>
+          <td class="cart-table__summ prod-border">
             <p class="mb-0 text-nowrap txt_18px font-weight-bold"><span class="txt_24px" data-thousand-separate data-summ="9200">9200</span> руб.</p>
+          </td>
+          <td class="cart-table__summ prod-border">
+            <p class="mb-0 text-nowrap txt_18px font-weight-bold txt-c-red"><span class="txt_24px" data-thousand-separate>9200</span> руб.</p>
           </td>
           <td class="cart-table__trash prod-border">
             <a data-trash href="#" class="icon icon_trash text-decoration-none"></a>
           </td>
         </tr>
       <% } %>
-
+      <tr data-id="44">
+        <td class="cart-table__img prod-border">
+          <img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+        </td>
+        <td class="cart-table__name prod-border">
+          <p>Сертификат на 5 тысяч рублей</p>
+        </td>
+        <td class="cart-table__price prod-border">
+          <p class="mb-0 text-nowrap txt_18px font-weight-bold"><span class="txt_24px" data-thousand-separate>-5000</span> руб.</p>
+        </td>
+        <td class="cart-table__quantity prod-border">
+          <div class="quantity">
+            <i class="quantity__icon minus" data-type="minus">-</i><input name="quantity" pattern="\d*" value="1"><i class="quantity__icon plus" data-type="plus">+</i>
+          </div>
+        </td>
+        <td class="cart-table__summ prod-border"></td>
+        <td class="cart-table__summ prod-border">
+          <p class="mb-0 text-nowrap txt_18px font-weight-bold"><span class="txt_24px" data-thousand-separate>-5000</span> руб.</p>
+        </td>
+        <td class="cart-table__trash prod-border">
+          <a data-trash href="#" class="icon icon_trash text-decoration-none"></a>
+        </td>
+      </tr>
     </table>
     <div class="alert-warning p-3">
       В корзине присутствуют товары из раздела каталога "Таблички" или "Сертификаты". Данные товары можно оформить только отдельно от других товаров. Сначала оформите заказ или удалите другие товары, чтобы перейти к оформлению заказа табличек или сертификатов.
     </div>
-    <div class="p-3 my-4 bg-gray">
+    <div class="p-3 my-4 bg-gray d-flex align-items-center">
+      <a href="#" class="btn mr-3">Очистить корзину</a>
       <div class="txt_18px">
         Итого: <span class="txt_22px font-weight-bold" data-totalcount>0</span> товаров на сумму <span class="font-weight-bold txt_22px" data-thousand-separate data-totalsumm>0</span> р. <span class="txt-c-gray-500"> Сумма заказа без учёта доставки</span>
+      </div>
+    </div>
+
+    <p class="txt_22px font-weight-bold txt-c-red mb-0">Промокод <span class="txt-c-black">234</span> применён</p>
+    <div class="p-3 my-4 bg-gray d-flex align-items-center">
+      <a href="#" class="btn mr-3">Очистить корзину</a>
+      <div class="txt_18px">
+        Итого: <span class="txt_22px font-weight-bold">1</span> товаров на сумму <span class="txt_18px line-through">9 200</span><span class="font-weight-bold txt_22px">9 200</span> р. <span class="txt-c-gray-500"> Сумма заказа без учёта доставки</span>
       </div>
     </div>
 
@@ -89,7 +128,7 @@
             <div class="col-auto d-flex align-items-center">
               <div class="papper-prod">
                 <div class="img-holder">
-                  <img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  <a href="./assets/example/product.png" data-fancybox><img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese"></a>
                 </div>
                 <div class="d-flex align-items-center my-2">
                   <input type="radio" value="44id" id="44id">
@@ -101,7 +140,7 @@
             <div class="col-auto d-flex align-items-center">
               <div class="papper-prod">
                 <div class="img-holder">
-                  <img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  <a href="./assets/example/product.png" data-fancybox><img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese"></a>
                 </div>
                 <div class="d-flex align-items-center my-2">
                   <input type="radio" value="44id" id="44id">
@@ -113,7 +152,7 @@
             <div class="col-auto d-flex align-items-center">
               <div class="papper-prod">
                 <div class="img-holder">
-                  <img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  <a href="./assets/example/product.png" data-fancybox><img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese"></a>
                 </div>
                 <div class="d-flex align-items-center my-2">
                   <input type="radio" value="44id" id="44id">
@@ -125,7 +164,7 @@
             <div class="col-auto d-flex align-items-center">
               <div class="papper-prod">
                 <div class="img-holder">
-                  <img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  <a href="./assets/example/product.png" data-fancybox><img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese"></a>
                 </div>
                 <div class="d-flex align-items-center my-2">
                   <input type="radio" value="44id" id="44id">
@@ -137,7 +176,7 @@
             <div class="col-auto d-flex align-items-center">
               <div class="papper-prod">
                 <div class="img-holder">
-                  <img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  <a href="./assets/example/product.png" data-fancybox><img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese"></a>
                 </div>
                 <div class="d-flex align-items-center my-2">
                   <input type="radio" value="44id" id="44id">
@@ -149,7 +188,7 @@
             <div class="col-auto d-flex align-items-center">
               <div class="papper-prod">
                 <div class="img-holder">
-                  <img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  <a href="./assets/example/product.png" data-fancybox><img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese"></a>
                 </div>
                 <div class="d-flex align-items-center my-2">
                   <input type="radio" value="44id" id="44id">
@@ -175,7 +214,7 @@
             <div class="col-auto d-flex align-items-center">
               <div class="papper-prod">
                 <div class="img-holder">
-                  <img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  <a href="./assets/example/product.png" data-fancybox><img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese"></a>
                 </div>
                 <div class="d-flex align-items-center my-2">
                   <input type="radio" value="44id" id="44id">
@@ -187,7 +226,7 @@
             <div class="col-auto d-flex align-items-center">
               <div class="papper-prod">
                 <div class="img-holder">
-                  <img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  <a href="./assets/example/product.png" data-fancybox><img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese"></a>
                 </div>
                 <div class="d-flex align-items-center my-2">
                   <input type="radio" value="44id" id="44id">
@@ -199,7 +238,7 @@
             <div class="col-auto d-flex align-items-center">
               <div class="papper-prod">
                 <div class="img-holder">
-                  <img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  <a href="./assets/example/product.png" data-fancybox><img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese"></a>
                 </div>
                 <div class="d-flex align-items-center my-2">
                   <input type="radio" value="44id" id="44id">
@@ -211,7 +250,7 @@
             <div class="col-auto d-flex align-items-center">
               <div class="papper-prod">
                 <div class="img-holder">
-                  <img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  <a href="./assets/example/product.png" data-fancybox><img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese"></a>
                 </div>
                 <div class="d-flex align-items-center my-2">
                   <input type="radio" value="44id" id="44id">
@@ -223,7 +262,7 @@
             <div class="col-auto d-flex align-items-center">
               <div class="papper-prod">
                 <div class="img-holder">
-                  <img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  <a href="./assets/example/product.png" data-fancybox><img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese"></a>
                 </div>
                 <div class="d-flex align-items-center my-2">
                   <input type="radio" value="44id" id="44id">
@@ -235,7 +274,7 @@
             <div class="col-auto d-flex align-items-center">
               <div class="papper-prod">
                 <div class="img-holder">
-                  <img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  <a href="./assets/example/product.png" data-fancybox><img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese"></a>
                 </div>
                 <div class="d-flex align-items-center my-2">
                   <input type="radio" value="44id" id="44id">
@@ -247,7 +286,7 @@
             <div class="col-auto d-flex align-items-center">
               <div class="papper-prod">
                 <div class="img-holder">
-                  <img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                  <a href="./assets/example/product.png" data-fancybox><img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese"></a>
                 </div>
                 <div class="d-flex align-items-center my-2">
                   <input type="radio" value="44id" id="44id">
@@ -265,21 +304,21 @@
     <div class="accordion__card bg-stripes pb-0">
       <p class="txt_18px mb-3 font-weight-bold">Сертификат</p>
       <div class="row">
-        <div class="col-md-4 mb-4">
+        <div class="col-md-5 mb-4 d-flex align-items-center">
           <input class="bg-white border-dark" type="text" name="sert-code" required>
+          <input type="submit" class="btn red cart ml-3" value="Применить">
         </div>
-        <div class="col-md-8 mb-4">
+        <div class="col-md-7 mb-4">
           <p>Если вы хотите полностью или частично оплатить заказ подарочным сертификатом, введите в поле выше код сертификата и нажмите применить</p>
         </div>
       </div>
     </div>
     <div class="accordion__card pb-2">
-      <div class="row align-items-center">
-        <div class="col-md-auto mb-4">
-          <p class="txt_18px mb-0 font-weight-bold">Промокод</p>
-        </div>
-        <div class="col-md-4 mb-4">
+      <p class="txt_18px mb-3 font-weight-bold">Сертификат</p>
+      <div class="row">
+        <div class="col-md-5 mb-4 d-flex align-items-center">
           <input class="bg-white border-dark" type="text" name="sert-code" required>
+          <input type="submit" class="btn red cart ml-3" value="Применить">
         </div>
       </div>
     </div>

@@ -31,6 +31,15 @@
       color: $c-red!important;
     }
   }
+  &.yellow{
+    background: $c-yellow;
+    border-color: $c-yellow;
+    color: #fff;
+    &:hover {
+      background: #fff;
+      color: $c-red!important;
+    }
+  }
   &.whitebg{
     background: #fff;
     border-color: #fff;
@@ -125,4 +134,12 @@ button{
   color: #fff;
   font-size: $txt_18px;
   padding: 1rem 2rem 1rem 1rem;
+}
+
+.badge-pill{
+  display: block;
+  width: 7px;
+  height: 7px;
+  margin-bottom: -1px;
+  margin-right: 4px;
 }

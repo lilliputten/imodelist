@@ -113,14 +113,16 @@
           display: 'flex'
         })
       }
-      $.ajax( {
-        type: "POST",
-        url: sys.cart.data(url),
-        data: JSON.stringify(sys.total_list),
-        success: function( response ) {
-          carttext.text('');
-        }
-      });
+      if (sys.cart.data(url)) {
+        $.ajax( {
+          type: "POST",
+          url: sys.cart.data(url),
+          data: JSON.stringify(sys.total_list),
+          success: function( response ) {
+            carttext.text('');
+          }
+        });
+      }
     }
     return this.each(init);
   };
@@ -134,6 +136,8 @@ $(function () {
 
   $("[data-buy]").on('click', function(e){
     e.preventDefault();
+    var imgtodrag = $(this).closest('.prod-item').find(".img-holder").eq(0);
+    cart_animation(imgtodrag);
     const add = {
       id: $(this).data('id'),
       price: $(this).data('price'),
@@ -144,12 +148,45 @@ $(function () {
       data: JSON.stringify(add),
       success: function( response ) {
         carttext.text(response);
-        $('#modal .modal-content').load($(this).data("remote"),function(){
-          $('#modal').modal({show:true});
-        });
       }
     });
   });
+
+  function cart_animation(imgtodrag) {
+    var cart = $('.icon-holder .icon_cart');
+    if (imgtodrag) {
+      var imgclone = imgtodrag.clone()
+        .offset({
+          top: imgtodrag.offset().top,
+          left: imgtodrag.offset().left
+        })
+        .css({
+          'opacity': '0.9',
+          'position': 'absolute',
+          'height': imgtodrag.height(),
+          'width': imgtodrag.width(),
+          'margin': 0,
+          'z-index': '100'
+        })
+        .appendTo($('body'))
+        .animate({
+          'top': cart.offset().top - 10,
+          'left': cart.offset().left + 10,
+          'width': 75,
+          'height': 75,
+          'opacity': 0
+        }, 1200);
+
+      imgclone.animate({
+        'width': 0,
+        'height': 0
+      }, function () {
+        $(this).detach()
+      });
+    }
+  }
+
+
   $("[data-compare]").on('click', function(e){
     e.preventDefault();
     $(this).addClass('hidden');
@@ -177,6 +214,24 @@ $(function () {
     $.ajax( {
       type: "POST",
       url: '/add-notify',
+      data: JSON.stringify(add),
+      success: function( response ) {
+        carttext.text(response);
+        $('#modal .modal-content').load($(this).data("remote"),function(){
+          $('#modal').modal({show:true});
+        });
+      }
+    });
+  });
+  $("[data-like]").on('click', function(e){
+    e.preventDefault();
+    $(this).addClass('hidden');
+    const add = {
+      id: $(this).data('id'),
+    };
+    $.ajax( {
+      type: "POST",
+      url: '/add-like',
       data: JSON.stringify(add),
       success: function( response ) {
         carttext.text(response);

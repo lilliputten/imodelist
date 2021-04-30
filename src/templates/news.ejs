@@ -61,8 +61,9 @@
             <div class="row row-scroll">
               <% for(var i = 0; i < 9; i++){ %>
                 <div class="col-auto col-md-12">
-                  <%- include elements/news.ejs %>
-                  <hr class="my-5 d-none d-md-block">
+                  <div class="news-element">
+                    <%- include elements/news.ejs %>
+                  </div>
                 </div>
               <% } %>
             </div>

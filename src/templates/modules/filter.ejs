@@ -39,16 +39,19 @@
           </select>
         </div>
       </div>
-      <div class="row mx-0 align-items-center">
-        <div class="mr-4 mb-3">
-          <a class="txt_16px txt-c-yellow" href="#">Искать</a>
+      <div class="row align-items-center">
+        <div class="col-lg-2 col-md-4 col-12 order-2 order-md-0 mb-3">
+          <a class="btn yellow txt_16px txt-c-black" href="#">Искать</a>
         </div>
-        <div class="mr-4 mb-3">
+        <div class="col-lg-2 col-md-4 col-12 order-0 order-md-1 mb-3">
+          <select name="size" class="form-control">
+            <option value="">Есть в наличии</option>
+            <option value="1">Все товары</option>
+            <option value="2">Нет в наличии</option>
+          </select>
+        </div>
+        <div class="col-lg-3 col-md-4 col-12 order-1 order-md-2 mb-3">
           <a class="txt_16px text-white" href="#">Сбросить фильтры</a>
-        </div>
-        <div class="custom-control custom-checkbox">
-          <input name="exist" type="checkbox" class="custom-control-input" id="exist">
-          <label class="custom-control-label" for="exist">Есть в наличии</label>
         </div>
       </div>
     </form>
