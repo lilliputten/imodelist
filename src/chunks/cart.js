@@ -113,16 +113,14 @@
           display: 'flex'
         })
       }
-      if (sys.cart.data(url)) {
-        $.ajax( {
-          type: "POST",
-          url: sys.cart.data(url),
-          data: JSON.stringify(sys.total_list),
-          success: function( response ) {
-            carttext.text('');
-          }
-        });
-      }
+      $.ajax( {
+        type: "POST",
+        url: sys.cart.data('url'),
+        data: JSON.stringify(sys.total_list),
+        success: function( response ) {
+          carttext.text('');
+        }
+      });
     }
     return this.each(init);
   };

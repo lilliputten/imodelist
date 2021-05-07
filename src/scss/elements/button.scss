@@ -83,6 +83,21 @@
       }
     }
   }
+  &.search{
+    display: inline-block;
+    position: relative;
+    height: 39px;
+    line-height: 33px;
+    padding: 0 15px;
+    font-size: 18px;
+    width: 100%;
+    color: white!important;
+    text-shadow: 0 2px  rgba(0, 0, 0, 0.3);
+    border: 2px solid;
+    border-radius: 7px;
+    border-color: #942110 #902010 #741a0d;
+    background: linear-gradient(to bottom, #ffac9e, #e6451b, #cd2d32, #a71c20);
+  }
   &.disabled{
     background: #eee!important;
     border: 0!important;
