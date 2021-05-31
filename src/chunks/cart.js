@@ -128,13 +128,13 @@
 
 $(function () {
   const carttext = $('[data-carttext]');
-  if ($('[data-cart-table]').length) {
-    $('[data-cart-table]').cart(carttext);
-  }
 
   $("[data-buy]").on('click', function(e){
     e.preventDefault();
     var imgtodrag = $(this).closest('.prod-item').find(".img-holder").eq(0);
+    if (!imgtodrag.length) {
+      imgtodrag = $(this).closest('.row').find(">div img").eq(0);
+    }
     cart_animation(imgtodrag);
     const add = {
       id: $(this).data('id'),
@@ -145,7 +145,7 @@ $(function () {
       url: '/add',
       data: JSON.stringify(add),
       success: function( response ) {
-        carttext.text(response);
+        //carttext.text(response);
       }
     });
   });

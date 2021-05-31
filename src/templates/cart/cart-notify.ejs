@@ -4,7 +4,7 @@
             <th>ТОВАР</th>
             <th></th>
             <th>Стоимость</th>
-            <th>Статус</th>
+            <th>Статус товара</th>
             <th></th>
         </tr>
         <% for(var i = 0; i < 3; i++){ %>
@@ -20,7 +20,25 @@
                     <p class="mb-0 text-nowrap txt_18px font-weight-bold"><span class="txt_24px" data-thousand-separate data-price="9200">9200</span> руб.</p>
                 </td>
                 <td class="cart-table__info">
-                    <div class="text-warning">В ожидании</div>
+                    <div class="d-flex align-items-center"><span class="badge-pill badge-secondary"></span> В ожидании</div>
+                </td>
+                <td class="cart-table__trash">
+                    <a data-trash href="#" class="icon icon_trash text-decoration-none"></a>
+                </td>
+            </tr>
+            <tr data-id="44">
+                <td class="cart-table__img">
+                    <img src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                </td>
+                <td class="cart-table__name">
+                    <a href="#" class="txt-c-black">MSD851724 Модель-Сервис Короб для кораблей 850х170х240</a>
+                    <p class="txt-c-gray-500">Артикул: MSD851724</p>
+                </td>
+                <td class="cart-table__price">
+                    <p class="mb-0 text-nowrap txt_18px font-weight-bold"><span class="txt_24px" data-thousand-separate data-price="9200">9200</span> руб.</p>
+                </td>
+                <td class="cart-table__info">
+                    <div class="d-flex align-items-center"><span class="badge-pill badge-primary"></span> Доступен</div>
                 </td>
                 <td class="cart-table__trash">
                     <a data-trash href="#" class="icon icon_trash text-decoration-none"></a>

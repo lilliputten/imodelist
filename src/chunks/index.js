@@ -108,8 +108,9 @@ $(document).ready(function() {
   imgLoaded();
   //ajax-load
   if (location.hash && location.hash.indexOf('page')) {
+    var hash = location.hash;
     location.hash = '';
-    location.href = location.href.split('?')[0] + '?' + location.hash.replace('#','');
+    location.href = location.href.split('?')[0] + '?' + hash.replace('#','');
   }
 
   $('#content').on('click', '.next-page', function(e){
