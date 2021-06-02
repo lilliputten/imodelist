@@ -107,7 +107,7 @@ $(document).ready(function() {
   }
   imgLoaded();
   //ajax-load
-  if (location.hash && location.hash.indexOf('page')) {
+  if (location.hash && location.hash.indexOf('page') !== -1) {
     var hash = location.hash;
     location.hash = '';
     location.href = location.href.split('?')[0] + '?' + hash.replace('#','');
@@ -131,6 +131,28 @@ $(document).ready(function() {
       });
   });
   //presents
+  $('body').on('change, input', 'form.block-table__change textarea, form.block-table__change select', function(e){
+    var name = $(this).attr('name');
+    var value = $(this).val();
+
+    switch (name) {
+      case 'tablecolor':
+        $('.block-table__table').css({'backgroundColor': value});
+        break;
+      case 'fontcolor':
+        $('.block-table__text').css({'color': value});
+        break;
+      case 'font':
+        $('.block-table__text').css({'fontFamily': value});
+        break;
+      case 'fontsize':
+        $('.block-table__text').css({'fontSize': value});
+        break;
+      case 'text':
+        $('.block-table__text').text(value);
+        break;
+    }
+  });
   $('#content').on('change', '[name="present-wrapping"]', function(e){
     e.preventDefault();
     if ($(this).prop('checked')) {
