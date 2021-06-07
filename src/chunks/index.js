@@ -131,25 +131,28 @@ $(document).ready(function() {
       });
   });
   //presents
-  $('body').on('change, input', 'form.block-table__change textarea, form.block-table__change select', function(e){
+
+  $('body').on('change, input', '.block-table__change textarea, .block-table__change input, .block-table__change select', function(e){
+
     var name = $(this).attr('name');
     var value = $(this).val();
+    var modal = $(this).closest('.modal-body');
 
     switch (name) {
       case 'tablecolor':
-        $('.block-table__table').css({'backgroundColor': value});
+        modal.find('.block-table__table').css({'backgroundColor': value});
         break;
       case 'fontcolor':
-        $('.block-table__text').css({'color': value});
+        modal.find('.block-table__text').css({'color': value});
         break;
       case 'font':
-        $('.block-table__text').css({'fontFamily': value});
+        modal.find('.block-table__text').css({'fontFamily': value});
         break;
       case 'fontsize':
-        $('.block-table__text').css({'fontSize': value});
+        modal.find('.block-table__text').css({'fontSize': value});
         break;
       case 'text':
-        $('.block-table__text').text(value);
+        modal.find('.block-table__text').html(value.replaceAll('\n','<br>'));
         break;
     }
   });

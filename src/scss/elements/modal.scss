@@ -1,5 +1,17 @@
 .modal {
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  &.bigmodal{
+    .modal-dialog {
+      height: 102%;
+      max-width: 58rem;
+      @media(max-width:991px) {
+        margin: -7px;
+      }
+      .modal-body{
+        background: $c-gradient;
+      }
+    }
+  }
 }
 

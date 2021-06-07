@@ -38,3 +38,57 @@
 }
 
 
+@font-face {
+  font-family: 'Mistral';
+  src:  url('#{$path-fonts}/Mistral.eot');
+  src:  url('#{$path-fonts}/Mistral.eot#iefix') format('embedded-opentype'),
+  url('#{$path-fonts}/Mistral.ttf') format('truetype'),
+  url('#{$path-fonts}/Mistral.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'TimesNewRomanPSMT';
+  src:  url('#{$path-fonts}/TimesNewRomanPSMT.eot');
+  src:  url('#{$path-fonts}/TimesNewRomanPSMT.eot#iefix') format('embedded-opentype'),
+  url('#{$path-fonts}/TimesNewRomanPSMT.ttf') format('truetype'),
+  url('#{$path-fonts}/TimesNewRomanPSMT.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'DeutschGothic';
+  src:  url('#{$path-fonts}/DeutschGothic.eot');
+  src:  url('#{$path-fonts}/DeutschGothic.eot#iefix') format('embedded-opentype'),
+  url('#{$path-fonts}/DeutschGothic.ttf') format('truetype'),
+  url('#{$path-fonts}/DeutschGothic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ComicSansMS';
+  src:  url('#{$path-fonts}/ComicSansMS.eot');
+  src:  url('#{$path-fonts}/ComicSansMS.eot#iefix') format('embedded-opentype'),
+  url('#{$path-fonts}/ComicSansMS.ttf') format('truetype'),
+  url('#{$path-fonts}/ComicSansMS.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'CenturyGothic';
+  src:  url('#{$path-fonts}/CenturyGothic.eot');
+  src:  url('#{$path-fonts}/CenturyGothic.eot#iefix') format('embedded-opentype'),
+  url('#{$path-fonts}/CenturyGothic.ttf') format('truetype'),
+  url('#{$path-fonts}/CenturyGothic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
