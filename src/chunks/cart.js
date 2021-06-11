@@ -214,10 +214,6 @@ $(function () {
       url: '/add-notify',
       data: JSON.stringify(add),
       success: function( response ) {
-        carttext.text(response);
-        $('#modal .modal-content').load($(this).data("remote"),function(){
-          $('#modal').modal({show:true});
-        });
       }
     });
   });
@@ -232,10 +228,6 @@ $(function () {
       url: '/add-like',
       data: JSON.stringify(add),
       success: function( response ) {
-        carttext.text(response);
-        $('#modal .modal-content').load($(this).data("remote"),function(){
-          $('#modal').modal({show:true});
-        });
       }
     });
   });

@@ -108,9 +108,18 @@ $(document).ready(function() {
   imgLoaded();
   //ajax-load
   if (location.hash && location.hash.indexOf('page') !== -1) {
-    var hash = location.hash;
-    location.hash = '';
-    location.href = location.href.split('?')[0] + '?' + hash.replace('#','');
+    var href = location.href;
+    var hash = href.split('?')[1];
+    location.hash = hash;
+    $.ajax({
+      url: href,
+      context: $(this)
+    }).done(function(data) {
+      $('.page-holder').prev('.row').remove();
+      $('.page-holder').after(data);
+      $('.page-holder').remove();
+      imgLoaded();
+    });
   }
 
   $('#content').on('click', '.next-page', function(e){
@@ -132,9 +141,23 @@ $(document).ready(function() {
   });
   //presents
 
+  function checkTables() {
+    if ($('.table-set').length) {
+      $('.table-set').each(function(e){
+        var inps = $(this).find('select');
+        var text = $(this).find('.table-set_name');
+        var arr = [];
+        inps.each(function(e){
+          arr.push('<b>' + $(this).data('name') + ' </b> ' + $(this).find('option:selected').data('val'))
+        });
+        text.html(arr.join('. '));
+      });
+    }
+  }
+  checkTables();
   $('body').on('change, input', '.block-table__change textarea, .block-table__change input, .block-table__change select', function(e){
 
-    var name = $(this).attr('name');
+    var name = $(this).data('class');
     var value = $(this).val();
     var modal = $(this).closest('.modal-body');
 
@@ -155,6 +178,7 @@ $(document).ready(function() {
         modal.find('.block-table__text').html(value.replaceAll('\n','<br>'));
         break;
     }
+    checkTables();
   });
   $('#content').on('change', '[name="present-wrapping"]', function(e){
     e.preventDefault();
