@@ -499,3 +499,13 @@ ul {
   font-style: italic;
   margin-top: 5px;
 }
+
+body.modal-open{
+  #allwrapper{
+      max-width: 100%;
+      overflow: hidden;
+      .table-responsive{
+        overflow: visible;
+      }
+  }
+}
