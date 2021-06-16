@@ -108,16 +108,15 @@ $(document).ready(function() {
   imgLoaded();
   //ajax-load
   if (location.hash && location.hash.indexOf('page') !== -1) {
-    var href = location.href;
-    var hash = href.split('?')[1];
-    location.hash = hash;
+    var href = location.href.split('?')[0].split('#')[0] + '?' + location.hash.split('#')[1];
     $.ajax({
       url: href,
       context: $(this)
     }).done(function(data) {
-      $('.page-holder').prev('.row').remove();
-      $('.page-holder').after(data);
-      $('.page-holder').remove();
+      var ph = $('.page-holder');
+      ph.prev('.row').remove();
+      ph.after(data);
+      ph.remove();
       imgLoaded();
     });
   }
