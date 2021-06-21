@@ -1,5 +1,10 @@
 .cart-table{
   width: 100%;
+  tr {
+    td.cart-table__info:last-child{
+      white-space: normal;
+    }
+  }
   th {
     text-transform: uppercase;
     padding: 0 0.7rem 1rem 0;
