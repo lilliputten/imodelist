@@ -155,11 +155,24 @@ $(document).ready(function() {
   }
   checkTables();
   $('body').on('change, input', '.block-table__change textarea, .block-table__change input, .block-table__change select', function(e){
-
     var name = $(this).data('class');
-    var value = $(this).val();
+    if ($(this).is('textarea')) {
+      var value = $(this).val();
+    } else {
+      var value = $(this).find('option:selected').data('val');
+    }
+
+
     var modal = $(this).closest('.modal-body');
 
+    if (name == 'tablecolor') {
+      modal.find('[data-class="fontcolor"] option').show();
+      modal.find('[data-class="fontcolor"] option[value="'+$(this).val()+'"]').hide();
+    }
+    if (name == 'fontcolor') {
+      modal.find('[data-class="tablecolor"] option').show();
+      modal.find('[data-class="tablecolor"] option[value="'+$(this).val()+'"]').hide();
+    }
     switch (name) {
       case 'tablecolor':
         modal.find('.block-table__table').css({'backgroundColor': value});
