@@ -147,7 +147,7 @@ $(document).ready(function() {
         var text = $(this).find('.table-set_name');
         var arr = [];
         inps.each(function(e){
-          arr.push('<b>' + $(this).data('name') + ' </b> ' + $(this).find('option:selected').data('val'))
+          arr.push('<b>' + $(this).data('name') + ' </b> ' + $(this).find('option:selected').val())
         });
         text.html(arr.join('. '));
       });
