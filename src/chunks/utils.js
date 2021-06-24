@@ -24,7 +24,6 @@ $(document).ready(function() {
     var $obj = $(this).data("target");
 
     $($obj+' .modal-body').load($(this).data("remote"),function(){
-      $($obj).addClass($css);
       $(".modal-backdrop").remove();
       $($obj).modal({show:true});
     });
