@@ -144,10 +144,14 @@ $(document).ready(function() {
     if ($('.table-set').length) {
       $('.table-set').each(function(e){
         var inps = $(this).find('select');
+        var textarea = $(this).find('textarea');
         var text = $(this).find('.table-set_name');
         var arr = [];
         inps.each(function(e){
           arr.push('<b>' + $(this).data('name') + ' </b> ' + $(this).find('option:selected').val())
+        });
+        textarea.each(function(e){
+          arr.push('<b>Текст таблички </b> ' + $(this).val())
         });
         text.html(arr.join('. '));
       });
