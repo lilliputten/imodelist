@@ -16,6 +16,9 @@
     display: flex;
     align-items: center;
     height: 36px;
+    a{
+      display: block;
+    }
   }
   @media(max-width:575px) {
     background-size: cover;

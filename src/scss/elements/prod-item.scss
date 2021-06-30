@@ -78,8 +78,7 @@
     }
   }
   &__name{
-    height: 3rem;
-    overflow: hidden;
+    min-height: 3rem;
     a {
       color: $c-black;
     }
