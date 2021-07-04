@@ -44,6 +44,11 @@ $(document).ready(function() {
     var $obj = $(this).closest('.table-set').find('.modal');
     $obj.modal({show:true});
   });
+  //list
+  $body.on('click', '.dropdown-list', function(e){
+    e.preventDefault();
+    $(this).toggleClass('active')
+  });
   //thousand separate
   $('[data-thousand-separate]').each(function(){
     $(this).thousandSeparateString();
