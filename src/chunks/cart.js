@@ -129,7 +129,7 @@
 $(function () {
   const carttext = $('[data-carttext]');
 
-  $("[data-buy]").on('click', function(e){
+  $("body").on('click', '[data-buy]', function(e){
     e.preventDefault();
     var imgtodrag = $(this).closest('.prod-item').find(".img-holder").eq(0);
     if (!imgtodrag.length) {
