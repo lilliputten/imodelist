@@ -104,6 +104,9 @@ iframe {
 .bg-gray {
   background: $c-gray;
 }
+.bg-gray200 {
+  background: $gray-200;
+}
 .bg-white {
   background-color: #fff !important;
 }
@@ -532,5 +535,16 @@ body.modal-open{
     max-height: 2000px;
     opacity: 1;
     visibility: visible;
+  }
+}
+
+.one-club{
+  .info{
+    font-size: $txt_13px;
+    color: $gray-500;
+    margin: 10px 0;
+  }
+  .more{
+    margin-top: 10px;
   }
 }

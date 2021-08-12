@@ -4,7 +4,7 @@
   <title>Demo Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="index-f225a86bd87ab7ee0bea.min.css" rel="stylesheet"></head>
+<link href="index-f314706b8da208907a75.min.css" rel="stylesheet"></head>
 <body>
   <section id="header">
     <div class="modal fade" id="modal">
@@ -83,6 +83,11 @@
     <div id="my_city" class="font-weight-bold txt_14px ajax-modal mt-3" data-target="#modal" data-remote="./free-delivery-modal.html">
       <span>Ваш город</span> Электросталь?
     </div>
+  </div>
+</div>
+<div class="bg-gray200 py-2">
+  <div class="d-flex justify-content-center align-items-center txt_14px">
+    Вам доступна бесплатная доставка* <span class="font-weight-bold ml-2">при заказе от 3 000 рублей</span>
   </div>
 </div>
 
@@ -486,11 +491,15 @@
       <hr class="my-2">
       <p class="txt_22px font-weight-bold txt-c-red mb-1">Сертификат на <span class="txt-c-black">5 000 рублей</span> применён</p>
       <hr class="my-2">
-      <div class="my-4 cart-whole-border d-flex align-items-center">
+      <div class="my-4 cart-whole-border w-100 b-radius">
+
         <div class="txt_22px">
           <b>Итого:</b> <span class="txt_22px font-weight-bold">3</span> товаров на сумму <span class="font-weight-bold line-through" data-thousand-separate>5200</span> <span class="font-weight-bold" data-thousand-separate>3200</span> рублей
           <div><span class="txt-c-gray-500"> Сумма заказа без учёта доставки</span></div>
         </div>
+
+        <div id="delivery_text" class="bg-gradient mt-3 px-3 py-2 b-radius text-white">Вам надо добрать товаров <span class="font-weight-bold">на <span class="txt_18px">300</span> руб</span> для бесплатной доставки</div>
+
       </div>
     </div>
 
@@ -739,6 +748,22 @@
     <div class="accordion__card">
       <p class="txt_18px mb-3 font-weight-bold">Доставка</p>
       <div class="row">
+        <div class="mb-3 col-12">
+          <div class="mb-2">Выберите город</div>
+          <div class="row" id="choose_delivery_city">
+            <div class="col-md-8">
+              <input class="form-control autoComplete" type="text"
+                     placeholder="Например Москва..."
+                     name="delivery-search"
+                     data-url="./assets/city.json"
+                     autocomplete="off">
+            </div>
+            <div class="col-md-4">
+              <a class="btn red cart ml-3 disabled">Выбрать</a>
+              <input type="hidden" name="delivery-search-hidden" value="">
+            </div>
+          </div>
+        </div>
         <div class="mb-3 col-md-4">
           <div class="mb-2">Почтовый индекс <span class="txt-c-red">*</span></div>
           <input class="w-100" type="text" name="ind" required>
@@ -824,5 +849,5 @@
 
   </section>
 
-<script type="text/javascript" src="index-f225a86bd87ab7ee0bea.min.js"></script><script type="text/javascript" src="utils-f225a86bd87ab7ee0bea.min.js"></script><script type="text/javascript" src="cart-f225a86bd87ab7ee0bea.min.js"></script></body>
+<script type="text/javascript" src="index-f314706b8da208907a75.min.js"></script><script type="text/javascript" src="utils-f314706b8da208907a75.min.js"></script><script type="text/javascript" src="cart-f314706b8da208907a75.min.js"></script></body>
 </html>

@@ -79,11 +79,15 @@
       <hr class="my-2">
       <p class="txt_22px font-weight-bold txt-c-red mb-1">Сертификат на <span class="txt-c-black">5 000 рублей</span> применён</p>
       <hr class="my-2">
-      <div class="my-4 cart-whole-border d-flex align-items-center">
+      <div class="my-4 cart-whole-border w-100 b-radius">
+
         <div class="txt_22px">
           <b>Итого:</b> <span class="txt_22px font-weight-bold">3</span> товаров на сумму <span class="font-weight-bold line-through" data-thousand-separate>5200</span> <span class="font-weight-bold" data-thousand-separate>3200</span> рублей
           <div><span class="txt-c-gray-500"> Сумма заказа без учёта доставки</span></div>
         </div>
+
+        <div id="delivery_text" class="bg-gradient mt-3 px-3 py-2 b-radius text-white">Вам надо добрать товаров <span class="font-weight-bold">на <span class="txt_18px">300</span> руб</span> для бесплатной доставки</div>
+
       </div>
     </div>
 
@@ -332,6 +336,22 @@
     <div class="accordion__card">
       <p class="txt_18px mb-3 font-weight-bold">Доставка</p>
       <div class="row">
+        <div class="mb-3 col-12">
+          <div class="mb-2">Выберите город</div>
+          <div class="row" id="choose_delivery_city">
+            <div class="col-md-8">
+              <input class="form-control autoComplete" type="text"
+                     placeholder="Например Москва..."
+                     name="delivery-search"
+                     data-url="./assets/city.json"
+                     autocomplete="off">
+            </div>
+            <div class="col-md-4">
+              <a class="btn red cart ml-3 disabled">Выбрать</a>
+              <input type="hidden" name="delivery-search-hidden" value="">
+            </div>
+          </div>
+        </div>
         <div class="mb-3 col-md-4">
           <div class="mb-2">Почтовый индекс <span class="txt-c-red">*</span></div>
           <input class="w-100" type="text" name="ind" required>

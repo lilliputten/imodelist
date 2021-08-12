@@ -99,6 +99,7 @@
     background: linear-gradient(to bottom, #ffac9e, #e6451b, #cd2d32, #a71c20);
   }
   &.disabled{
+    color: #aaa;
     background: #eee!important;
     border: 0!important;
     &:hover {
