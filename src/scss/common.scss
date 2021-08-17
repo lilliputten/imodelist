@@ -107,6 +107,14 @@ iframe {
 .bg-gray200 {
   background: $gray-200;
 }
+.bg-orange {
+  background: #e7843d;
+  color: #fff;
+  a{
+    color: #fff!important;
+    text-decoration: none;
+  }
+}
 .bg-white {
   background-color: #fff !important;
 }

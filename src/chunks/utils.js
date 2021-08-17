@@ -43,17 +43,21 @@ $(document).ready(function() {
   })
   $('#choose_delivery_city').find('a').click(function(e){
     e.preventDefault();
+    var url = $(this).data('url');
     var input = $(this).next('input').val();
     if (input) {
       $.ajax( {
         type: "POST",
-        url: '/choose_delivery_city',
+        url: url,
         data: {id: input},
         success: function( response ) {
           try {
             response = JSON.parse(response)
-            $('#delivery_text').text(response.text);
+
+            $('#delivery_text').html(response.text);
             $('#modal .modal-content').html('<div class="p-4">' + response.message + '</div>');
+            $('#my_city').html(response.header);
+
             $('#modal').modal({show:true});
           } catch(e) {}
         }
