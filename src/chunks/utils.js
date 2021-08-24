@@ -31,39 +31,25 @@ $(document).ready(function() {
 
 
   $('#choose_delivery_city').find('input').on('autocomplete.select', function(evt, item) {
-    var a = $(this).closest('#choose_delivery_city').find('a');
-    var hidden = a.next('input');
-    if (item.value) {
-      hidden.val(item.value);
-      a.removeClass('disabled');
-    } else {
-      hidden.val('');
-      a.addClass('disabled');
-    }
-  })
-  $('#choose_delivery_city').find('a').click(function(e){
-    e.preventDefault();
     var url = $(this).data('url');
-    var input = $(this).next('input').val();
-    if (input) {
-      $.ajax( {
-        type: "POST",
-        url: url,
-        data: {id: input},
-        success: function( response ) {
-          try {
-            response = JSON.parse(response)
+    $.ajax( {
+      type: "POST",
+      url: url,
+      data: {id: input},
+      success: function( response ) {
+        try {
+          response = JSON.parse(response)
 
-            $('#delivery_text').html(response.text);
-            $('#modal .modal-content').html('<div class="p-4">' + response.message + '</div>');
-            $('#my_city').html(response.header);
+          $('#delivery_text').html(response.text);
+          $('#modal .modal-content').html('<div class="p-4">' + response.message + '</div>');
+          $('#my_city').html(response.header);
+          $('.free-delivery').html(response.freedelivery);
 
-            $('#modal').modal({show:true});
-          } catch(e) {}
-        }
-      });
-    }
-  });
+          $('#modal').modal({show:true});
+        } catch(e) {}
+      }
+    });
+  })
   //modal
   $body.on('click', '.ajax-modal', function(e){
     e.preventDefault();
