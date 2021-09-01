@@ -40,11 +40,20 @@ $(document).ready(function() {
         try {
           response = JSON.parse(response)
 
-          $('#delivery_text').html(response.text);
-          $('#modal .modal-content').html('<div class="p-4">' + response.message + '</div>');
-          $('#my_city').html(response.header);
-          $('.free-delivery').html(response.freedelivery);
+          if (response.text) {
+            $('#delivery_text').html(response.text);
+          }
+          if (response.formadrmessage) {
+            $('.form-adr-message').html(response.formadrmessage);
+          }
+          if (response.header) {
+            $('#my_city').html(response.header);
+          }
+          if (response.freedelivery) {
+            $('.free-delivery').html(response.freedelivery);
+          }
 
+          $('#modal .modal-content').html('<div class="p-4">' + response.message + '</div>');
           $('#modal').modal({show:true});
         } catch(e) {}
       }
