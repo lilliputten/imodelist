@@ -1,7 +1,6 @@
 .sliderTop{
   background: #454343;
   .carousel-inner{
-    height: 28rem;
     @media(max-width:991px) {
       height: 24rem;
     }
@@ -111,7 +110,6 @@
 
 #sliderMain{
   .carousel-inner{
-    height: 28rem;
     @media(max-width:991px) {
       height: 14rem;
     }
