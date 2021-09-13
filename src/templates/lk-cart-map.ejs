@@ -82,6 +82,7 @@
                 </script>
                 <form action="">
                     <div class="map-accord">
+
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
                                 <a class="nav-link map-tabs active" data-toggle="tab" href="#d1">Доставка 1</a>
@@ -122,15 +123,18 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
-                    <div class="bord-block d-flex flex-column justify-content-center align-items-start p-4 h-100 hidden show-deliver-point">
-                        <p class="header-text txt_24px mb-3"><b>Выбран пункт</b></p>
-                        <p class="title font-weight-bold txt_20px mb-2"></p>
-                        <p class="text"></p>
-                        <input type="hidden" name="uid" value="">
-                        <div class="d-flex">
-                            <a href="#" class="btn red">Перейти к оплате</a>
-                            <a href="#" class="btn ml-2">Изменить выбор точки</a>
+                    <div class="bord-block d-flex flex-column justify-content-center align-items-start h-100 disabled show-deliver-point">
+                        <div class="p-4">
+                            <p class="header-text txt_24px mb-3"><b>Выбран пункт</b></p>
+                            <p class="title font-weight-bold txt_20px mb-2"></p>
+                            <p class="text"></p>
+                            <input type="hidden" name="uid" value="">
+                            <div class="d-flex">
+                                <a href="#" class="btn red">Перейти к оплате</a>
+                                <a href="#" class="btn ml-2">Изменить выбор точки</a>
+                            </div>
                         </div>
                     </div>
                 </form>

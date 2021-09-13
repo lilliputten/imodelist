@@ -17,7 +17,20 @@ $.fn.thousandSeparateString = function () {
 
 $(document).ready(function() {
   var $body = $('body');
+  $('.autoComplete-custom').autoComplete({
+    noResultsText: '',
+    events: {
+      searchPost: function (res) {
+        try {
+          return JSON.parse(res);
+        } catch(e) {
+          return [];
+        }
+      }
+    }
+  });
   $('.autoComplete').autoComplete({
+    noResultsText: 'Нет результатов',
     events: {
       searchPost: function (res) {
         try {

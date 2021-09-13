@@ -598,3 +598,11 @@ body.modal-open{
     }
   }
 }
+.show-deliver-point{
+  &.disabled{
+    opacity: 0;
+    max-height: 0px;
+    transition: all 450ms ease-out;
+    overflow: hidden;
+  }
+}

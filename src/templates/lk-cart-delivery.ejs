@@ -93,6 +93,42 @@
                             </div>
                         </div>
                         <div>
+                            <input class="hidden cart-choose-block-inp map-tab-active" data-map="map-d1" id="delivery-sdek1" name="delivery" type="radio" value="4">
+                            <label class="cart-choose-block" for="delivery-sdek1">
+                                <div class="icon">
+                                    <img src="./assets/img/delivery-types/sdek1.jpg" alt="">
+                                </div>
+                                Сдэк - пункт самовывоза
+                            </label>
+                        </div>
+                        <div>
+                            <input class="hidden cart-choose-block-inp" id="delivery-sdek2" name="delivery" type="radio" value="11">
+                            <label class="cart-choose-block" for="delivery-sdek2">
+                                <div class="icon">
+                                    <img src="./assets/img/delivery-types/sdek2.jpg" alt="">
+                                </div>
+                                Сдэк - доставка до двери
+                            </label>
+                        </div>
+                        <div>
+                            <input class="hidden cart-choose-block-inp map-tab-active" data-map="map-d2" id="delivery-labirint1" name="delivery" type="radio" value="22">
+                            <label class="cart-choose-block" for="delivery-labirint1">
+                                <div class="icon">
+                                    <img src="./assets/img/delivery-types/lpost1.jpg" alt="">
+                                </div>
+                                Лабиринт  - пункт самовывоза
+                            </label>
+                        </div>
+                        <div>
+                            <input class="hidden cart-choose-block-inp" id="delivery-labirint2" name="delivery" type="radio" value="33">
+                            <label class="cart-choose-block" for="delivery-labirint2">
+                                <div class="icon">
+                                    <img src="./assets/img/delivery-types/lpost2.jpg" alt="">
+                                </div>
+                                Лабиринт - доставка до двери
+                            </label>
+                        </div>
+                        <div>
                             <input class="hidden cart-choose-block-inp" id="delivery-inp2" name="delivery" type="radio" value="2">
                             <label class="cart-choose-block" for="delivery-inp2">
                                 <div class="icon">
@@ -127,26 +163,68 @@
                             </div>
                         </div>
                         <div>
-                            <input class="hidden cart-choose-block-inp" id="delivery-inp4" name="delivery" type="radio" value="4">
-                            <label class="cart-choose-block" for="delivery-inp4">
+                            <input class="hidden cart-choose-block-inp" id="delivery-inp99" name="delivery" type="radio" value="99">
+                            <label class="cart-choose-block" for="delivery-inp99">
                                 <div class="icon">
-                                    <img src="./assets/img/delivery-types/sdek.png" alt="">
+                                    <img src="./assets/img/delivery-types/ener.jpg" alt="">
                                 </div>
-                                Транспортной компанией СДЭК.
+                                Энергия
                             </label>
-                        </div>
-                        <div>
-                            <input class="hidden cart-choose-block-inp" id="delivery-inp5" name="delivery" type="radio" value="5">
-                            <label class="cart-choose-block" for="delivery-inp5">
-                                <div class="icon">
-                                    <img src="./assets/img/delivery-types/samovivoz.png" alt="">
-                                </div>
-                                Самовывоз
-                            </label>
-                        </div>
+                            <div class="cart-choose-text">
+                                <div class="py-3">
 
+                                    <h4 class="mb-1">Lorem ipsum dolor sit amet</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
+                    <script src="https://api-maps.yandex.ru/2.1/?apikey=95907f08-d778-495c-96cf-92c2c3b150c8&lang=ru_RU" type="text/javascript">
+                    </script>
+                    <div class="bord-block d-flex flex-column justify-content-center align-items-start h-100 disabled show-deliver-point">
+                        <div class="p-4">
+                            <p class="header-text txt_24px mb-3"><b>Выбран пункт</b></p>
+                            <p class="title font-weight-bold txt_20px mb-2"></p>
+                            <p class="text"></p>
+                            <input type="hidden" name="uid" value="">
+                        </div>
+                    </div>
+                    <div class="map-accord disabled mb-4">
+                        <div class="tab-content bg-gradient b-radius">
+                            <div id="map-d1" class="container tab-pane"><br>
+                                <div class="row map-holder" data-map="map1">
+                                    <div class="col-md-8 mb-3">
+                                        <div class="ya-map" id="map1" data-url="/assets/points.json" data-type="cdek" data-lt="55.76" data-lg="37.64"></div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="bord-block d-flex flex-column justify-content-center align-items-start p-4 h-100">
+                                            <p class="header-text txt_24px mb-3"><b>Выберите пункт самовывоза:</b></p>
+                                            <p class="title font-weight-bold txt_20px mb-2"></p>
+                                            <p class="text"></p>
+                                            <a href="#" class="close-map"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="map-d2" class="container tab-pane"><br>
+                                <div class="row map-holder" data-map="map2">
+                                    <div class="col-md-8 mb-3">
+                                        <div class="ya-map" id="map2" data-url="/assets/points.json" data-type="cdek" data-lt="55.76" data-lg="37.64"></div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="bord-block d-flex flex-column justify-content-center align-items-start p-4 h-100">
+                                            <p class="header-text txt_24px mb-3"><b>Выберите пункт самовывоза:</b></p>
+                                            <p class="title font-weight-bold txt_20px mb-2"></p>
+                                            <p class="text"></p>
+                                            <a href="#" class="close-map"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <input type="submit" class="btn red cart" value="К ОПЛАТЕ">
                 </form>
 
