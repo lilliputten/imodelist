@@ -44,23 +44,24 @@ $(document).ready(function() {
 
 
   $('#choose_delivery_city').find('input').on('autocomplete.select', function(evt, item) {
-    var url = $(this).data('url');
+    var post = $(this).data('post');
+    var input = $(this).val();
     $.ajax( {
-      type: "POST",
-      url: url,
+      type: "get",
+      url: post,
       data: {id: input},
       success: function( response ) {
         try {
           response = JSON.parse(response)
 
           if (response.text) {
-            $('#delivery_text').html(response.text);
+            $('#delivery_text').html(response.deliverytext);
           }
           if (response.formadrmessage) {
             $('.form-adr-message').html(response.formadrmessage);
           }
           if (response.header) {
-            $('#my_city').html(response.header);
+            $('#my_city').html(response.mycity);
           }
           if (response.freedelivery) {
             $('.free-delivery').html(response.freedelivery);
