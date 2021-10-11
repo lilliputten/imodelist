@@ -7,13 +7,14 @@ $(document).ready(function() {
       $('.map-holder').each(function() {
         var map = $(this).data('map');
         var obj = $('#' + map);
+        var zoom = obj.data('zoom');
         var url = obj.data('url');
         var type = obj.data('type');
         var lt = obj.data('lt');
         var lg = obj.data('lg');
         var myMap = new ymaps.Map(map, {
           center: [lt, lg],
-          zoom: 7
+          zoom: zoom
         });
         ALLmaps.push(myMap);
         getAjax();
@@ -33,32 +34,35 @@ $(document).ready(function() {
               t: type,
             },
             success: function (response) {
-              myCollection = new ymaps.GeoObjectCollection({}, {
-                preset: 'islands#redCircleDotIcon'
-              });
-              for (var i = 0; i < response.length; i++) {
-                var myGeoObject = new ymaps.GeoObject({
-                  geometry: {
-                    type: "Point",
-                    coordinates: [response[i].lt, response[i].lg]
-                  },
-                  properties: {
-                    hintContent: response[i].title,
-                  }
+              try {
+                response=JSON.parse(response);
+                myCollection = new ymaps.GeoObjectCollection({}, {
+                  preset: 'islands#redCircleDotIcon'
                 });
-                (function () {
-                  var resp = response[i];
-                  myGeoObject.events.add("click", function (e) {
-                    $('.title').html(resp.title);
-                    $('.text').html(resp.text);
-                    $('.close-map').addClass('btn').text('Выбрать');
-                    $('.close-map').data('uid', resp.uid);
-                    $('.close-map').data('title', resp.title);
+                for (var i = 0; i < response.length; i++) {
+                  var myGeoObject = new ymaps.GeoObject({
+                    geometry: {
+                      type: "Point",
+                      coordinates: [+response[i].lt, +response[i].lg]
+                    },
+                    properties: {
+                      hintContent: response[i].title,
+                    }
                   });
-                })(i);
-                myCollection.add(myGeoObject);
-              }
-              myMap.geoObjects.add(myCollection);
+                  (function () {
+                    var resp = response[i];
+                    myGeoObject.events.add("click", function (e) {
+                      $('.title').html(resp.title);
+                      $('.text').html(resp.text);
+                      $('.close-map').addClass('btn').text('Выбрать');
+                      $('.close-map').data('uid', resp.uid);
+                      $('.close-map').data('title', resp.title);
+                    });
+                  })(i);
+                  myCollection.add(myGeoObject);
+                }
+                myMap.geoObjects.add(myCollection);
+              } catch(e) {}
             }
           });
         }
