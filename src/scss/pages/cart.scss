@@ -153,6 +153,7 @@
   border-radius: 8px;
   cursor: pointer;
   @extend %anim;
+  position: relative;
   &:hover{
     border-color: $c-red;
   }
@@ -160,6 +161,14 @@
     max-height: 32px;
     max-width: 115px;
     margin-right: 10px;
+  }
+  .badge{
+    border-radius: 1rem;
+    position: absolute;
+    top: -3px;
+    left: -2px;
+    font-size: $txt_14px;
+    padding: 3px 7px;
   }
 }
 .cart-choose-block-inp{

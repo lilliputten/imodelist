@@ -1,6 +1,28 @@
 
 $(document).ready(function() {
   if ($('.map-holder').length) {
+    $('.map-holder').find('input.autoComplete').on('autocomplete.select', function(evt, item) {
+      var post = $(this).data('post');
+      var input = $(this).val();
+      $.ajax( {
+        type: "get",
+        url: post,
+        data: {id: input},
+        success: function( response ) {
+          try {
+            response = JSON.parse(response)
+            $('.title').html(response.title);
+            $('.text').html(response.text);
+            $('.close-map').addClass('btn').text('Выбрать');
+            $('.close-map').data('uid', response.uid);
+            $('.close-map').data('title', response.title);
+          } catch(e) {}
+        }
+      });
+    })
+
+
+
     ymaps.ready(init);
     var ALLmaps = [];
     function init(){
@@ -86,7 +108,7 @@ $(document).ready(function() {
         })(i);
       }
     })
-    $('input[name="delivery"]').change(function(e){
+    $('input[name="product_order[delivery_form]"]').change(function(e){
       if ($(this).hasClass('map-tab-active')) {
         $('[name="uid"]').val('');
         $('.show-deliver-point').addClass('disabled');

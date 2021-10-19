@@ -34,6 +34,7 @@ $(document).ready(function() {
     events: {
       searchPost: function (res) {
         try {
+          return res;
           return JSON.parse(res);
         } catch(e) {
           return [];
