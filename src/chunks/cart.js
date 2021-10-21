@@ -145,7 +145,7 @@ $(function () {
       url: '/add',
       data: JSON.stringify(add),
       success: function( response ) {
-        //carttext.text(response);
+        carttext.text(response);
       }
     });
   });
