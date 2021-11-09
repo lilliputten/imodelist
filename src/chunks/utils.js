@@ -67,7 +67,7 @@ $(document).ready(function() {
             $('.free-delivery').html(response.freedelivery);
           }
 
-          $('#modal .modal-content').html('<div class="p-4">' + response.message + '</div>');
+          $('#modal .modal-body').html('<div class="p-4">' + response.message + '</div>');
           $('#modal').modal({show:true});
         } catch(e) {}
       }
