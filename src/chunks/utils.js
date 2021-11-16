@@ -41,8 +41,23 @@ $(document).ready(function() {
       }
     }
   });
-
-
+  $body.on('focus', '.modal-body .autoComplete', function(e){
+    if (!$(this).hasClass('added')) {
+      $(this).addClass('added');
+      $(this).autoComplete({
+        noResultsText: 'Нет результатов',
+        events: {
+          searchPost: function (res) {
+            try {
+              return JSON.parse(res);
+            } catch(e) {
+              return [];
+            }
+          }
+        }
+      });
+    }
+  });
   $('#choose_delivery_city').find('input').on('autocomplete.select', function(evt, item) {
     var post = $(this).data('post');
     var input = $(this).val();
