@@ -12,6 +12,9 @@
 .header{
   background: url('#{$path-assets}/img/stripes.svg') no-repeat top right;
   background-size: 550px;
+  &.ny2022{
+    background: url('#{$path-assets}/img/ny2022.jpg') repeat-x bottom left;
+  }
   .naming{
     display: flex;
     align-items: center;
