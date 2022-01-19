@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <section id="header">
+    <%- include modules/modal-loader.ejs %>
+    <%- include modules/preheader.ejs %>
+    <%- include modules/header.ejs %>
+  </section>
+  <section id="menu">
+    <%- include modules/menu.ejs %>
+  </section>
+
+  <div class="sliderInner">
+    <div class="carousel-inner">
+      <div class="container">
+        <div class="bread">
+          <a href="/">Главная</a>  »  Конкурсы
+        </div>
+        <h1 class="slider-text">
+          Конкурсы
+        </h1>
+      </div>
+      <img class="d-block w-100" src="./assets/img/headers/news.jpg" alt="">
+    </div>
+  </div>
+
+
+
+
+  <section id="content">
+    <div class="bg-gray py-3 mobile-menu d-lg-none">
+      <div class="container">
+        <div class="row">
+          <div class="col-auto">
+            <a href="#" data-toggle-cata-left-menu class="d-flex align-items-center">
+              <i class="icon icon_burger"></i>
+              <div class="ml-3 txt_22px text-uppercase font-weight-bold txt-c-black">Каталог</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 cata-left-menu">
+            <div class="holder">
+              <a href="#" data-toggle-cata-left-menu class="icon icon_close"></a>
+              <p class="h1">Каталог</p>
+              <%- include elements/left-menu.ejs %>
+              <p class="h3 mt-5">Важная информация</p>
+              <%- include elements/left-info.ejs %>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <h1>Конкурсы</h1>
+            <img src="https://i-modelist.ru/file.php/iperc/100/100c04f84d00be000f8e330c3f8bc0ae/" class="img-fluid mb-4" alt="">
+            <h2  class="txt_30px mb-3">ГБ ПО Т-62 ПРИ СУДЕЙСТВЕ МИГЕЛЯ ХИМЕНЕСА</h2>
+            <p class="txt_22px">Сроки проведения: до 15.02.2022﻿</p>
+            <p class="txt_22px">Подробнее: <a href="https://vk.com/wall-34210859_657143" target="_blank">https://vk.com/wall-34210859_657143</a></p>
+            <p>Итак, наши дорогие амигос, мы наконец готовы раскрыть карты и представить Вам тот самый масштабный проект , над которым мы работали все это время, и который объединит в себе предзаказ, эксклюзивный супер-апгрейд, конкурсную площадку международного уровня и участие настоящих легенд модельного мира в лице хорошо известной Вам испанской фирмы AmmoMig или лично человека-везеринга всея моделизма Мигеля Хименеса ! Не ожидали? То ли еще будет! Пришла пора сказать: "T-62, A(mmo)MIGо!"</p>
+            <p>Суть конкурса предельно проста – оформить предзаказ-Upgrade на грядущий релиз T-62 в масштабе 1/35 от фирмы “Звезда” на нашем сайте и завершить стройку в срок до 15.02.2022.</p>
+            <hr>
+            <img src="https://i-modelist.ru/file.php/iperc/100/100c04f84d00be000f8e330c3f8bc0ae/" class="img-fluid mb-4" alt="">
+            <h2  class="txt_30px mb-3">ГБ ПО Т-62 ПРИ СУДЕЙСТВЕ МИГЕЛЯ ХИМЕНЕСА</h2>
+            <p class="txt_22px">Сроки проведения: до 15.02.2022﻿</p>
+            <p class="txt_22px">Подробнее: <a href="https://vk.com/wall-34210859_657143" target="_blank">https://vk.com/wall-34210859_657143</a></p>
+            <p>Итак, наши дорогие амигос, мы наконец готовы раскрыть карты и представить Вам тот самый масштабный проект , над которым мы работали все это время, и который объединит в себе предзаказ, эксклюзивный супер-апгрейд, конкурсную площадку международного уровня и участие настоящих легенд модельного мира в лице хорошо известной Вам испанской фирмы AmmoMig или лично человека-везеринга всея моделизма Мигеля Хименеса ! Не ожидали? То ли еще будет! Пришла пора сказать: "T-62, A(mmo)MIGо!"</p>
+            <p>Суть конкурса предельно проста – оформить предзаказ-Upgrade на грядущий релиз T-62 в масштабе 1/35 от фирмы “Звезда” на нашем сайте и завершить стройку в срок до 15.02.2022.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="footer">
+    <%- include modules/footer.ejs %>
+  </section>
+
+</body>
+</html>
