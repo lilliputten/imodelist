@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <section id="header">
+    <%- include modules/modal-loader.ejs %>
+    <%- include modules/preheader.ejs %>
+    <%- include modules/header.ejs %>
+  </section>
+  <section id="menu">
+    <%- include modules/menu.ejs %>
+  </section>
+
+
+
+
+  <section id="content">
+    <div class="bg-gray py-3 mobile-menu d-lg-none">
+      <div class="container">
+        <div class="row">
+          <div class="col-auto">
+            <a href="#" data-toggle-cata-left-menu class="d-flex align-items-center">
+              <i class="icon icon_burger"></i>
+              <div class="ml-3 txt_22px text-uppercase font-weight-bold txt-c-black">Каталог</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p class="txt_58px font-weight-bold">Ошибка 404</p>
+            <hr>            
+            <p class="txt_22px">Страница не найдена.</p>
+            <p class="txt_22px txt-c-gray-500">Возможно, данная страница была удалена, перенесена или вы ввели неверный адрес.</p>
+            <hr>
+            <p class="txt_22px">Перейдите на <a href="/" class="txt_22px">главную</a></p>
+            
+            <p class="txt_22px">Или воспользуйтесь нашим <b>каталогом:</b></p>
+            <div class="row row-scroll py-5">
+              <% for(var i = 0; i < 5; i++){ %>
+                  <div class="col-auto col-md-3 col-lg-3 d-inline-flex align-items-center mb-4">
+                      <a class="rub-icon-holder small">
+                          <img src="./assets/img/icons/sb-model.svg" alt="">
+                      </a>
+                      <a class="txt-c-black" href="#">Сборные модели</a>
+                  </div>
+                  <div class="col-auto col-md-3 col-lg-3 d-inline-flex align-items-center mb-4">
+                      <a class="rub-icon-holder small">
+                          <img src="./assets/img/icons/kraski.svg" alt="">
+                      </a>
+                      <a class="txt-c-black" href="#">Краски</a>
+                  </div>
+                  <div class="col-auto col-md-3 col-lg-3 d-inline-flex align-items-center mb-4">
+                      <a class="rub-icon-holder small">
+                          <img src="./assets/img/icons/avd.svg" alt="">
+                      </a>
+                      <a class="txt-c-black" href="#">AVD Models</a>
+                  </div>
+                  <div class="col-auto col-md-3 col-lg-3 d-inline-flex align-items-center mb-4">
+                      <a class="rub-icon-holder small">
+                          <img src="./assets/img/icons/smesi.svg" alt="">
+                      </a>
+                      <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
+                  </div>
+                  <div class="col-auto col-md-3 col-lg-3 d-inline-flex align-items-center mb-4">
+                      <a class="rub-icon-holder small">
+                          <img src="./assets/img/icons/kraski.svg" alt="">
+                      </a>
+                      <a class="txt-c-black" href="#">Краски</a>
+                  </div>
+                  <div class="col-auto col-md-3 col-lg-3 d-inline-flex align-items-center mb-4">
+                      <a class="rub-icon-holder small">
+                          <img src="./assets/img/icons/avd.svg" alt="">
+                      </a>
+                      <a class="txt-c-black" href="#">AVD Models</a>
+                  </div>
+                  <div class="col-auto col-md-3 col-lg-3 d-inline-flex align-items-center mb-4">
+                      <a class="rub-icon-holder small">
+                          <img src="./assets/img/icons/smesi.svg" alt="">
+                      </a>
+                      <a class="txt-c-black" href="#">Смеси для<br>нанесения эффектов</a>
+                  </div>
+              <% } %>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="footer">
+    <%- include modules/footer.ejs %>
+  </section>
+
+</body>
+</html>

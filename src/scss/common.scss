@@ -243,6 +243,10 @@ ul {
     height: 50%;
     object-fit: contain;
   }
+  &.small{
+    width: 2rem;
+    height: 2rem;
+  }
 }
 .col-auto{
   &.rub-model{
