@@ -4,7 +4,7 @@
   <title>Demo Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="index-0b3d4cd1a84461d7aebd.min.css" rel="stylesheet"></head>
+<link href="index-a7b41674eae0923fe127.min.css" rel="stylesheet"></head>
 <body>
   <section id="header">
     <div class="modal fade" id="modal">
@@ -252,14 +252,14 @@
 
   </section>
   <div class="sliderInner">
-      <div class="carousel-inner">
-          <div class="container">
-              <div class="bread">
+      <div class="carousel-inner">  
+          <div class="container"> 
+              <div class="bread"> 
                   <a href="/">Главная</a>  »  Способы доставки
               </div>
-              <h1 class="slider-text">
+              <h1 class="slider-text">  
                   Личный кабинет
-              </h1>
+              </h1>   
           </div>
           <img class="d-block w-100" src="./assets/img/headers/reg.jpg" alt="">
       </div>
@@ -337,12 +337,12 @@
                       <div class="ml-3 txt_22px text-uppercase font-weight-bold txt-c-black">Меню</div>
                   </a>
               </div>
-          </div>
+          </div> 
       </div>
   </div>
   <section id="content">
     <div class="py-5">
-      <div class="container">
+      <div class="container"> 
         <div class="row">
             <div class="col-lg-2 cata-left-menu">
                 <div class="holder">
@@ -386,11 +386,15 @@
     <div class="white-block">
       <div class="d-flex">
         <a href="#" class="btn mr-2 d-inline-block my-4">Очистить корзину</a>
-        <a href="#" class="btn mr-2 d-inline-block my-4">Очистите корзину кроме табличек</a>
+        <a href="#" class="btn ml-auto d-inline-block my-4">Удалить выбранные товары</a>
       </div>
-
-      <div class="ajax-modal" data-target="#modal" data-css="big" data-remote="./table-modal.html">
-        <a class="btn mb-5 d-inline-block">Пример таблички</a>
+      <div class="container">
+        <div class="row row-scroll mb-4 p-3 bg-gray"> 
+          <span class="col col-auto font-weight-bold">Сортировать по:</span> 
+          <a class="col col-auto d-inline-block" href="#">Названию</a>
+          <a class="col col-auto d-inline-block txt-c-gray-500" href="#">Стоимости ↑</a>
+          <a class="col col-auto d-iexamplenline-block txt-c-gray-500" href="#">Стоимости ↓</a>
+        </div>
       </div>
       <table class="cart-table table-responsive">
         <tr>
@@ -426,7 +430,10 @@
               <p class="mb-0 text-nowrap txt_18px font-weight-bold txt-c-red"><span class="txt_24px" data-thousand-separate>9200</span> руб.</p>
             </td>
             <td class="cart-table__trash prod-border">
-              <a data-trash href="#" class="icon icon_trash text-decoration-none"></a>
+              <div class="d-flex align-items-center">
+                <a data-trash href="#" class="icon icon_trash text-decoration-none txt_12px"></a>
+                <input class="ml-3" type="checkbox" name="del" value="id">
+              </div>
             </td>
           </tr>
         
@@ -453,7 +460,10 @@
               <p class="mb-0 text-nowrap txt_18px font-weight-bold txt-c-red"><span class="txt_24px" data-thousand-separate>9200</span> руб.</p>
             </td>
             <td class="cart-table__trash prod-border">
-              <a data-trash href="#" class="icon icon_trash text-decoration-none"></a>
+              <div class="d-flex align-items-center">
+                <a data-trash href="#" class="icon icon_trash text-decoration-none txt_12px"></a>
+                <input class="ml-3" type="checkbox" name="del" value="id">
+              </div>
             </td>
           </tr>
         
@@ -480,7 +490,10 @@
               <p class="mb-0 text-nowrap txt_18px font-weight-bold txt-c-red"><span class="txt_24px" data-thousand-separate>9200</span> руб.</p>
             </td>
             <td class="cart-table__trash prod-border">
-              <a data-trash href="#" class="icon icon_trash text-decoration-none"></a>
+              <div class="d-flex align-items-center">
+                <a data-trash href="#" class="icon icon_trash text-decoration-none txt_12px"></a>
+                <input class="ml-3" type="checkbox" name="del" value="id">
+              </div>
             </td>
           </tr>
         
@@ -857,5 +870,5 @@
 
   </section>
 
-<script type="text/javascript" src="index-0b3d4cd1a84461d7aebd.min.js"></script><script type="text/javascript" src="ya-map-0b3d4cd1a84461d7aebd.min.js"></script><script type="text/javascript" src="utils-0b3d4cd1a84461d7aebd.min.js"></script><script type="text/javascript" src="cart-0b3d4cd1a84461d7aebd.min.js"></script></body>
+<script type="text/javascript" src="index-a7b41674eae0923fe127.min.js"></script><script type="text/javascript" src="ya-map-a7b41674eae0923fe127.min.js"></script><script type="text/javascript" src="utils-a7b41674eae0923fe127.min.js"></script><script type="text/javascript" src="cart-a7b41674eae0923fe127.min.js"></script></body>
 </html>
