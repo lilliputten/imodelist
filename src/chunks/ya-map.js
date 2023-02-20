@@ -16,6 +16,7 @@ $(document).ready(function() {
             $('.close-map').addClass('btn').text('Выбрать');
             $('.close-map').data('uid', response.uid);
             $('.close-map').data('title', response.title);
+            choosePoint();
           } catch(e) {}
         }
       });
@@ -92,11 +93,7 @@ $(document).ready(function() {
     }
     $('.close-map').click(function(e){
       e.preventDefault();
-      $('[name="uid"]').val($(this).data('uid'));
-      $(this).closest('.map-accord').addClass('disabled');
-      $('.show-deliver-point').removeClass('disabled');
-      $('.show-deliver-point .title').html($(this).data('title'));
-      $('.show-deliver-point .text').html($(this).data('text'));
+      choosePoint();
     })
     $('.map-tabs').click(function(e){
       for (var i = 0; i < ALLmaps.length; i++) {
@@ -121,5 +118,12 @@ $(document).ready(function() {
         $('.show-deliver-point').addClass('disabled');
       }
     })
+    function choosePoint(){
+      $('[name="uid"]').val($('.close-map').data('uid'));
+      $('.close-map').closest('.map-accord').addClass('disabled');
+      $('.show-deliver-point').removeClass('disabled');
+      $('.show-deliver-point .title').html($('.close-map').data('title'));
+      $('.show-deliver-point .text').html($('.close-map').data('text'));
+    }
   }
 });
