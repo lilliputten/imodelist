@@ -71,3 +71,17 @@ textarea, .inputlike, .form-control, .custom-file-label{
 .custom-file-input ~ .custom-file-label::after {
   content: "Загрузить";
 }
+
+.eye {
+  content: url('#{$path-assets}/img/eye.svg');
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  opacity: 0.8;
+  top: 10px;
+  right: 30px;
+  cursor: pointer;
+  &.active{
+    opacity: 0.3;
+  }
+}

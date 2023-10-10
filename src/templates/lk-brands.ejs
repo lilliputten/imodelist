@@ -36,7 +36,7 @@
               <div class="col-auto">
                   <a href="#" data-toggle-cata-left-menu class="d-flex align-items-center">
                       <i class="icon icon_burger"></i>
-                      <div class="ml-3 txt_22px text-uppercase font-weight-bold txt-c-black">Меню</div>
+                      <div class="ml-3 txt_18px text-uppercase font-weight-bold txt-c-black">Меню</div>
                   </a>
               </div>
           </div>
@@ -50,13 +50,116 @@
                 <div class="holder">
                     <a href="#" data-toggle-cata-left-menu class="icon icon_close"></a>
                     <p class="h1">Меню</p>
-                    <%- include cart/cart-list.ejs %>
+                    <ul>
+                        <li class="mb-4"><a class="menu-list-item active" href="#">МОЯ КОРЗИНА</a></li>
+                        <li><a class="menu-list-item" href="#">МОЯ СКИДКА</a></li>
+                        <li><a class="menu-list-item" href="#">ПРОМОКОДЫ <span class="round">2</span></a></li>
+                        <li><a class="menu-list-item" href="#">МОИ БРЕНДЫ <span class="round">3</span></a></li>
+                    </ul>
                 </div>
             </div>
             <div class="col-lg-10">
-                <h3>Избранное </h3>
-                <p class="mb-5">Вы отметили, что вам нравятся эти бренды. Здесь Вы можете видеть информацию о новых поступлениях любимых брендов . Вы можете убрать (разлюбить) бренды из списка, а также добавить в него новые – для этого нажмите кнопку «Мне нравится» на странице выбранного бренда.</p>
-                <%- include cart/cart-brands.ejs %>
+                <h3>МОИ БРЕНДЫ</h3>
+
+                <div class="row pt-3 pb-5 mt-0 block">
+                    <div class="col-auto rub-model">
+                        <a class="rub-model-holder">
+                            <img src="./assets/example/models/im3.jpg" alt="">
+                        </a>
+                        <a href="#">Звезда (100)</a>
+                    </div>
+                    <div class="col-auto rub-model">
+                        <a class="rub-model-holder">
+                            <img src="./assets/example/models/im4.jpg" alt="">
+                        </a>
+                        <a href="#">КомБриг (14)</a>
+                    </div>
+                    <div class="col-auto rub-model">
+                        <a class="rub-model-holder">
+                            <img src="./assets/example/models/im5.jpg" alt="">
+                        </a>
+                        <a href="#">Моделист (69)</a>
+                    </div>
+                </div>
+                <div class="block gray">
+                    <div class="py-4">
+                        <div class="row">
+                            <div class="col-auto mb-2">
+                                <h4 class="mr-2">Выберите 3 бренда</h4>
+                            </div>
+                            <div class="col-auto mb-2">
+                                <button class="btn red fav-remember" data-url="/remember">Запомнить выбор</button>
+                            </div>
+                        </div>
+                        <hr class="mt-4">
+                        <div class="row pb-2 mt-0">
+                            <% for(var i = 0; i < 3; i++){ %>
+                                <div data-brand="222" class="col-auto rub-model fav-brand">
+                                    <a class="rub-model-holder">
+                                        <img src="./assets/example/models/im1.jpg" alt="">
+                                    </a>
+                                    <p>Восточный экспресс (333)</p>
+                                </div>
+                                <div data-brand="222" class="col-auto rub-model fav-brand">
+                                    <a class="rub-model-holder">
+                                        <img src="./assets/example/models/im2.jpg" alt="">
+                                    </a>
+                                    <p>Грань (1)</p>
+                                </div>
+                                <div data-brand="222" class="col-auto rub-model fav-brand">
+                                    <a class="rub-model-holder">
+                                        <img src="./assets/example/models/im3.jpg" alt="">
+                                    </a>
+                                    <p>Звезда (100)</p>
+                                </div>
+                                <div data-brand="222" class="col-auto rub-model fav-brand">
+                                    <a class="rub-model-holder">
+                                        <img src="./assets/example/models/im4.jpg" alt="">
+                                    </a>
+                                    <p>КомБриг (14)</p>
+                                </div>
+                                <div data-brand="222" class="col-auto rub-model fav-brand">
+                                    <a class="rub-model-holder">
+                                        <img src="./assets/example/models/im5.jpg" alt="">
+                                    </a>
+                                    <p>Моделист (69)</p>
+                                </div>
+                                <div data-brand="222" class="col-auto rub-model fav-brand">
+                                    <a class="rub-model-holder">
+                                        <img src="./assets/example/models/im1.jpg" alt="">
+                                    </a>
+                                    <p>Восточный экспресс (333)</p>
+                                </div>
+                                <div data-brand="222" class="col-auto rub-model fav-brand">
+                                    <a class="rub-model-holder">
+                                        <img src="./assets/example/models/im2.jpg" alt="">
+                                    </a>
+                                    <p>Грань (1)</p>
+                                </div>
+                                <div data-brand="222" class="col-auto rub-model fav-brand">
+                                    <a class="rub-model-holder">
+                                        <img src="./assets/example/models/im3.jpg" alt="">
+                                    </a>
+                                    <p>Звезда (100)</p>
+                                </div>
+                                <div data-brand="222" class="col-auto rub-model fav-brand">
+                                    <a class="rub-model-holder">
+                                        <img src="./assets/example/models/im4.jpg" alt="">
+                                    </a>
+                                    <p>КомБриг (14)</p>
+                                </div>
+                                <div data-brand="222" class="col-auto rub-model fav-brand">
+                                    <a class="rub-model-holder">
+                                        <img src="./assets/example/models/im5.jpg" alt="">
+                                    </a>
+                                    <p>Моделист (69)</p>
+                                </div>
+                            <% } %>
+                        </div>
+                
+                    </div>
+                </div>
+                
             </div>
         </div>
       </div>

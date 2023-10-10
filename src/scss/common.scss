@@ -152,8 +152,23 @@ iframe {
   text-transform: uppercase;
   text-decoration: none;
   color: $c-black;
+  position: relative;
   &.active, &:hover {
     color: $c-red;
+  }
+  .round {
+    background: $c-red;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    color: #fff;
+    width: 17px;
+    height: 17px;
+    top: -8px;
+    right: -18px;
+    font-size: 10px;
   }
 }
 hr {
@@ -394,6 +409,53 @@ ul {
     .rub-model-holder{
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     }
+  }
+}
+.block{
+  .rub-model-holder{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+  &.gray{
+    background: #f6f6f6;
+    padding: 0px 20px;
+    border-radius: 10px;
+  }
+}
+.fav-remember{
+  opacity: 0.6;
+  transition: all 0.5s; 
+  &.active{
+    opacity: 1;    
+  }
+}
+.fav-brand{
+  opacity: 0.6;
+  transition: all 0.5s; 
+  position: relative;
+  cursor: pointer;
+  &.active{
+    &:after{
+      content: "+";
+      display: flex;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      top: -10px;
+      right: 0;
+      left: 0;
+      position: absolute;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      background: $c-red;
+      color: #fff;
+      font-size: 20px;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin: 0 5px 0 auto;
+    }
+  }
+  &.active,&:hover{
+    opacity: 1;    
   }
 }
 .white-block{

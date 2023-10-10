@@ -221,4 +221,55 @@ $(document).ready(function() {
       $('#notifications-bottom-right-tab').removeClass('active');
     });
   }
+
+  $('input[type="password"]').each(function(){
+    const eye=$( '<div class="eye"></div>');
+    eye.insertAfter($(this));
+    eye.on('click', function(){
+      if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+        $(this).prev('input').attr('type','password');
+      } else {
+        $(this).addClass('active');
+        $(this).prev('input').attr('type','text');
+      }
+      $(this).prev('input').t
+    })
+  });
+
+  $('.copy').on('click', function(){
+    const promo=$(this).prev('.promo').get( 0 );
+    window.getSelection().selectAllChildren(
+      promo
+  );
+    try {
+      navigator.clipboard.writeText(promo.innerText);
+    } catch (error) {}
+  })
+
+  $('.fav-brand').on('click', function(){
+    if($(this).hasClass('active')){
+      $(this).removeClass('active');
+    } else {
+      if($('.fav-brand.active').length<3){
+        $(this).addClass('active'); 
+        if($('.fav-brand.active').length==3){
+          $('.fav-remember').addClass('active'); 
+        } else {
+          $('.fav-remember').removeClass('active'); 
+        }
+      }
+
+    }
+  });
+
+  $('.fav-remember').on('click', function(){
+    if($('.fav-brand').hasClass('active')){
+      const arr = [];
+      $('.fav-brand.active').each((i,el)=>{
+        arr.push(el.dataset.brand);
+      })
+      location.href=$(this).data('url') + '?fav=' + arr.join(',')
+    }
+  });
 });
