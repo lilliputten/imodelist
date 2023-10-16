@@ -250,16 +250,11 @@ $(document).ready(function() {
   $('.fav-brand').on('click', function(){
     if($(this).hasClass('active')){
       $(this).removeClass('active');
+      $('.fav-remember').removeClass('active');
     } else {
-      if($('.fav-brand.active').length<3){
-        $(this).addClass('active'); 
-        if($('.fav-brand.active').length==3){
-          $('.fav-remember').addClass('active'); 
-        } else {
-          $('.fav-remember').removeClass('active'); 
-        }
-      }
-
+      $('.fav-brand').removeClass('active'); 
+      $(this).addClass('active');
+      $('.fav-remember').addClass('active');
     }
   });
 
