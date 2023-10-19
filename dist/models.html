@@ -271,9 +271,15 @@
     <form>
       <div class="row">
         <div class="col-6 col-md">
-          <div class="form-group">
-            <input type="text" name="name" class="form-control" placeholder="Название">
-          </div>
+          <select name="category" class="form-control">
+            <option value="">Категории</option>
+            <option value="1">БТТ</option>
+            <option value="1">Авиация</option>
+            <option value="1">Автомобили</option>
+            <option value="1">Мотоциклы</option>
+            <option value="1">Диорамы</option>
+            <option value="1">Флот</option>
+          </select>
         </div>
         <div class="col-6 col-md">
           <div class="form-group">
@@ -289,8 +295,8 @@
           </div>
         </div>
         <div class="col-6 col-md">
-          <select name="producer" class="form-control">
-            <option value="">Производитель</option>
+          <select name="size" class="form-control">
+            <option value="">Масштаб</option>
             <option value="1">2</option>
             <option value="1">3</option>
             <option value="1">4</option>
@@ -298,12 +304,24 @@
           </select>
         </div>
         <div class="col-6 col-md">
-          <select name="size" class="form-control">
-            <option value="">Масштаб</option>
-            <option value="1">2</option>
-            <option value="1">3</option>
-            <option value="1">4</option>
-            <option value="1">5</option>
+          <select name="period" class="form-control">
+            <option value="">Период</option>
+            <option value="1">ВОВ</option>
+            <option value="1">Афган</option>
+            <option value="1">Чечня</option>
+            <option value="1">Современный</option>
+            <option value="1">1 МВ</option>
+          </select>
+        </div>
+        <div class="col-6 col-md">
+          <select name="country" class="form-control">
+            <option value="">Страна</option>
+            <option value="1">Россия</option>
+            <option value="1">Китай</option>
+            <option value="1">США</option>
+            <option value="1">Германия</option>
+            <option value="1">Япония</option>
+            <option value="1">Великобритания</option>
           </select>
         </div>
       </div>
@@ -347,7 +365,7 @@
           <div class="col-lg-3 cata-left-menu">
             <div class="holder">
               <a href="#" data-toggle-cata-left-menu class="icon icon_close"></a>
-              <p class="h1">Каталог</p>
+              <p class="h1">Готовые модели</p>
               <ul>
     <li><a class="menu-list-item active" href="#">Новинки</a> </li>
     <li><a class="menu-list-item" href="#">Спецпредложения</a> </li>
@@ -424,449 +442,192 @@
             <div class="row row-scroll mb-5">
               <span class="col col-auto font-weight-bold">Сортировать по:</span>
               <a class="col col-auto d-inline-block txt-c-gray-500" href="#">Наличию</a>
-              <a class="col col-auto d-inline-block" href="#">Названию</a>
               <a class="col col-auto d-inline-block txt-c-gray-500" href="#">Цене ↑</a>
               <a class="col col-auto d-iexamplenline-block txt-c-gray-500" href="#">Цене ↓</a>
             </div>
-            <div class="bord-block scroll">
-    <div class="py-4 px-4">
-        <p class="h2 mb-0 text-md-center">АВИАЦИЯ</p>
-        <div class="d-flex row-scroll custom-scroll pt-3 pb-5 mt-0">
-            
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im1.jpg" alt="">
-                    </a>
-                    <a href="#">Восточный экспресс (333)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im2.jpg" alt="">
-                    </a>
-                    <a href="#">Грань (1)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im3.jpg" alt="">
-                    </a>
-                    <a href="#">Звезда (100)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im4.jpg" alt="">
-                    </a>
-                    <a href="#">КомБриг (14)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im5.jpg" alt="">
-                    </a>
-                    <a href="#">Моделист (69)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im1.jpg" alt="">
-                    </a>
-                    <a href="#">Восточный экспресс (333)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im2.jpg" alt="">
-                    </a>
-                    <a href="#">Грань (1)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im3.jpg" alt="">
-                    </a>
-                    <a href="#">Звезда (100)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im4.jpg" alt="">
-                    </a>
-                    <a href="#">КомБриг (14)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im5.jpg" alt="">
-                    </a>
-                    <a href="#">Моделист (69)</a>
-                </div>
-            
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im1.jpg" alt="">
-                    </a>
-                    <a href="#">Восточный экспресс (333)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im2.jpg" alt="">
-                    </a>
-                    <a href="#">Грань (1)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im3.jpg" alt="">
-                    </a>
-                    <a href="#">Звезда (100)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im4.jpg" alt="">
-                    </a>
-                    <a href="#">КомБриг (14)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im5.jpg" alt="">
-                    </a>
-                    <a href="#">Моделист (69)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im1.jpg" alt="">
-                    </a>
-                    <a href="#">Восточный экспресс (333)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im2.jpg" alt="">
-                    </a>
-                    <a href="#">Грань (1)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im3.jpg" alt="">
-                    </a>
-                    <a href="#">Звезда (100)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im4.jpg" alt="">
-                    </a>
-                    <a href="#">КомБриг (14)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im5.jpg" alt="">
-                    </a>
-                    <a href="#">Моделист (69)</a>
-                </div>
-            
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im1.jpg" alt="">
-                    </a>
-                    <a href="#">Восточный экспресс (333)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im2.jpg" alt="">
-                    </a>
-                    <a href="#">Грань (1)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im3.jpg" alt="">
-                    </a>
-                    <a href="#">Звезда (100)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im4.jpg" alt="">
-                    </a>
-                    <a href="#">КомБриг (14)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im5.jpg" alt="">
-                    </a>
-                    <a href="#">Моделист (69)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im1.jpg" alt="">
-                    </a>
-                    <a href="#">Восточный экспресс (333)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im2.jpg" alt="">
-                    </a>
-                    <a href="#">Грань (1)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im3.jpg" alt="">
-                    </a>
-                    <a href="#">Звезда (100)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im4.jpg" alt="">
-                    </a>
-                    <a href="#">КомБриг (14)</a>
-                </div>
-                <div class="col-auto rub-model">
-                    <a class="rub-model-holder">
-                        <img src="./assets/example/models/im5.jpg" alt="">
-                    </a>
-                    <a href="#">Моделист (69)</a>
-                </div>
-            
-        </div>
-
-    </div>
-</div>
-
-
-
-
-            <div class="row row-scroll pt-4">
+            <hr class="mt-0 mb-3">
+            <p class="mb-0 txt_18px">Заявки на изготовление моделей под заказ направлять на электронную почту <a class="txt_18px" href="mailto:zakaz@i-modelist.ru">zakaz@i-modelist.ru</a></p>
+            <hr class="mt-3 mb-0">
+            <div class="row row-scroll">
               
                 <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
                   <div class="prod-item">
-  <div class="prod-item__mark">НОВИНКА</div>
-  <div class="prod-item__mark right">БЕСПЛАТНЯ ДОСТАВКА 0</div>
-  <div class="d-flex txt_14px align-items-center">
-    Арт.: 6599
-    <div class="stars stars_3"></div>
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
-  </div>
-  <div class="d-flex align-items-center w-100 pt-1">
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-like data-id="1"><img class="heart_like mr-1" src="./assets/img/heart_like.svg"> В избранное</a>
-  </div>
-  <a href="#" class="img-holder">
-    <div class="prod-item__mark promo">ПРОМОКОД</div>
-    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
-  </a>
-  <div class="prod-item__name">
-    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
-  </div>
-  <div class="d-flex align-items-center">
-    <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
-    <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> в наличии</button>
-  </div>
-</div>
-
+                    <div class="d-flex txt_14px align-items-end justify-content-between">
+                      <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                      <p class="mb-1">Арт.: 6599</p>
+                    </div>
+                    <a href="#" class="img-holder">
+                      <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                    </a>
+                    <div class="prod-item__name">
+                      <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      
+                      
+                    </div>
+                  </div>
+                  
                 </div>
               
                 <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
                   <div class="prod-item">
-  <div class="prod-item__mark">НОВИНКА</div>
-  <div class="prod-item__mark right">БЕСПЛАТНЯ ДОСТАВКА 0</div>
-  <div class="d-flex txt_14px align-items-center">
-    Арт.: 6599
-    <div class="stars stars_3"></div>
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
-  </div>
-  <div class="d-flex align-items-center w-100 pt-1">
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-like data-id="1"><img class="heart_like mr-1" src="./assets/img/heart_like.svg"> В избранное</a>
-  </div>
-  <a href="#" class="img-holder">
-    <div class="prod-item__mark promo">ПРОМОКОД</div>
-    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
-  </a>
-  <div class="prod-item__name">
-    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
-  </div>
-  <div class="d-flex align-items-center">
-    <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
-    <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> в наличии</button>
-  </div>
-</div>
-
+                    <div class="d-flex txt_14px align-items-end justify-content-between">
+                      <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                      <p class="mb-1">Арт.: 6599</p>
+                    </div>
+                    <a href="#" class="img-holder">
+                      <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                    </a>
+                    <div class="prod-item__name">
+                      <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      
+                      
+                    </div>
+                  </div>
+                  
                 </div>
               
                 <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
                   <div class="prod-item">
-  <div class="prod-item__mark">НОВИНКА</div>
-  <div class="prod-item__mark right">БЕСПЛАТНЯ ДОСТАВКА 0</div>
-  <div class="d-flex txt_14px align-items-center">
-    Арт.: 6599
-    <div class="stars stars_3"></div>
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
-  </div>
-  <div class="d-flex align-items-center w-100 pt-1">
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-like data-id="1"><img class="heart_like mr-1" src="./assets/img/heart_like.svg"> В избранное</a>
-  </div>
-  <a href="#" class="img-holder">
-    <div class="prod-item__mark promo">ПРОМОКОД</div>
-    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
-  </a>
-  <div class="prod-item__name">
-    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
-  </div>
-  <div class="d-flex align-items-center">
-    <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
-    <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> в наличии</button>
-  </div>
-</div>
-
+                    <div class="d-flex txt_14px align-items-end justify-content-between">
+                      <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                      <p class="mb-1">Арт.: 6599</p>
+                    </div>
+                    <a href="#" class="img-holder">
+                      <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                    </a>
+                    <div class="prod-item__name">
+                      <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      
+                      
+                    </div>
+                  </div>
+                  
                 </div>
               
                 <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
                   <div class="prod-item">
-  <div class="prod-item__mark">НОВИНКА</div>
-  <div class="prod-item__mark right">БЕСПЛАТНЯ ДОСТАВКА 0</div>
-  <div class="d-flex txt_14px align-items-center">
-    Арт.: 6599
-    <div class="stars stars_3"></div>
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
-  </div>
-  <div class="d-flex align-items-center w-100 pt-1">
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-like data-id="1"><img class="heart_like mr-1" src="./assets/img/heart_like.svg"> В избранное</a>
-  </div>
-  <a href="#" class="img-holder">
-    <div class="prod-item__mark promo">ПРОМОКОД</div>
-    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
-  </a>
-  <div class="prod-item__name">
-    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
-  </div>
-  <div class="d-flex align-items-center">
-    <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
-    <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> в наличии</button>
-  </div>
-</div>
-
+                    <div class="d-flex txt_14px align-items-end justify-content-between">
+                      <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                      <p class="mb-1">Арт.: 6599</p>
+                    </div>
+                    <a href="#" class="img-holder">
+                      <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                    </a>
+                    <div class="prod-item__name">
+                      <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      
+                      
+                    </div>
+                  </div>
+                  
                 </div>
               
                 <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
                   <div class="prod-item">
-  <div class="prod-item__mark">НОВИНКА</div>
-  <div class="prod-item__mark right">БЕСПЛАТНЯ ДОСТАВКА 0</div>
-  <div class="d-flex txt_14px align-items-center">
-    Арт.: 6599
-    <div class="stars stars_3"></div>
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
-  </div>
-  <div class="d-flex align-items-center w-100 pt-1">
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-like data-id="1"><img class="heart_like mr-1" src="./assets/img/heart_like.svg"> В избранное</a>
-  </div>
-  <a href="#" class="img-holder">
-    <div class="prod-item__mark promo">ПРОМОКОД</div>
-    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
-  </a>
-  <div class="prod-item__name">
-    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
-  </div>
-  <div class="d-flex align-items-center">
-    <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
-    <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> в наличии</button>
-  </div>
-</div>
-
+                    <div class="d-flex txt_14px align-items-end justify-content-between">
+                      <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                      <p class="mb-1">Арт.: 6599</p>
+                    </div>
+                    <a href="#" class="img-holder">
+                      <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                    </a>
+                    <div class="prod-item__name">
+                      <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      
+                      
+                    </div>
+                  </div>
+                  
                 </div>
               
                 <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
                   <div class="prod-item">
-  <div class="prod-item__mark">НОВИНКА</div>
-  <div class="prod-item__mark right">БЕСПЛАТНЯ ДОСТАВКА 0</div>
-  <div class="d-flex txt_14px align-items-center">
-    Арт.: 6599
-    <div class="stars stars_3"></div>
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
-  </div>
-  <div class="d-flex align-items-center w-100 pt-1">
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-like data-id="1"><img class="heart_like mr-1" src="./assets/img/heart_like.svg"> В избранное</a>
-  </div>
-  <a href="#" class="img-holder">
-    <div class="prod-item__mark promo">ПРОМОКОД</div>
-    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
-  </a>
-  <div class="prod-item__name">
-    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
-  </div>
-  <div class="d-flex align-items-center">
-    <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
-    <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> в наличии</button>
-  </div>
-</div>
-
+                    <div class="d-flex txt_14px align-items-end justify-content-between">
+                      <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                      <p class="mb-1">Арт.: 6599</p>
+                    </div>
+                    <a href="#" class="img-holder">
+                      <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                    </a>
+                    <div class="prod-item__name">
+                      <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      
+                      
+                    </div>
+                  </div>
+                  
                 </div>
               
                 <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
                   <div class="prod-item">
-  <div class="prod-item__mark">НОВИНКА</div>
-  <div class="prod-item__mark right">БЕСПЛАТНЯ ДОСТАВКА 0</div>
-  <div class="d-flex txt_14px align-items-center">
-    Арт.: 6599
-    <div class="stars stars_3"></div>
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
-  </div>
-  <div class="d-flex align-items-center w-100 pt-1">
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-like data-id="1"><img class="heart_like mr-1" src="./assets/img/heart_like.svg"> В избранное</a>
-  </div>
-  <a href="#" class="img-holder">
-    <div class="prod-item__mark promo">ПРОМОКОД</div>
-    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
-  </a>
-  <div class="prod-item__name">
-    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
-  </div>
-  <div class="d-flex align-items-center">
-    <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
-    <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> в наличии</button>
-  </div>
-</div>
-
+                    <div class="d-flex txt_14px align-items-end justify-content-between">
+                      <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                      <p class="mb-1">Арт.: 6599</p>
+                    </div>
+                    <a href="#" class="img-holder">
+                      <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                    </a>
+                    <div class="prod-item__name">
+                      <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      
+                      
+                    </div>
+                  </div>
+                  
                 </div>
               
                 <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
                   <div class="prod-item">
-  <div class="prod-item__mark">НОВИНКА</div>
-  <div class="prod-item__mark right">БЕСПЛАТНЯ ДОСТАВКА 0</div>
-  <div class="d-flex txt_14px align-items-center">
-    Арт.: 6599
-    <div class="stars stars_3"></div>
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
-  </div>
-  <div class="d-flex align-items-center w-100 pt-1">
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-like data-id="1"><img class="heart_like mr-1" src="./assets/img/heart_like.svg"> В избранное</a>
-  </div>
-  <a href="#" class="img-holder">
-    <div class="prod-item__mark promo">ПРОМОКОД</div>
-    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
-  </a>
-  <div class="prod-item__name">
-    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
-  </div>
-  <div class="d-flex align-items-center">
-    <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
-    <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> в наличии</button>
-  </div>
-</div>
-
+                    <div class="d-flex txt_14px align-items-end justify-content-between">
+                      <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                      <p class="mb-1">Арт.: 6599</p>
+                    </div>
+                    <a href="#" class="img-holder">
+                      <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                    </a>
+                    <div class="prod-item__name">
+                      <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      
+                      
+                    </div>
+                  </div>
+                  
                 </div>
               
                 <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
                   <div class="prod-item">
-  <div class="prod-item__mark">НОВИНКА</div>
-  <div class="prod-item__mark right">БЕСПЛАТНЯ ДОСТАВКА 0</div>
-  <div class="d-flex txt_14px align-items-center">
-    Арт.: 6599
-    <div class="stars stars_3"></div>
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-notify data-id="1">Уведомить</a>
-  </div>
-  <div class="d-flex align-items-center w-100 pt-1">
-    <a href="#" class="txt_14px txt-c-black ml-auto" data-like data-id="1"><img class="heart_like mr-1" src="./assets/img/heart_like.svg"> В избранное</a>
-  </div>
-  <a href="#" class="img-holder">
-    <div class="prod-item__mark promo">ПРОМОКОД</div>
-    <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
-  </a>
-  <div class="prod-item__name">
-    <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
-  </div>
-  <div class="d-flex align-items-center">
-    <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
-    <button class="btn red ml-auto" data-buy data-id="1" data-price="9200"><i class="icon icon_cart text-white txt_12px mr-2"></i> в наличии</button>
-  </div>
-</div>
-
+                    <div class="d-flex txt_14px align-items-end justify-content-between">
+                      <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                      <p class="mb-1">Арт.: 6599</p>
+                    </div>
+                    <a href="#" class="img-holder">
+                      <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                    </a>
+                    <div class="prod-item__name">
+                      <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      
+                      
+                    </div>
+                  </div>
+                  
                 </div>
               
             </div>

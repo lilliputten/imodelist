@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <section id="header">
+    <%- include modules/modal-loader.ejs %>
+    <%- include modules/preheader.ejs %>
+    <%- include modules/header.ejs %>
+  </section>
+  <section id="menu">
+    <%- include modules/menu.ejs %>
+  </section>
+
+  <div class="sliderInner">
+    <div class="carousel-inner">
+      <div class="container">
+        <div class="bread">
+          <a href="/">Главная</a>  »  Способы доставки
+        </div>
+        <h1 class="slider-text">
+          Спецпредложения
+        </h1>
+      </div>
+      <img class="d-block w-100" src="./assets/img/headers/catalog.jpg" alt="">
+    </div>
+  </div>
+
+  <%- include modules/filter-models.ejs %>
+
+
+  <section id="content">
+    <div class="bg-gray py-3 mobile-menu d-lg-none">
+      <div class="container">
+        <div class="row">
+          <div class="col-auto">
+            <a href="#" data-toggle-cata-left-menu class="d-flex align-items-center">
+              <i class="icon icon_burger"></i>
+              <div class="ml-3 txt_22px text-uppercase font-weight-bold txt-c-black">Каталог</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 cata-left-menu">
+            <div class="holder">
+              <a href="#" data-toggle-cata-left-menu class="icon icon_close"></a>
+              <p class="h1">Готовые модели</p>
+              <%- include elements/left-menu.ejs %>
+              <p class="h3 mt-5">Важная информация</p>
+              <%- include elements/left-info.ejs %>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="row row-scroll mb-5">
+              <span class="col col-auto font-weight-bold">Сортировать по:</span>
+              <a class="col col-auto d-inline-block txt-c-gray-500" href="#">Наличию</a>
+              <a class="col col-auto d-inline-block txt-c-gray-500" href="#">Цене ↑</a>
+              <a class="col col-auto d-iexamplenline-block txt-c-gray-500" href="#">Цене ↓</a>
+            </div>
+            <hr class="mt-0 mb-3">
+            <p class="mb-0 txt_18px">Заявки на изготовление моделей под заказ направлять на электронную почту <a class="txt_18px" href="mailto:zakaz@i-modelist.ru">zakaz@i-modelist.ru</a></p>
+            <hr class="mt-3 mb-0">
+            <div class="row row-scroll">
+              <% for(var i = 0; i < 9; i++){ %>
+                <div class="col col-xl-4 col-lg-6 col-md-8 col-11 mt-5 mb-3">
+                  <div class="prod-item">
+                    <div class="d-flex txt_14px align-items-end justify-content-between">
+                      <p class="prod-item__price"><span data-thousand-separate>9200</span><span class="txt_14px">р.</span></p>
+                      <p class="mb-1">Арт.: 6599</p>
+                    </div>
+                    <a href="#" class="img-holder">
+                      <img class="img-loading" src="./assets/example/product.png" alt="6058 Italeri 1/72 Fanteria Inglese e Scozzese">
+                    </a>
+                    <div class="prod-item__name">
+                      <a href="#">6058 Italeri 1/72 Fanteria Inglese e Scozzese</a>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      
+                      
+                    </div>
+                  </div>
+                  
+                </div>
+              <% } %>
+            </div>
+            <div class="page-holder text-center">
+              <div class="py-3">
+                <a class="next-page btn red" href="?page" tabs="1" tabindex="1">Показать еще 36</a>
+                <img class="next-page-loading" src="./assets/img/loader.gif" alt="">
+              </div>
+            </div>
+
+
+            <div class="white-block">
+              <p class="txt_18px m-2 font-weight-bold text-uppercase">Возможно вам понравится</p>
+              <a href="#" class="d-inline-block m-2 text-lowercase txt-c-black">WARHAMMER 40.000</a>
+              <a href="#" class="d-inline-block m-2 text-lowercase txt-c-black">ПОДАРОЧНАЯ УПАКОВКА</a>
+              <a href="#" class="d-inline-block m-2 text-lowercase txt-c-black">ТАБЛИЧКИ ДЛЯ МОДЕЛЕЙ</a>
+              <a href="#" class="d-inline-block m-2 text-lowercase txt-c-black">ТАБЛИЧКИ НА ЗАКАЗ</a>
+              <a href="#" class="d-inline-block m-2 text-lowercase txt-c-black">МОДЕЛИ ИЗ БУМАГИ</a>
+              <a href="#" class="d-inline-block m-2 text-lowercase txt-c-black">МОДЕЛИ ИЗ ДЕРЕВА</a>
+              <a href="#" class="d-inline-block m-2 text-lowercase txt-c-black">ПОДАРОЧНАЯ УПАКОВКА</a>
+              <a href="#" class="d-inline-block m-2 text-lowercase txt-c-black">ТАБЛИЧКИ ДЛЯ МОДЕЛЕЙ</a>
+              <a href="#" class="d-inline-block m-2 text-lowercase txt-c-black">ТАБЛИЧКИ НА ЗАКАЗ</a>
+              <a href="#" class="d-inline-block m-2 text-lowercase txt-c-black">МОДЕЛИ ИЗ БУМАГИ</a>
+              <a href="#" class="d-inline-block m-2 text-lowercase txt-c-black">МОДЕЛИ ИЗ ДЕРЕВА</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="footer">
+    <%- include modules/footer.ejs %>
+  </section>
+
+</body>
+</html>
