@@ -1,24 +1,25 @@
 $icons: (
-  ('close' '\e908' 1.25rem #fff #fff),
-  ('phone' '\e901' 1rem $c-black $c-black),
-  ('time' '\e903' 1rem $c-black $c-black),
-  ('user' '\e904' 1rem $c-black $c-black),
-  ('cart' '\e907' 1rem $c-black $c-black),
-  ('vk' '\e905' 1.25rem $c-red $c-red),
-  ('yt' '\e906' 1.25rem $c-red $c-red),
-  ('in' '\e900' 1.25rem $c-red $c-red),
-  ('burger' '\e909' 1rem $c-black $c-black),
-  ('c-time' '\e90a' 1.8rem $c-black $c-black),
-  ('c-bank' '\e90b' 1.8rem $c-black $c-black),
-  ('c-email' '\e90c' 1.8rem $c-black $c-black),
-  ('c-mail' '\e90d' 1.8rem $c-black $c-black),
-  ('c-map' '\e90e' 1.7rem $c-black $c-black),
-  ('c-phone' '\e90f' 1.7rem $c-black $c-black),
-  ('trash' '\e910' 1.4rem $c-black $c-red),
+  ("close" "\e908"1.25rem #fff #fff),
+  ("phone" "\e901"1rem $c-black $c-black),
+  ("time" "\e903"1rem $c-black $c-black),
+  ("user" "\e904"1rem $c-black $c-black),
+  ("cart" "\e907"1rem $c-black $c-black),
+  ("vk" "\e905"1.25rem $c-red $c-red),
+  ("yt" "\e906"1.25rem $c-red $c-red),
+  ("in" "\e900"1.25rem $c-red $c-red),
+  ("burger" "\e909"1rem $c-black $c-black),
+  ("c-time" "\e90a"1.8rem $c-black $c-black),
+  ("c-bank" "\e90b"1.8rem $c-black $c-black),
+  ("c-email" "\e90c"1.8rem $c-black $c-black),
+  ("c-mail" "\e90d"1.8rem $c-black $c-black),
+  ("c-map" "\e90e"1.7rem $c-black $c-black),
+  ("c-phone" "\e90f"1.7rem $c-black $c-black),
+  ("trash" "\e910"1.4rem $c-black $c-red),
+  ("telegram" "\e911"1.25rem $c-red $c-red)
 );
 
 .icon {
-  font-family: 'icomoon';
+  font-family: "icomoon";
   font-size: 1rem;
   font-style: normal;
 
@@ -27,10 +28,10 @@ $icons: (
       font-size: nth($icon, 3);
       color: nth($icon, 4);
 
-      &:before{
+      &:before {
         content: nth($icon, 2);
       }
-      &:hover{
+      &:hover {
         color: nth($icon, 5);
       }
     }
