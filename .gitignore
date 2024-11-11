@@ -2,4 +2,20 @@
 .DS_Store
 
 node_modules/
-git remote -v
+
+.gitmodules
+.env.*
+
+# Temporariy, swap & ignored files
+pnpm-lock.*
+package-lock.*
+*.log
+/log*.txt
+/config-local.*
+/*.session
+*UNUSED
+*~
+.*.sw?
+*.tmp
+*.zip
+*.tgz
