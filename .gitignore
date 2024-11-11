@@ -6,6 +6,8 @@ node_modules/
 .gitmodules
 .env.*
 
+/dist
+
 # Temporariy, swap & ignored files
 pnpm-lock.*
 package-lock.*
