@@ -5,12 +5,11 @@ node_modules/
 
 .gitmodules
 .env.*
+.venv
 
 /dist
 
 # Temporariy, swap & ignored files
-pnpm-lock.*
-package-lock.*
 *.log
 /log*.txt
 /config-local.*
