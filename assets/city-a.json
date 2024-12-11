@@ -1,0 +1,7 @@
+{
+  "deliverytext": "<div class=\"bg-orange text-white mt-2 txt_14px px-2 py-1 b-radius d-inline-block\">123 <span class=\"font-weight-bold\">на <span class=\"txt_18px\">300</span> руб</span> для бесплатной доставки</div>",
+  "formadrmessage": "2",
+  "mycity": "3",
+  "freedelivery": "4",
+  "message": "<div class=\"p-4\">123</div>"
+}
