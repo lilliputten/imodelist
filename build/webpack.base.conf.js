@@ -1,29 +1,29 @@
-const glob = require('glob'),
-  path = require('path'),
-  config = require('../config'),
-  CopyWebpackPlugin = require('copy-webpack-plugin'),
-  HtmlWebpackPlugin = require('html-webpack-plugin');
+const glob = require('glob');
+const path = require('path');
+const config = require('../config');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir);
 }
 
-function toList (paths) {
-  return paths.map(path => path.split('/').slice(-1)[0]);
+function toList(paths) {
+  return paths.map((path) => path.split('/').slice(-1)[0]);
 }
 
-function assetsPath (_path) {
-  return path.posix.join(config.assetsSubDirectory, _path)
+function assetsPath(_path) {
+  return path.posix.join(config.assetsSubDirectory, _path);
 }
 
-function getEjs () {
-  return toList(glob.sync('./src/templates/*.ejs')).map(file => {
+function getEjs() {
+  return toList(glob.sync('./src/templates/*.ejs')).map((file) => {
     const filename = file.split('.');
-    filename.splice(-1,1);
+    filename.splice(-1, 1);
 
     const options = {
       template: 'ejs-render-loader!./src/templates/' + file,
-      filename: filename.join('.') + '.html'
+      filename: filename.join('.') + '.html',
     };
 
     if (Object.keys(config.excludeChunks).indexOf(filename.join('.')) !== -1) {
@@ -31,22 +31,24 @@ function getEjs () {
     }
 
     return new HtmlWebpackPlugin(options);
-  })
+  });
 }
 
 module.exports = {
   entry: config.chunks,
   output: {
     path: resolve('dist'),
-    filename: '[name]-[hash].js'
+    filename: '[name]-[hash].js',
   },
   plugins: [
     new CopyWebpackPlugin([
+      { from: 'src/app-info.txt', to: '' },
+      { from: 'src/app-info.json', to: '' },
       {
         from: path.resolve(__dirname, '../src/assets'),
         to: config.assetsSubDirectory,
-        ignore: ['.*']
-      }
+        ignore: ['.*'],
+      },
     ]),
     ...getEjs(),
   ],
@@ -54,18 +56,18 @@ module.exports = {
     loaders: [
       {
         test: /fonts[\/|\\].*\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-          name: assetsPath('fonts/[name].[hash:7].[ext]')
-        }
+          name: assetsPath('fonts/[name].[hash:7].[ext]'),
+        },
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-          name: assetsPath('fonts/[name].[hash:7].[ext]')
-        }
-      }
-    ]
-  }
+          name: assetsPath('fonts/[name].[hash:7].[ext]'),
+        },
+      },
+    ],
+  },
 };

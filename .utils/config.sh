@@ -8,13 +8,13 @@ IS_CYGWIN=`uname | grep -i "CYGWIN"`
 
 # Project structure setup
 BUILD_FOLDER="dist"
-PUBLIC_FOLDER="public"
+# PUBLIC_FOLDER="public"
 PUBLISH_FOLDER="publish"
 PUBLISH_BRANCH="publish"
 # DIST_REPO comes from the actual git configuration
 
 VERSION_FILE="version.txt"
-PROJECT_INFO_FILE="public/app-info.txt"
+PROJECT_INFO_FILE="src/app-info.txt"
 PROJECT_INFO_JSON_FILE="src/app-info.json"
 
 # TODO: To use generic `init-crossplatform-command-names.sh`?

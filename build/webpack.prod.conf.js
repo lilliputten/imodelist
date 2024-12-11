@@ -1,9 +1,9 @@
 'use strict';
 
-const merge = require('webpack-merge'),
-  baseWebpackConfig = require('./webpack.base.conf'),
-  ExtractTextPlugin = require('extract-text-webpack-plugin'),
-  UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const merge = require('webpack-merge');
+const baseWebpackConfig = require('./webpack.base.conf');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const webpackConfig = merge(baseWebpackConfig, {
   // @see https://webpack.js.org/configuration/devtool/

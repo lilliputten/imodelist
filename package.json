@@ -1,7 +1,7 @@
 {
   "name": "html-webpack-quickstart",
   "version": "1.0.1",
-  "timestamp": "2024.12.11 03:51:13 +0300",
+  "timestamp": "2024.12.11 05:09:33 +0300",
   "description": "imodelist site",
   "repository": {
     "type": "git",
@@ -21,6 +21,8 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@types/copy-webpack-plugin": "^4.4.4",
+    "@types/webpack-merge": "^5.0.0",
     "bootstrap": "^4.0.0",
     "copy-webpack-plugin": "^4.5.0",
     "cross-os": "^1.2.3",

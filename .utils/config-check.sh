@@ -12,10 +12,10 @@ if [ -z "$PUBLISH_BRANCH" ]; then
   echo "Publish branch isn't specified. See 'PUBLISH_BRANCH' parameter in 'config.sh'"
   exit 1
 fi
-if [ -z "$PUBLIC_FOLDER" ]; then
-  echo "Public folder isn't specified. See 'PUBLIC_FOLDER' parameter in 'config.sh'"
-  exit 1
-fi
+# if [ -z "$PUBLIC_FOLDER" ]; then
+#   echo "Public folder isn't specified. See 'PUBLIC_FOLDER' parameter in 'config.sh'"
+#   exit 1
+# fi
 if [ -z "$PUBLISH_FOLDER" ]; then
   echo "Publish folder isn't specified. See 'PUBLISH_FOLDER' parameter in 'config.sh'"
   exit 1
