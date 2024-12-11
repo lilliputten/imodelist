@@ -7,7 +7,11 @@ node_modules/
 .env.*
 .venv
 
+# Remoe the built project from the repository (that was an original behavior)
 /dist
+
+# Prepared publish submodule for published build (`publish` branch)
+/publish
 
 # Temporariy, swap & ignored files
 *.log

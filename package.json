@@ -1,25 +1,14 @@
 {
   "name": "html-webpack-quickstart",
-  "version": "1.0.0",
-  "description": "HTML Webpack Quickstart",
+  "version": "1.0.1",
+  "timestamp": "2024.12.11 03:51:13 +0300",
+  "description": "imodelist site",
   "repository": {
     "type": "git",
     "url": "git@github.com:pablodiguerero/html-webpack-quickstart.git"
   },
   "license": "MIT",
   "author": "Pavel Ivanov <pablodiguerero@gmail.com>",
-  "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "build": "cross-os build_dist",
-    "build_dist": {
-      "darwin": "npm run remove_dist_unix && webpack --config build/webpack.prod.conf.js --bail",
-      "linux": "npm run remove_dist_unix && webpack --config build/webpack.prod.conf.js --bail",
-      "win32": "npm run remove_dist_win && webpack --config build/webpack.prod.conf.js --bail"
-    },
-    "remove_dist_unix": "rm -rf ./dist",
-    "remove_dist_win": "del /s /q /f \"./dist\"",
-    "start": "npm run dev"
-  },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
     "bootstrap-autocomplete": "^2.3.7",
@@ -50,5 +39,17 @@
     "webpack-dev-server": "^2.11.2",
     "webpack-merge": "^4.1.2",
     "webpack-node-externals": "^1.6.0"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "build": "cross-os build_dist",
+    "build_dist": {
+      "darwin": "npm run remove_dist_unix && webpack --config build/webpack.prod.conf.js --bail",
+      "linux": "npm run remove_dist_unix && webpack --config build/webpack.prod.conf.js --bail",
+      "win32": "npm run remove_dist_win && webpack --config build/webpack.prod.conf.js --bail"
+    },
+    "remove_dist_unix": "rm -rf ./dist",
+    "remove_dist_win": "del /s /q /f \"./dist\"",
+    "start": "npm run dev"
   }
 }
