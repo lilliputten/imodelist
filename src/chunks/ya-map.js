@@ -1,3 +1,5 @@
+/* globals: yamaps */
+
 $(document).ready(function () {
   if ($('.map-holder').length) {
     $('.map-holder')
@@ -48,7 +50,7 @@ $(document).ready(function () {
           var bounds = myMap.getBounds();
           $.ajax({
             type: 'GET',
-            url: url,
+            url,
             data: {
               l: bounds[0],
               r: bounds[1],
@@ -89,7 +91,10 @@ $(document).ready(function () {
                 }
                 myMap.geoObjects.add(myCollection);
               } catch (e) {
-                console.error('[ya-map:init]', e);
+                console.error('[ya-map:init:iterate:getAjax] Request response processing error', e, {
+                  response,
+                  url,
+                });
                 debugger;
               }
             },
