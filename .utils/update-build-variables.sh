@@ -1,6 +1,6 @@
 #!/bin/sh
 # @desc Update version number & build timestamps
-# @changed 2024.12.02, 12:54
+# @changed 2024.12.13, 01:18
 
 scriptsPath=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
 rootPath=`dirname "$scriptsPath"`
@@ -21,7 +21,7 @@ TIMETAG=`date -r $VERSION_PATH "+%y%m%d-%H%M"`
 PROJECT_INFO="v.$VERSION / $TIMESTAMP"
 PROJECT_INFO_REP=`echo "$PROJECT_INFO" | sed 's,/,\\\\/,g'` # Quoted for replace, see below
 
-echo "Version/time: $PROJECT_INFO"
+echo "Updated version/time: $PROJECT_INFO"
 
 if [ ! -z "${PROJECT_INFO_FILE}" ]; then
   echo "Creating '$PROJECT_INFO_FILE' file..."
