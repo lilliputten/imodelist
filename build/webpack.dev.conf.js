@@ -6,7 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const webpackConfig = merge(baseWebpackConfig, {
   // @see https://webpack.js.org/configuration/devtool/
-  devtool: 'eval-cheap-source-map',
+  devtool: 'source-map',
   module: {
     loaders: [
       {

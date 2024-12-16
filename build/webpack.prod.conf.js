@@ -19,8 +19,11 @@ const webpackConfig = merge(baseWebpackConfig, {
           fallback: 'style-loader',
           use: {
             // @see https://webpack.js.org/loaders/style-loader/#source-maps
-            loader: 'css-loader?sourceMap',
-            options: { minimize: true },
+            loader: 'css-loader',
+            options: {
+              minimize: true,
+              sourceMap: true,
+            },
           },
         }),
       },
@@ -30,8 +33,11 @@ const webpackConfig = merge(baseWebpackConfig, {
           fallback: 'style-loader',
           use: [
             {
-              loader: 'css-loader?sourceMap',
-              options: { minimize: true },
+              loader: 'css-loader',
+              options: {
+                minimize: true,
+                sourceMap: true,
+              },
             },
             'sass-loader?sourceMap',
           ],
