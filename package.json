@@ -2,7 +2,9 @@
   "name": "html-webpack-quickstart",
   "version": "1.0.2",
   "timestamp": "2024.12.16 13:30:40 +0300",
+  "changed": "2025.01.12, 02:52",
   "description": "imodelist site",
+  "NOTE": "Use npm and node 16, see `.nvmrc`, `nvm list`, `nvm use 16`",
   "repository": {
     "type": "git",
     "url": "git@github.com:pablodiguerero/html-webpack-quickstart.git"
