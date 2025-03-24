@@ -4,7 +4,6 @@ $icons: (
   ("time" "\e903"1rem $c-black $c-black),
   ("user" "\e904"1rem $c-black $c-black),
   ("cart" "\e907"1rem $c-black $c-black),
-  ("vk" "\e905"1.25rem $c-red $c-red),
   ("yt" "\e906"1.25rem $c-red $c-red),
   ("in" "\e900"1.25rem $c-red $c-red),
   ("burger" "\e909"1rem $c-black $c-black),
@@ -15,7 +14,11 @@ $icons: (
   ("c-map" "\e90e"1.7rem $c-black $c-black),
   ("c-phone" "\e90f"1.7rem $c-black $c-black),
   ("trash" "\e910"1.4rem $c-black $c-red),
-  ("telegram" "\e911"1.25rem $c-red $c-red)
+  ("telegram" "\e911"1.25rem $c-red $c-red),
+  // ("vk" "\e905"1.25rem $c-red $c-red),
+  ("vk" url('#{$path-assets}/img/custom-icons/vk.svg')1.25rem $c-red $c-red),
+  ("dzen" url('#{$path-assets}/img/custom-icons/dzen.svg')1.25rem $c-red $c-red),
+  ("rutube" url('#{$path-assets}/img/custom-icons/rutube.svg')1.25rem $c-red $c-red),
 );
 
 .icon {
@@ -36,4 +39,16 @@ $icons: (
       }
     }
   }
+
+  &_vk,
+  &_rutube,
+  &_dzen {
+      $size: 20px;
+      &:before {
+        display: inline-block;
+        width: $size;
+        height: $size;
+      }
+  }
 }
+
