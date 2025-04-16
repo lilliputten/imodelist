@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
-<body>
+<body class="with-bottom-notification">
   <section id="header">
     <%- include modules/modal-loader.ejs %>
     <%- include modules/preheader.ejs %>
@@ -151,8 +151,10 @@
   <section id="footer">
     <%- include modules/footer.ejs %>
   </section>
+  <%- include modules/bottom-notification.ejs %>
 
 
+  <%# UNUSED: Floating banner. Doesn't exists on the current site.
   <div id="notifications-bottom-right-tab">
     <div id="notifications-bottom-right-tab-close" class="close"><i class="icon icon_close"></i></div>
     <div id="notifications-bottom-right-tab-avatar"><img src="./assets/example/product.png" width="70" height="70" /></div>
@@ -161,6 +163,7 @@
       <div id="notifications-bottom-right-tab-right-text">Пополнение ассортимента сборных моделей, фототравления и дополнений к моделям фирмы "Eduard". Новинки! Пополнение ассортимента сборных моделей, фототравления и дополнений к моделям фирмы "Eduard". Новинки!</div>
     </div>
   </div>
+  %>
 
 </body>
 </html>

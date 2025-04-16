@@ -1,0 +1,25 @@
+// ???
+// body.with-bottom-notification section#footer {
+//   padding-bottom: 150px;
+// }
+
+.bottom-notification {
+  position: relative;
+  z-index: 10;
+  &:not(.visible) {
+    display: none;
+  }
+}
+.bottom-notification-wrapper {
+  background-color: $c-red;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.bottom-notification-container {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
