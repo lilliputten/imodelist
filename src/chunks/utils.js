@@ -22,8 +22,15 @@ $(document).ready(function() {
     events: {
       searchPost: function (res) {
         try {
-          return JSON.parse(res);
-        } catch(e) {
+          console.log('[utils:autoComplete-custom] done', {
+            res,
+          });
+          return typeof res === 'string' ? JSON.parse(res) : res;
+        } catch(error) {
+          console.error('[utils:autoComplete-custom]', {
+            error,
+          });
+          debugger;
           return [];
         }
       }

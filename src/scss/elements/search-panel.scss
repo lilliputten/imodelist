@@ -1,0 +1,233 @@
+@use 'sass:color';
+@use 'sass:math';
+
+// import '../_variables';
+
+// Stylize the search bar
+form.search-panel-trigger.header-search-form {
+  border: 1px solid #999;
+  border-radius: 5px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  cursor: pointer;
+  transition: all 250ms;
+  // position: relative;
+  &:hover {
+    // opacity: .8;
+    background-color: #ddd;
+  }
+  & input {
+    &,
+    &.form-control {
+      pointer-events: none;
+      cursor: pointer;
+      border: 0 !important;
+      outline: none !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+.search-panel-wrapper {
+  flex: 1;
+}
+
+// The panel itself
+.search-panel {
+  $useSideOffsets: false;
+  $bgColor: #eee;
+  $primaryColor: $c-red;
+  $outerRadius: 10px;
+  $outerPadding: 20px;
+  $innerPadding: 10px;
+  $outsideRadius: calc(#{$outerRadius} + 10px);
+  z-index: 99;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: 14px;
+  transition: all 250ms ease-out;
+  &:not(.visible) {
+    opacity: 0;
+    visibility: hidden;
+    margin-top: -50px;
+    pointer-events: none;
+  }
+  .container {
+    // border: 1px solid red; // DEBUG
+  }
+  .results-panel,
+  .top-panel {
+    background-color: $bgColor;
+    border-radius: $outsideRadius;
+    display: flex;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2) !important;
+  }
+  .results-panel {
+    flex-direction: column;
+    gap: $outsideRadius;
+    box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.2) !important;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    // Side offsets. Is it required?
+    @if $useSideOffsets {
+      margin-left: $outerPadding;
+      margin-right: $outerPadding;
+    }
+    padding: $outerPadding;
+    @if $useSideOffsets {
+      padding-top: $innerPadding;
+    }
+    else {
+      padding-top: 0;
+    }
+  }
+  .top-panel {
+    align-items: center;
+    gap: 0.5em;
+    padding: $outerPadding;
+    // Don't show bottom radiuses
+    @if not $useSideOffsets {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      padding-bottom: 0;
+    }
+  }
+  .top-panel-inner {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: $innerPadding;
+    border-radius: $outerRadius;
+    background-color: transparentize(darken($bgColor, 10%), 0.5);
+    .action,
+    .search {
+      border: 0 !important;
+      outline: none !important;
+      box-shadow: none !important;
+      border-radius: 8px;
+      min-height: 2.5em;
+    }
+    .search {
+      background-color: transparent !important;
+    }
+    .action {
+      background-color: $primaryColor;
+      padding: 8px 2em;
+      transition: all 250ms;
+      &:hover {
+        background-color: darken($primaryColor, 10%);
+      }
+    }
+  }
+  .results-panel-items {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $outerPadding;
+  }
+  .prod-item {
+    display: flex;
+    align-items: center;
+    gap: $outerPadding;
+    box-shadow: none;
+    height: auto;
+    @media (max-width: 752px) {
+      // flex-direction: column;
+    }
+    &:first-child {
+      // DEBUG
+      // display: none;
+    }
+  }
+  // Right group
+  .prod-item__right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  // Prod item details
+  .img-holder {
+    margin: 0;
+    $imgSize: 150px;
+    width: $imgSize;
+    height: $imgSize;
+    @media (max-width: 752px) {
+      $imgSize: 120px;
+      width: $imgSize;
+      height: $imgSize;
+    }
+    @media (max-width: 560px) {
+      display: none;
+    }
+  }
+  .prod-item__name {
+    overflow: visible;
+    height: auto;
+    &:hover {
+      a {
+        position: sticky;
+        background: transparent;
+        left: auto;
+        right: auto;
+        top: auto;
+        padding: 0;
+        box-shadow: none;
+      }
+    }
+  }
+  .prod-item__mark {
+    display: none;
+  }
+  .old_price {
+    position: sticky;
+    display: none;
+    margin-right: 0.5em;
+  }
+  .prod-item__price_and_buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+  .prod-item__price {
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+  .prod-item.has_old_price {
+    .old_price {
+      display: inline-block;
+    }
+    .prod-item__price_units,
+    .prod-item__price_value {
+      color: $primaryColor;
+    }
+  }
+  .prod-item_buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .bottom {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .bottom-summary {
+    flex: 1;
+    opacity: 0.5;
+  }
+  .bottom-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+}

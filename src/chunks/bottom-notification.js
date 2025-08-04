@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  // Fond an announcement panel node in dom
+  // Found an announcement panel node in dom
   const node = document.getElementById('bottom-notification');
 
   // 'Already confirmed' state in the local storage
@@ -46,7 +46,7 @@ $(document).ready(function () {
   button.addEventListener('click', onButtonClick);
   window.addEventListener('resize', updateGeometry);
 
-  // Initially update geometry
+  // Initiall geometry update
   if (window.requestAnimationFrame) {
     window.requestAnimationFrame(updateGeometry);
   } else {

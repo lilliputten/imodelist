@@ -57,6 +57,15 @@
       }
     }
   }
+  &.ghost{
+    background: transparent;
+    color: $c-black!important;
+    border-color: transparent;
+    &:hover,
+    &.active{
+      background: darken($c-gray-d, 5%)!important;
+    }
+  }
   &.bordered{
     background: #fff;
     color: $c-black!important;
@@ -80,6 +89,21 @@
         background: $c-red!important;
         border: 0!important;
         color: #fff;
+      }
+    }
+  }
+  &.gray{
+    background: $c-gray-d!important;
+    border: 0!important;
+    color: #000;
+    &:hover {
+      background: darken($c-gray-d, 15%)!important;
+    }
+    &.active{
+      &:hover {
+        background: $c-gray-d!important;
+        border: 0!important;
+        color: #000;
       }
     }
   }
