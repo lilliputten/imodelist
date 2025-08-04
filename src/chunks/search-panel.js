@@ -112,6 +112,9 @@ $(document).ready(function () {
     // Focus in the input field
     if (isVisible) {
       setTimeout(() => panelInput.focus(), 100);
+      // DEBUG: Show and hide the loading spinner
+      searchPanel.classList.toggle('loading', true);
+      setTimeout(() => searchPanel.classList.toggle('loading', false), 1000);
     }
   }
 
@@ -129,6 +132,7 @@ $(document).ready(function () {
   function init() {
     const closeButton = searchPanel.querySelector('#close-button');
     const goToResultsButton = searchPanel.querySelector('#go-to-results');
+    const searchPanelButtonButton = searchPanel.querySelector('#search-panel-button');
 
     const urlParams = new URLSearchParams(window.location.search);
     searchValue = urlParams.get('q') || '';
@@ -145,6 +149,7 @@ $(document).ready(function () {
     triggerForm.addEventListener('click', onTriggerClick);
     closeButton && closeButton.addEventListener('click', closePanel);
     goToResultsButton && goToResultsButton.addEventListener('click', goToResults);
+    searchPanelButtonButton && searchPanelButtonButton.addEventListener('click', goToResults);
 
     if (isVisible) {
       updatePanelStatus();

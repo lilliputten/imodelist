@@ -96,6 +96,29 @@ form.search-panel-trigger.header-search-form {
       padding-bottom: 0;
     }
   }
+  .loader-wrapper {
+    $size: 2em;
+    transition: all 250ms;
+    &,
+    .loader {
+      width: $size;
+      height: $size;
+      display: inline-block;
+    }
+    .loader {
+      border: 3px solid #FFF;
+      border-bottom-color: $primaryColor;
+      border-radius: 50%;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+  }
+  &:not(.loading) {
+    .loader-wrapper {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
   .top-panel-inner {
     flex: 1;
     display: flex;
@@ -115,12 +138,20 @@ form.search-panel-trigger.header-search-form {
     .search {
       background-color: transparent !important;
     }
+    @keyframes rotation {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(360deg);
+      }
+    }
     .action {
       background-color: $primaryColor;
       padding: 8px 2em;
       transition: all 250ms;
       &:hover {
-        background-color: darken($primaryColor, 10%);
+        background-color: darken($primaryColor, 15%);
       }
     }
   }
