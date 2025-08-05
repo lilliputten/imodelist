@@ -1,18 +1,42 @@
 'use strict';
 
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.base.conf');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const path = require('path');
+const glob = require('glob');
+
+// Create a single entry point that imports all chunks
+function createSingleEntry() {
+  const chunks = glob.sync('./src/chunks/*.js');
+  const entry = {};
+
+  // Create a single bundle entry point
+  entry['bundle'] = chunks;
+
+  return entry;
+}
 
 const webpackConfig = merge(baseWebpackConfig, {
+  // Override entry to create a single bundle
+  entry: createSingleEntry(),
   // @see https://webpack.js.org/configuration/devtool/
-  devtool: 'source-map',
+  devtool: 'hidden-source-map', // 'source-map',
   output: {
     filename: '[name]-[hash].min.js',
   },
   module: {
     loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        options: {
+          presets: ['env']
+        }
+      },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
@@ -54,10 +78,17 @@ const webpackConfig = merge(baseWebpackConfig, {
       uglifyOptions: {
         compress: {
           warnings: false,
+          // drop_console: true, // optional: remove console logs
+          dead_code: true, // eliminate unreachable code
+          unused: true, // remove unused variables/functions
         },
       },
       sourceMap: true,
+      mangle: true,
       parallel: true,
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
   ],
 });

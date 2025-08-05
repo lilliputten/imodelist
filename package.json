@@ -2,7 +2,7 @@
   "name": "html-webpack-quickstart",
   "version": "1.0.5",
   "timestamp": "2025.08.05 04:49:18 +0300",
-  "changed": "2025.03.25, 02:15",
+  "changed": "2025.08.05, 06:16",
   "description": "imodelist site",
   "NOTE": "Use npm and node 16, see `.nvmrc`, `nvm list`, `nvm use 16`",
   "repository": {
@@ -25,6 +25,11 @@
   "devDependencies": {
     "@types/copy-webpack-plugin": "^4.4.4",
     "@types/webpack-merge": "^5.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-runtime": "^6.26.0",
     "bootstrap": "^4.0.0",
     "copy-webpack-plugin": "^4.5.0",
     "cross-os": "^1.2.3",
@@ -51,6 +56,12 @@
       "darwin": "npm run remove_dist_unix && webpack --config build/webpack.prod.conf.js --bail",
       "linux": "npm run remove_dist_unix && webpack --config build/webpack.prod.conf.js --bail",
       "win32": "npm run remove_dist_win && webpack --config build/webpack.prod.conf.js --bail"
+    },
+    "build:bundle": "cross-os build_bundle",
+    "build_bundle": {
+      "darwin": "npm run remove_dist_unix && webpack --config build/webpack.prod.bundle.conf.js --bail",
+      "linux": "npm run remove_dist_unix && webpack --config build/webpack.prod.bundle.conf.js --bail",
+      "win32": "npm run remove_dist_win && webpack --config build/webpack.prod.bundle.conf.js --bail"
     },
     "remove_dist_unix": "rm -rf ./dist",
     "remove_dist_win": "del /s /q /f \"./dist\"",

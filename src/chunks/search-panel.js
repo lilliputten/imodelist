@@ -3,12 +3,11 @@
 $(document).ready(function () {
   /// Start...
 
-  const isDev =
-    window.location.host.startsWith('localhost') ||
-    window.location.host.startsWith('imodelist.lilliputten.ru');
+  const __isLocal = window.location.host.startsWith('localhost');
+  const __isDev = __isLocal || window.location.host.startsWith('imodelist.lilliputten.ru');
 
   /** Generate a list of random (*) products. Only for dev mode. */
-  const __genertateDemoProducts = true;
+  const __genertateDemoProducts = __isDev && true;
 
   const maxDisplayingProducts = 3;
 
@@ -164,7 +163,7 @@ $(document).ready(function () {
    * @type {AbortController|undefined} */
   let requestController = undefined;
 
-  const apiPathPrefix = !isDev ? '/search/suggestion/?q=' : '/assets/suggestion.json?q=';
+  const apiPathPrefix = !__isDev ? '/search/suggestion/?q=' : '/assets/suggestion.json?q=';
 
   /** Queued request timer handler
    * @type {ReturnType<typeof setTimeout>|undefined}
@@ -216,9 +215,11 @@ $(document).ready(function () {
     setLoading(true);
     const promise = fetch(url, { signal })
       .then(async (res) => {
-        if (isDev) {
-          await new Promise((resolve) => setTimeout(resolve, 1000));
-        }
+        /* // DEBUG
+         * if (__isLocal) {
+         *   await new Promise((resolve) => setTimeout(resolve, 1000));
+         * }
+         */
         const { ok, status, statusText } = res;
         const body = await res.text();
         if (!ok) {
@@ -257,7 +258,7 @@ $(document).ready(function () {
       })
       .then((/** @type {ProductsItem[]} */ items) => {
         // DEMO: Create random data...
-        if (isDev && __genertateDemoProducts) {
+        if (__genertateDemoProducts) {
           const count = Math.floor(Math.random() * 6);
           items = Array.from(Array(count)).map((_none, no) => {
             // return sampleProduct;
