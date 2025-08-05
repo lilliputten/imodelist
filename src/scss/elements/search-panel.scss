@@ -28,6 +28,9 @@ form.search-panel-trigger.header-search-form {
       background-color: transparent !important;
       box-shadow: none !important;
     }
+    &.form-control {
+      font-size: 1.15em !important;
+    }
   }
 }
 
@@ -56,9 +59,7 @@ form.search-panel-trigger.header-search-form {
     margin-top: -50px;
     pointer-events: none;
   }
-  .container {
-    // border: 1px solid red; // DEBUG
-  }
+
   .results-panel,
   .top-panel {
     background-color: $bgColor;
@@ -85,6 +86,18 @@ form.search-panel-trigger.header-search-form {
       padding-top: 0;
     }
   }
+  // Dim results on update
+  .results-panel-items,
+  .bottom {
+    transition: opacity 500ms;
+  }
+  &.waiting,
+  &.loading {
+    .results-panel .results-panel-items,
+    .results-panel .bottom {
+      opacity: 0.5;
+    }
+  }
   .top-panel {
     align-items: center;
     gap: 0.5em;
@@ -98,55 +111,98 @@ form.search-panel-trigger.header-search-form {
   }
   .loader-wrapper {
     $size: 2em;
-    transition: all 250ms;
+    position: relative;
+    min-width: $size;
+    border-radius: 50%;
+    overflow: hidden;
+    // pointer-events: none;
     &,
+    .waiter,
     .loader {
+      transition: all 500ms;
       width: $size;
       height: $size;
       display: inline-block;
     }
+    .waiter,
     .loader {
-      border: 3px solid #FFF;
+      position: absolute;
+    }
+    .loader {
+      border: 3px solid #fff;
       border-bottom-color: $primaryColor;
       border-radius: 50%;
       box-sizing: border-box;
       animation: rotation 1s linear infinite;
     }
-  }
-  &:not(.loading) {
-    .loader-wrapper {
-      opacity: 0;
-      pointer-events: none;
+    .waiter {
+      $smSize: calc(#{$size} / 1.5);
+      $smDiff: calc((#{$size} - #{$smSize}) / 2);
+      width: $smSize;
+      height: $smSize;
+      left: $smDiff;
+      top: $smDiff;
+      // background-color: #ddd;
+      border-radius: 50%;
+      box-sizing: border-box;
+      animation: pulse-color 1s linear infinite;
     }
+    @keyframes pulse-color {
+      0%,
+      100% {
+        background-color: #fff;
+      }
+      50% {
+        background-color: rgba(255, 255, 255, 0);
+      }
+    }
+    @keyframes pulse {
+      0%,
+      100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 100%;
+      }
+    }
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  &:not(.waiting) .loader-wrapper .waiter,
+  &:not(.loading) .loader-wrapper .loader,
+  &:not(.waiting):not(.loading) .loader-wrapper {
+    visibility: hidden;
+    opacity: 0;
   }
   .top-panel-inner {
     flex: 1;
     display: flex;
     align-items: center;
-    gap: 0.5em;
+    gap: 1em;
     padding: $innerPadding;
     border-radius: $outerRadius;
     background-color: transparentize(darken($bgColor, 10%), 0.5);
-    .action,
-    .search {
+    button.action,
+    input.search {
       border: 0 !important;
       outline: none !important;
       box-shadow: none !important;
       border-radius: 8px;
       min-height: 2.5em;
     }
-    .search {
+    input.search {
       background-color: transparent !important;
+      font-size: 1.25em !important;
+      padding: 0 $innerPadding;
+      line-height: 1;
     }
-    @keyframes rotation {
-      0% {
-          transform: rotate(0deg);
-      }
-      100% {
-          transform: rotate(360deg);
-      }
-    }
-    .action {
+    button.action {
       background-color: $primaryColor;
       padding: 8px 2em;
       transition: all 250ms;
@@ -161,6 +217,12 @@ form.search-panel-trigger.header-search-form {
     flex-direction: column;
     gap: $outerPadding;
   }
+  &:not(.has_results) {
+    #go-to-results,
+    .results-panel-items {
+      display: none;
+    }
+  }
   .prod-item {
     display: flex;
     align-items: center;
@@ -169,10 +231,6 @@ form.search-panel-trigger.header-search-form {
     height: auto;
     @media (max-width: 752px) {
       // flex-direction: column;
-    }
-    &:first-child {
-      // DEBUG
-      // display: none;
     }
   }
   // Right group

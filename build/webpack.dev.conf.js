@@ -7,6 +7,13 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpackConfig = merge(baseWebpackConfig, {
   // @see https://webpack.js.org/configuration/devtool/
   devtool: 'source-map',
+  /* // This doesn't work
+   * watch: true,
+   * devServer: {
+   *   contentBase: 'src',
+   *   watchContentBase: true,
+   * },
+   */
   module: {
     loaders: [
       {

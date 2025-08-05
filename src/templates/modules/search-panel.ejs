@@ -11,6 +11,7 @@
         />
         <span class="loader-wrapper">
           <span class="loader"></span>
+          <span class="waiter"></span>
         </span>
         <button class="action" id="search-panel-button" title="Показать все результаты поиска">
           <img src="./assets/vectors/loupe-w.svg" width="20" height="20" />
@@ -20,9 +21,10 @@
     <div class="results-panel">
       <div class="results-panel-items">
 
+        <%# // Product item example. See also the generator function `renderProductItem` in the `src/chunks/search-panel.js` module
         <div class="prod-item no_old_price">
           <a href="{ITEM_LINK}" class="img-holder">
-            <img src="./assets/example/product.png"
+            <img src="/assets/example/product.png"
               alt="70063 Акан Краска водорастворимая Western Approaches Blue окраска надводных бортов кораблей ВМФ Англии с 1941 года">
           </a>
           <div class="prod-item__right">
@@ -40,8 +42,7 @@
               </p>
               <div class="prod-item_buttons">
                 <button data-remote="/add/ok" class="prod-item__btn_cart btn red" data-buy="" data-id="38247" data-price="73" title="Добавить в корзину">
-                  <i class="icon icon_cart text-white txt_12px mr-2"></i>
-                  в корзину
+                  <i class="icon icon_cart text-white txt_12px mr-2"></i> в корзину
                 </button>
                 <button data-remote="{ITEM_LINK}" class="prod-item__btn_go btn gray" data-buy="" data-id="38247" data-price="73" title="Перейти к продукту">
                   <span>🡢</span>
@@ -50,43 +51,13 @@
             </div>
           </div>
         </div>
-
-        <div class="prod-item has_old_price">
-          <a href="{ITEM_LINK}" class="img-holder">
-            <img src="./assets/example/product.png"
-              alt="70063 Акан Краска водорастворимая Western Approaches Blue окраска надводных бортов кораблей ВМФ Англии с 1941 года">
-          </a>
-          <div class="prod-item__right">
-            <div class="prod-item__name">
-              <a href="{ITEM_LINK}">
-                70063 Акан Краска водорастворимая Western Approaches Blue окраска надводных бортов кораблей ВМФ Англии с 1941 года
-              </a>
-            </div>
-            <div class="d-flex txt_14px align-items-center">
-              Артикул: 70063 </div>
-            <div class="prod-item__price_and_buttons">
-              <p class="prod-item__price">
-                <span class="prod-item__price_old_price old_price">147р.</span>
-                <span class="prod-item__price_value" data-thousand-separate="">73</span><span class="prod-item__price_units txt_14px">р.</span>
-              </p>
-              <div class="prod-item_buttons">
-                <button data-remote="/add/ok" class="prod-item__btn_cart btn red" data-buy="" data-id="38247" data-price="73" title="Добавить в корзину">
-                  <i class="icon icon_cart text-white txt_12px mr-2"></i>
-                  в корзину
-                </button>
-                <button data-remote="{ITEM_LINK}" class="prod-item__btn_go btn gray" data-buy="" data-id="38247" data-price="73" title="Перейти к продукту">
-                  <span>🡢</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        %>
 
       </div>
 
       <div class="bottom">
         <div class="bottom-summary">
-          Найдено результатов: 68
+          Найдено результатов: <span id="results-count">0</span>
         </div>
         <div class="bottom-actions">
           <button class="btn ghost" id="close-button">

@@ -42,6 +42,7 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin([
+      { from: 'src/favicon.ico', to: '' },
       { from: 'src/app-info.txt', to: '' },
       { from: 'src/app-info.json', to: '' },
       {
