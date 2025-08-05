@@ -3,7 +3,9 @@
 $(document).ready(function () {
   /// Start...
 
-  const isDev = window.location.host.startsWith('localhost');
+  const isDev =
+    window.location.host.startsWith('localhost') ||
+    window.location.host.startsWith('imodelist.lilliputten.ru');
 
   /** Generate a list of random (*) products. Only for dev mode. */
   const __genertateDemoProducts = true;
