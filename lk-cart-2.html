@@ -4,7 +4,7 @@
   <title>Demo Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="index-cef953f415e5c294caa4.min.css" rel="stylesheet"></head>
+<link href="index-9c9dffa564c05e05d7bd.min.css" rel="stylesheet"></head>
 <body>
   <section id="header">
     <div class="modal fade" id="modal">
@@ -22,6 +22,53 @@
   <p class="h2 txt_18px text-white mb-0">Уже доступны новинки 2021 года. <a class="h2 txt_16px white-pill text-uppercase txt-c-black" href="#">Смотреть тут</a></p>
   <a href="#" data-dismiss="alert" aria-label="close"><i class="icon icon_close ml-3"></i></a>
 </div>
+
+<div class="search-panel" id="search-panel">
+  <div class="container">
+    <div class="top-panel">
+      <div class="top-panel-inner">
+        <input class="search" id="search-panel-input" type="search" value=""
+          placeholder="Поиск по сайту..."
+          name="search"
+          data-url="./assets/search.json"
+          autocomplete="off"
+        />
+        <span class="loader-wrapper">
+          <span class="loader"></span>
+          <span class="waiter"></span>
+        </span>
+        <button class="action" id="search-panel-button" title="Показать все результаты поиска">
+          <img src="./assets/vectors/loupe-w.svg" width="20" height="20" />
+        </button>
+      </div>
+    </div>
+    <div class="results-panel">
+      <div class="results-panel-items">
+
+        
+
+      </div>
+
+      <div class="bottom">
+        <div class="bottom-summary">
+          Найдено результатов: <span id="results-count">0</span>
+        </div>
+        <div class="bottom-actions">
+          <button class="btn ghost" id="close-button">
+            <span class="icon-close mr-2">×</span>
+            Закрыть
+          </button>
+          <button class="btn gray" id="go-to-results">
+            <span class="icon-arrow mr-2">🡢</span>
+            Все результаты
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <div class="bg-gray py-3">
   <div class="container">
     <div class="row align-items-center">
@@ -34,22 +81,25 @@
       <div class="col-auto d-none d-lg-block">
         <img src="./assets/img/delivery/3.png" alt="">
       </div>
-      <div class="col-6 col-sm-auto">
-        <form action="" class="input-group header-search-form">
+      <div class="col-6 col-sm-auto search-panel-wrapper" id="search-panel-wrapper">
+        <form action="/search.html" class="input-group header-search-form search-panel-trigger" id="search-panel-trigger" title="Открыть панель поиска">
+          <input type="hidden" name="all" value="1">
           <input class="autoComplete-custom form-control py-2 bg-white" type="search" value=""
                  placeholder="Поиск по сайту..."
-                 name="search"
+                 name="q"
                  data-url="./assets/search.json"
                  autocomplete="off">
           <span class="input-group-append">
             <input type="image" src="./assets/vectors/loupe.svg">
           </span>
+          <input type="submit" style="display: none;">
         </form>
       </div>
       <div class="col-6 col-sm-auto ml-md-auto mr-0">
         <div class="d-flex align-items-center">
+          
           <div id="my_city" class="font-weight-bold txt_14px ajax-modal d-none d-md-block" data-target="#modal" data-remote="./free-delivery-modal.html">
-            <span>Ваш город</span> Электросталь?
+            <span>Ваш город</span> Электросталь 1?
           </div>
           <div class='lang ml-2'>
             <div>
@@ -81,7 +131,7 @@
   </div>
   <div class="d-flex justify-content-center align-items-center">
     <div id="my_city" class="font-weight-bold txt_14px ajax-modal mt-3" data-target="#modal" data-remote="./free-delivery-modal.html">
-      <span>Ваш город</span> Электросталь?
+      <span>Ваш город</span> Электросталь 2?
     </div>
   </div>
 </div>
@@ -888,5 +938,5 @@
 
   </section>
 
-<script type="text/javascript" src="index-cef953f415e5c294caa4.min.js"></script><script type="text/javascript" src="ya-map-cef953f415e5c294caa4.min.js"></script><script type="text/javascript" src="utils-cef953f415e5c294caa4.min.js"></script><script type="text/javascript" src="cart-cef953f415e5c294caa4.min.js"></script><script type="text/javascript" src="bottom-notification-cef953f415e5c294caa4.min.js"></script></body>
+<script type="text/javascript" src="index-9c9dffa564c05e05d7bd.min.js"></script><script type="text/javascript" src="ya-map-9c9dffa564c05e05d7bd.min.js"></script><script type="text/javascript" src="utils-9c9dffa564c05e05d7bd.min.js"></script><script type="text/javascript" src="search-panel-9c9dffa564c05e05d7bd.min.js"></script><script type="text/javascript" src="cart-9c9dffa564c05e05d7bd.min.js"></script><script type="text/javascript" src="bottom-notification-9c9dffa564c05e05d7bd.min.js"></script></body>
 </html>
