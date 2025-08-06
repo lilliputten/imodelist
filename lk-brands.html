@@ -4,7 +4,7 @@
   <title>Demo Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="bundle-69a64b9bf84d26efe8b5.min.css" rel="stylesheet"></head>
+<link href="bundle-3a9d31c54e4745b20c03.min.css" rel="stylesheet"></head>
 <body>
   <section id="header">
     <div class="modal fade" id="modal">
@@ -23,7 +23,7 @@
   <a href="#" data-dismiss="alert" aria-label="close"><i class="icon icon_close ml-3"></i></a>
 </div>
 
-<div class="search-panel" id="search-panel">
+<div class="search-panel visible has_value" id="search-panel">
   <div class="container">
     <div class="top-panel">
       <div class="top-panel-inner">
@@ -33,9 +33,10 @@
           data-url="./assets/search.json"
           autocomplete="off"
         />
-        <span class="loader-wrapper">
+        <span class="icons-wrapper">
           <span class="loader"></span>
           <span class="waiter"></span>
+          <span class="clear" id="clear-text" title="Очистить текст"><span>×</span></span>
         </span>
         <button class="action" id="search-panel-button" title="Показать все результаты поиска">
           <img src="./assets/vectors/loupe-w.svg" width="20" height="20" />
@@ -51,7 +52,8 @@
 
       <div class="bottom">
         <div class="bottom-summary">
-          Найдено результатов: <span id="results-count">0</span>
+          <div class="with-results">Найдено результатов: <span id="results-count">0</span></div>
+          <div class="without-results">Нет результатов</div>
         </div>
         <div class="bottom-actions">
           <button class="btn ghost" id="close-button">
@@ -64,6 +66,8 @@
           </button>
         </div>
       </div>
+
+      <div class="curtain"></div>
 
     </div>
   </div>
@@ -97,7 +101,6 @@
       </div>
       <div class="col-6 col-sm-auto ml-md-auto mr-0">
         <div class="d-flex align-items-center">
-          
           <div id="my_city" class="font-weight-bold txt_14px ajax-modal d-none d-md-block" data-target="#modal" data-remote="./free-delivery-modal.html">
             <span>Ваш город</span> Электросталь 1?
           </div>
@@ -702,5 +705,5 @@
 
   </section>
 
-<script type="text/javascript" src="bundle-69a64b9bf84d26efe8b5.min.js"></script></body>
+<script type="text/javascript" src="bundle-3a9d31c54e4745b20c03.min.js"></script></body>
 </html>
