@@ -1,433 +1,451 @@
 // @ts-check
 
-$(document).ready(function () {
-  /// Start...
+/// Start...
 
-  const __isLocal = window.location.host.startsWith('localhost');
-  const __isDev = __isLocal || window.location.host.startsWith('imodelist.lilliputten.ru');
+const __isLocal = window.location.host.startsWith('localhost');
+const __isDev = __isLocal || window.location.host.startsWith('imodelist.lilliputten.ru');
 
-  /** Generate a list of random (*) products. Only for dev mode. */
-  const __genertateDemoProducts = __isDev && true;
+/** Generate a list of random (*) products. Only for dev mode. */
+const __genertateDemoProducts = __isDev && true;
 
-  const maxDisplayingProducts = 3;
+const maxDisplayingProducts = 3;
 
-  // Required node:
-  const searchPanel = /** @type {HTMLDivElement} */ (document.getElementById('search-panel'));
-  if (!searchPanel) {
-    console.error('[search-panel:init] No search panel node found');
-    debugger;
-    return;
-  }
-  const searchPanelContainer = /** @type {HTMLDivElement} */ (
-    searchPanel.querySelector('.container')
-  );
-  if (!searchPanelContainer) {
-    console.error('[search-panel:init] No search panel container found');
-    debugger;
-    return;
-  }
-  const itemsContainer = /** @type {HTMLDivElement} */ (
-    searchPanel.querySelector('.results-panel-items')
-  );
-  if (!itemsContainer) {
-    console.error('[search-panel:init] No search panel items container found');
-    debugger;
-    return;
-  }
+// Required node:
+const searchPanel = /** @type {HTMLDivElement} */ (document.getElementById('search-panel'));
+if (!searchPanel) {
+  const error = new Error('No search panel node found');
+  console.error('[search-panel]', error);
+  debugger;
+  throw error;
+}
+const searchPanelContainer = /** @type {HTMLDivElement} */ (
+  searchPanel.querySelector('.container')
+);
+if (!searchPanelContainer) {
+  const error = new Error('No search panel container found');
+  console.error('[search-panel]', error);
+  debugger;
+  throw error;
+}
+const itemsContainer = /** @type {HTMLDivElement} */ (
+  searchPanel.querySelector('.results-panel-items')
+);
+if (!itemsContainer) {
+  const error = new Error('No search panel items container found');
+  console.error('[search-panel]', error);
+  debugger;
+  throw error;
+}
 
-  // Other optional nodes...
-  const resultsCountNode = /** @type {HTMLElement|null} */ (
-    searchPanel.querySelector('#results-count')
-  );
+// Other optional nodes...
+const resultsCountNode = /** @type {HTMLElement|null} */ (
+  searchPanel.querySelector('#results-count')
+);
 
-  /** @type {boolean} */
-  let isVisible = searchPanel.classList.contains('visible');
+/** @type {boolean} */
+let isVisible = searchPanel.classList.contains('visible');
 
-  /** @type {string} */
-  let searchValue = '';
+/** @type {string} */
+let searchValue = '';
 
-  const triggerForm = /** @type {HTMLFormElement} */ (
-    document.getElementById('search-panel-trigger')
-  );
-  if (!triggerForm) {
-    console.warn('[search-panel:init] No search panel trigger form found');
-    debugger;
-    return;
-  }
+const triggerForm = /** @type {HTMLFormElement} */ (
+  document.getElementById('search-panel-trigger')
+);
+if (!triggerForm) {
+  const error = new Error('No search panel trigger form found');
+  console.warn('[search-panel:init]', error);
+  debugger;
+  // throw error;
+}
 
-  const panelInput = /** @type {HTMLInputElement} */ (
-    searchPanel.querySelector('#search-panel-input')
-  );
-  if (!panelInput) {
-    console.warn('[search-panel:init] No search panel input field found');
-    debugger;
-    return;
-  }
+const panelInput = /** @type {HTMLInputElement} */ (
+  searchPanel.querySelector('#search-panel-input')
+);
+if (!panelInput) {
+  const error = Error('No search panel input field found');
+  console.warn('[search-panel:init]', error);
+  debugger;
+  // throw error;
+}
 
-  const bodyInput = /** @type {HTMLInputElement} */ (triggerForm.querySelector('input[name="q"]'));
-  if (!panelInput) {
-    console.warn('[search-panel:init] No body form input field found');
-    debugger;
-    return;
-  }
+const bodyInput = /** @type {HTMLInputElement} */ (triggerForm.querySelector('input[name="q"]'));
+if (!panelInput) {
+  const error = new Error('No body form input field found');
+  console.warn('[search-panel:init]', error);
+  debugger;
+}
 
-  /// Render products...
+/// Render products...
 
-  /**
-   * @typedef {Object} ProductsItem
-   * @property {string|number} id - Product id or art.no
-   * @property {string} value - Product title
-   * @property {string} text - Product short name (whatever it is)
-   * @property {number|string} price - Price, eg '1 300' (space delimited)
-   * @property {string} [units] - Currency, optional, default is "р." (Russian rubles)
-   * @property {number|string} [oldPrice] - Old price, the same as `price`, optional
-   * @property {string} url - Url in the catalogue
-   * @property {string} imgUrl - Image url
-   */
+/**
+ * @typedef {Object} ProductsItem
+ * @property {string|number} id - Product id or art.no
+ * @property {string} value - Product title
+ * @property {string} text - Product short name (whatever it is)
+ * @property {number|string} price - Price, eg '1 300' (space delimited)
+ * @property {string} [units] - Currency, optional, default is "р." (Russian rubles)
+ * @property {number|string} [oldPrice] - Old price, the same as `price`, optional
+ * @property {string} url - Url in the catalogue
+ * @property {string} imgUrl - Image url
+ */
 
-  /** Sample product item data
-   * @type {ProductsItem}
-   */
-  const sampleProduct = {
-    id: 70063,
-    value:
-      '70063 Акан Краска водорастворимая Western Approaches Blue окраска надводных бортов кораблей ВМФ Англии с 1941 года',
-    text: '70063',
-    price: '1 200',
-    oldPrice: '1 650',
-    url: '/goods/klei/akan/123/110/38247.html',
-    imgUrl: '/assets/example/product.png', // '/file/i/207/207/769436ae/bdb355b865c7d64c38322a06dd7221d6.jpg',
-  };
+/** Sample product item data
+ * @type {ProductsItem}
+ */
+const sampleProduct = {
+  id: 70063,
+  value:
+    '70063 Акан Краска водорастворимая Western Approaches Blue окраска надводных бортов кораблей ВМФ Англии с 1941 года',
+  text: '70063',
+  price: '1 200',
+  oldPrice: '1 650',
+  url: '/goods/klei/akan/123/110/38247.html',
+  imgUrl: '/assets/example/product.png', // '/file/i/207/207/769436ae/bdb355b865c7d64c38322a06dd7221d6.jpg',
+};
 
-  /** @param {ProductsItem} item */
-  function renderProductItem(item) {
-    const {
-      id, // Product id or art.no
-      value: title, // Product title
-      // text, // Product short name (whatever it is)
-      price, // Price, eg '1 300' (space delimited)
-      units = 'р.', // Currency, optional, default is "р." (Russian rubles)
-      oldPrice, // Old price, the same as `price`, optional
-      url, // Url in the catalogue
-      imgUrl, // Image url
-    } = item;
-    const className = ['prod-item', !!oldPrice && 'has_old_price'].filter(Boolean).join(' ');
-    const oldPriceContent = oldPrice
-      ? `<span class="prod-item__price_old_price old_price">${escapeHtml(oldPrice)}${escapeHtml(
-          units,
-        )}</span>`
-      : '';
-    const content = `<div class="${className}" id="product-${escapeHtml(id)}">
-  <a href="${escapeHtml(url)}" class="img-holder">
-    <img src="${escapeHtml(imgUrl)}" alt="${escapeHtml(title)}" />
-  </a>
-  <div class="prod-item__right">
-    <div class="prod-item__name">
-      <a href="${escapeHtml(url)}">${escapeHtml(title)}</a>
-    </div>
-    <div class="d-flex txt_14px align-items-center">Артикул: ${escapeHtml(id)}</div>
-    <div class="prod-item__price_and_buttons">
-      <p class="prod-item__price">
-        ${oldPriceContent} <span class="prod-item__price_value" data-thousand-separate="">${escapeHtml(
-      price,
-    )}</span><span class="prod-item__price_units txt_14px">${escapeHtml(units)}</span>
-      </p>
-      <div class="prod-item_buttons">
-        <button data-remote="/add/ok" class="prod-item__btn_cart btn red" data-buy="" data-id="${escapeHtml(
-          id,
-        )}" data-price="${escapeHtml(price)}" title="Добавить в корзину">
-          <i class="icon icon_cart text-white txt_12px mr-2"></i> в корзину
-        </button>
-        <a href="${escapeHtml(url)}" class="prod-item__btn_go btn gray" title="Перейти к продукту">
-          <span>🡢</span>
-        </a>
-      </div>
+/** @param {ProductsItem} item */
+function renderProductItem(item) {
+  const {
+    id, // Product id or art.no
+    value: title, // Product title
+    // text, // Product short name (whatever it is)
+    price, // Price, eg '1 300' (space delimited)
+    units = 'р.', // Currency, optional, default is "р." (Russian rubles)
+    oldPrice, // Old price, the same as `price`, optional
+    url, // Url in the catalogue
+    imgUrl, // Image url
+  } = item;
+  const className = ['prod-item', !!oldPrice && 'has_old_price'].filter(Boolean).join(' ');
+  const oldPriceContent = oldPrice
+    ? `<span class="prod-item__price_old_price old_price">${escapeHtml(oldPrice)}${escapeHtml(
+        units,
+      )}</span>`
+    : '';
+  const content = `<div class="${className}" id="product-${escapeHtml(id)}">
+<a href="${escapeHtml(url)}" class="img-holder">
+  <img src="${escapeHtml(imgUrl)}" alt="${escapeHtml(title)}" />
+</a>
+<div class="prod-item__right">
+  <div class="prod-item__name">
+    <a href="${escapeHtml(url)}">${escapeHtml(title)}</a>
+  </div>
+  <div class="d-flex txt_14px align-items-center">Артикул: ${escapeHtml(id)}</div>
+  <div class="prod-item__price_and_buttons">
+    <p class="prod-item__price">
+      ${oldPriceContent} <span class="prod-item__price_value" data-thousand-separate="">${escapeHtml(
+    price,
+  )}</span><span class="prod-item__price_units txt_14px">${escapeHtml(units)}</span>
+    </p>
+    <div class="prod-item_buttons">
+      <button data-remote="/add/ok" class="prod-item__btn_cart btn red" data-buy="" data-id="${escapeHtml(
+        id,
+      )}" data-price="${escapeHtml(price)}" title="Добавить в корзину">
+        <i class="icon icon_cart text-white txt_12px mr-2"></i> в корзину
+      </button>
+      <a href="${escapeHtml(url)}" class="prod-item__btn_go btn gray" title="Перейти к продукту">
+        <span>🡢</span>
+      </a>
     </div>
   </div>
+</div>
 </div>`;
-    return content;
+  return content;
+}
+
+/** Renders first `maxDisplayingProducts` items of retrieved products.
+ * @param {ProductsItem[]} items
+ */
+function renderProducts(items) {
+  const content = items.slice(0, maxDisplayingProducts).map(renderProductItem).join('\n');
+  // NOTE: All the substituted values are escaped
+  itemsContainer.innerHTML = content;
+  // Update the state
+  const itemsCount = items.length;
+  resultsCountNode && (resultsCountNode.innerText = String(itemsCount));
+  searchPanel.classList.toggle('has_results', !!itemsCount);
+}
+
+/// Server request...
+
+/** AbortController instance
+ * @type {AbortController|undefined} */
+let requestController = undefined;
+
+const apiPathPrefix = !__isDev ? '/search/suggestion/?q=' : '/assets/suggestion.json?q=';
+
+/** Queued request timer handler
+ * @type {ReturnType<typeof setTimeout>|undefined}
+ */
+let queueTimerHandler = undefined;
+
+/** Delay to invoke the server request
+ * @type {number}
+ */
+const acceptChangesDelay = 1000;
+
+let dataHasBeenLoaded = false;
+
+let loadingCounter = 0;
+let waitingCounter = 0;
+
+/** Set loading panel status
+ * @param {boolean} value
+ */
+function setLoading(value) {
+  loadingCounter += value ? 1 : -1;
+  searchPanel.classList.toggle('loading', loadingCounter > 0);
+}
+
+/** Set waiting panel status
+ * @param {boolean} value
+ */
+function setWaiting(value) {
+  waitingCounter += value ? 1 : -1;
+  searchPanel.classList.toggle('waiting', waitingCounter > 0);
+}
+
+function requestServerData() {
+  // Clear timer
+  clearQueueTimer();
+  // Check active request
+  if (requestController) {
+    // Cancel previously created request, if it's exists
+    requestController.abort();
   }
-
-  /** Renders first `maxDisplayingProducts` items of retrieved products.
-   * @param {ProductsItem[]} items
-   */
-  function renderProducts(items) {
-    const content = items.slice(0, maxDisplayingProducts).map(renderProductItem).join('\n');
-    // NOTE: All the substituted values are escaped
-    itemsContainer.innerHTML = content;
+  requestController = new AbortController();
+  const signal = requestController.signal;
+  // Prepare request...
+  const encodedValue = encodeURIComponent(searchValue);
+  if (!encodedValue) {
+    // Set empty results for empty text
+    renderProducts([]);
+    return;
   }
-
-  /// Server request...
-
-  /** AbortController instance
-   * @type {AbortController|undefined} */
-  let requestController = undefined;
-
-  const apiPathPrefix = !__isDev ? '/search/suggestion/?q=' : '/assets/suggestion.json?q=';
-
-  /** Queued request timer handler
-   * @type {ReturnType<typeof setTimeout>|undefined}
-   */
-  let queueTimerHandler = undefined;
-
-  /** Delay to invoke the server request
-   * @type {number}
-   */
-  const acceptChangesDelay = 1000;
-
-  let dataHasBeenLoaded = false;
-
-  let loadingCounter = 0;
-  let waitingCounter = 0;
-
-  /** Set loading panel status
-   * @param {boolean} value
-   */
-  function setLoading(value) {
-    loadingCounter += value ? 1 : -1;
-    searchPanel.classList.toggle('loading', loadingCounter > 0);
-  }
-
-  /** Set waiting panel status
-   * @param {boolean} value
-   */
-  function setWaiting(value) {
-    waitingCounter += value ? 1 : -1;
-    searchPanel.classList.toggle('waiting', waitingCounter > 0);
-  }
-
-  function requestServerData() {
-    // Prepare data...
-    const value = searchValue;
-    const encodedValue = encodeURIComponent(searchValue);
-    // Clear timer
-    clearQueueTimer();
-    // Check active request
-    if (requestController) {
-      // Cancel previously created request, if it's exists
-      requestController.abort();
-    }
-    requestController = new AbortController();
-    const signal = requestController.signal;
-    // Prepare request...
-    const url = apiPathPrefix + encodedValue;
-    // Send and process the request...
-    setLoading(true);
-    const promise = fetch(url, { signal })
-      .then(async (res) => {
-        /* // DEBUG
-         * if (__isLocal) {
-         *   await new Promise((resolve) => setTimeout(resolve, 1000));
-         * }
-         */
-        const { ok, status, statusText } = res;
-        const body = await res.text();
-        if (!ok) {
-          const reason = [status, statusText].filter(Boolean).join(', ');
-          const errMsg = `Request failed (${reason})`;
-          console.error('[search-panel:requestServerData]', errMsg, {
-            status,
-            statusText,
-            body,
-            res,
-            url,
+  const url = apiPathPrefix + encodedValue;
+  // Send and process the request...
+  setLoading(true);
+  const promise = fetch(url, { signal })
+    .then(async (res) => {
+      /* // DEBUG
+       * if (__isLocal) {
+       *   await new Promise((resolve) => setTimeout(resolve, 1000));
+       * }
+       */
+      const { ok, status, statusText } = res;
+      const body = await res.text();
+      if (!ok) {
+        const reason = [status, statusText].filter(Boolean).join(', ');
+        const errMsg = `Request failed (${reason})`;
+        console.error('[search-panel:requestServerData]', errMsg, {
+          status,
+          statusText,
+          body,
+          res,
+          url,
+        });
+        throw new Error(errMsg);
+      }
+      /** @type {object|undefined} */
+      let data = undefined;
+      try {
+        data = JSON.parse(body);
+      } catch (error) {
+        const errMsg = 'Cannot parse response';
+        console.error('[search-panel:requestServerData]', errMsg, {
+          error,
+          body,
+          res,
+          url,
+        });
+        throw new Error(errMsg);
+      }
+      if (!data) {
+        throw new Error('Empty data returned');
+      }
+      if (!Array.isArray(data)) {
+        throw new Error('Expected array data');
+      }
+      return data;
+    })
+    .then((/** @type {ProductsItem[]} */ items) => {
+      // DEMO: Create random data...
+      if (__genertateDemoProducts) {
+        const count = Math.floor(Math.random() * 6);
+        items = Array.from(Array(count)).map((_none, no) => {
+          // return sampleProduct;
+          const id = 1000 + Math.round(Math.random() * 9000);
+          const price = 50 + Math.round(Math.random() * 600);
+          return Object.assign({}, sampleProduct, {
+            id,
+            value: sampleProduct.value.replace(/^\d+/, String(id)),
+            price,
+            oldPrice: Math.round(Math.random()) ? price + Math.round(Math.random() * 300) : '',
           });
-          throw new Error(errMsg);
-        }
-        /** @type {object|undefined} */
-        let data = undefined;
-        try {
-          data = JSON.parse(body);
-        } catch (error) {
-          const errMsg = 'Cannot parse response';
-          console.error('[search-panel:requestServerData]', errMsg, {
-            error,
-            body,
-            res,
-            url,
-          });
-          throw new Error(errMsg);
-        }
-        if (!data) {
-          throw new Error('Empty data returned');
-        }
-        if (!Array.isArray(data)) {
-          throw new Error('Expected array data');
-        }
-        return data;
-      })
-      .then((/** @type {ProductsItem[]} */ items) => {
-        // DEMO: Create random data...
-        if (__genertateDemoProducts) {
-          const count = Math.floor(Math.random() * 6);
-          items = Array.from(Array(count)).map((_none, no) => {
-            // return sampleProduct;
-            const id = 1000 + Math.round(Math.random() * 9000);
-            const price = 50 + Math.round(Math.random() * 600);
-            return Object.assign({}, sampleProduct, {
-              id,
-              value: sampleProduct.value.replace(/^\d+/, String(id)),
-              price,
-              oldPrice: Math.round(Math.random()) ? price + Math.round(Math.random() * 300) : '',
-            });
-          });
-        }
-        // Render received data
-        renderProducts(items);
-        // Update the state
-        const itemsCount = items.length;
-        resultsCountNode && (resultsCountNode.innerText = String(itemsCount));
-        searchPanel.classList.toggle('has_results', !!itemsCount);
-        dataHasBeenLoaded = true;
-      })
-      .catch((error) => {
-        if (error.name !== 'AbortError') {
-          console.error('[search-panel:requestServerData]', {
-            error,
-            url,
-          });
-          debugger;
-        }
-      })
-      .finally(() => {
-        setLoading(false);
-        requestController = undefined;
-      });
-    return promise;
+        });
+      }
+      // Render received data
+      renderProducts(items);
+      dataHasBeenLoaded = true;
+    })
+    .catch((error) => {
+      if (error.name !== 'AbortError') {
+        console.error('[search-panel:requestServerData]', {
+          error,
+          url,
+        });
+        debugger;
+      }
+    })
+    .finally(() => {
+      setLoading(false);
+      requestController = undefined;
+    });
+  return promise;
+}
+
+function clearQueueTimer() {
+  if (queueTimerHandler) {
+    clearTimeout(queueTimerHandler);
+    queueTimerHandler = undefined;
+    setWaiting(false);
   }
+}
 
-  function clearQueueTimer() {
-    if (queueTimerHandler) {
-      clearTimeout(queueTimerHandler);
-      queueTimerHandler = undefined;
-      setWaiting(false);
-    }
-  }
+function setQueueTimer() {
+  clearQueueTimer();
+  queueTimerHandler = setTimeout(requestServerData, acceptChangesDelay);
+  setWaiting(true);
+}
 
-  function setQueueTimer() {
-    clearQueueTimer();
-    queueTimerHandler = setTimeout(requestServerData, acceptChangesDelay);
-    setWaiting(true);
-  }
+/// Routines...
 
-  /// Routines...
-
-  function closePanel() {
-    if (isVisible) {
-      isVisible = false;
-      updatePanelStatus();
-    }
-  }
-
-  /** Close the panel if the Escape key clicked
-   * @param {KeyboardEvent} ev
-   */
-  function detectEsc(ev) {
-    if (ev.key === 'Escape') {
-      closePanel();
-    }
-  }
-
-  /** Prevent close the panel if it's been clicked inside
-   * @param {MouseEvent} ev
-   */
-  function preventClose(ev) {
-    ev.preventDefault();
-    ev.stopPropagation();
-  }
-
-  /** Close the panel by click outside the panel (see `preventClose` method above)
-   * @param {MouseEvent} _ev
-   */
-  function closeByClick(_ev) {
-    closePanel();
-  }
-
-  function goToResults() {
-    triggerForm.submit();
-  }
-
-  /** @param {string|number|boolean|undefined|null} str
-   * @return {string}
-   */
-  function escapeHtml(str) {
-    if (str == undefined) {
-      return '';
-    }
-    if (typeof str !== 'string') {
-      str = String(str);
-    }
-    str = str.trim();
-    return str.replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  }
-
-  /** Sync search text in document with current value */
-  function updateSearchValueInDocument() {
-    const escapedValue = escapeHtml(searchValue);
-    bodyInput.value = escapedValue;
-    panelInput.value = escapedValue;
-  }
-
-  /** Search text has been changed
-   * @param {Event} _ev
-   */
-  function panelInputChanged(_ev) {
-    searchValue = panelInput.value;
-    bodyInput.value = searchValue;
-    setQueueTimer();
-  }
-
-  function updatePanelStatus() {
-    updateSearchValueInDocument();
-    searchPanel.classList.toggle('visible', !!isVisible);
-    // Set/reset event handlers
-    if (isVisible) {
-      panelInput.addEventListener('input', panelInputChanged);
-      searchPanelContainer.addEventListener('mouseup', preventClose, true);
-      document.addEventListener('mouseup', closeByClick);
-      document.addEventListener('keydown', detectEsc);
-    } else {
-      panelInput.removeEventListener('input', panelInputChanged);
-      searchPanelContainer.addEventListener('mouseup', preventClose);
-      document.removeEventListener('mouseup', closeByClick);
-      document.removeEventListener('keydown', detectEsc);
-    }
-    // Focus in the input field
-    if (isVisible) {
-      setTimeout(() => panelInput.focus(), 100);
-    }
-  }
-
-  /** @param {MouseEvent} ev */
-  function onTriggerClick(ev) {
-    ev.preventDefault();
-    ev.stopPropagation();
-    isVisible = !isVisible;
-    if (!dataHasBeenLoaded && isVisible && searchValue) {
-      requestServerData();
-    }
+function closePanel() {
+  if (isVisible) {
+    isVisible = false;
     updatePanelStatus();
   }
+}
 
-  function init() {
-    const closeButton = searchPanel.querySelector('#close-button');
-    const goToResultsButton = searchPanel.querySelector('#go-to-results');
-    const searchPanelButtonButton = searchPanel.querySelector('#search-panel-button');
-
-    const urlParams = new URLSearchParams(window.location.search);
-    searchValue = urlParams.get('q') || '';
-
-    triggerForm.addEventListener('click', onTriggerClick);
-    closeButton && closeButton.addEventListener('click', closePanel);
-    goToResultsButton && goToResultsButton.addEventListener('click', goToResults);
-    searchPanelButtonButton && searchPanelButtonButton.addEventListener('click', goToResults);
-
-    if (isVisible) {
-      updatePanelStatus();
-    } else {
-      updateSearchValueInDocument();
-    }
+/** Close the panel if the Escape key clicked
+ * @param {KeyboardEvent} ev
+ */
+function detectEsc(ev) {
+  if (ev.key === 'Escape') {
+    closePanel();
   }
+}
 
-  init();
-});
+/** Prevent close the panel if it's been clicked inside
+ * @param {MouseEvent} ev
+ */
+function preventClose(ev) {
+  ev.preventDefault();
+  ev.stopPropagation();
+}
+
+/** Close the panel by click outside the panel (see `preventClose` method above)
+ * @param {MouseEvent} _ev
+ */
+function closeByClick(_ev) {
+  closePanel();
+}
+
+function goToResults() {
+  triggerForm.submit();
+}
+
+/** @param {string|number|boolean|undefined|null} str
+ * @return {string}
+ */
+function escapeHtml(str) {
+  if (str == undefined) {
+    return '';
+  }
+  if (typeof str !== 'string') {
+    str = String(str);
+  }
+  str = str.trim();
+  return str.replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+/** Sync search text in document with current value */
+function updateSearchValueInDocument() {
+  const escapedValue = escapeHtml(searchValue);
+  bodyInput.value = escapedValue;
+  panelInput.value = escapedValue;
+  searchPanel.classList.toggle('has_value', !!searchValue);
+}
+
+/** Search text has been changed
+ * @param {Event} _ev
+ */
+function panelInputChanged(_ev) {
+  searchValue = panelInput.value;
+  bodyInput.value = searchValue;
+  searchPanel.classList.toggle('has_value', !!searchValue);
+  setQueueTimer();
+}
+
+function updatePanelStatus() {
+  updateSearchValueInDocument();
+  searchPanel.classList.toggle('visible', !!isVisible);
+  // Set/reset event handlers
+  if (isVisible) {
+    panelInput.addEventListener('input', panelInputChanged);
+    searchPanelContainer.addEventListener('mouseup', preventClose, true);
+    document.addEventListener('mouseup', closeByClick);
+    document.addEventListener('keydown', detectEsc);
+  } else {
+    panelInput.removeEventListener('input', panelInputChanged);
+    searchPanelContainer.addEventListener('mouseup', preventClose);
+    document.removeEventListener('mouseup', closeByClick);
+    document.removeEventListener('keydown', detectEsc);
+  }
+  // Focus in the input field
+  if (isVisible) {
+    setTimeout(() => panelInput.focus(), 100);
+  }
+}
+
+function clearText() {
+  searchValue = '';
+  updateSearchValueInDocument();
+  renderProducts([]);
+}
+
+/** @param {MouseEvent} ev */
+function onTriggerClick(ev) {
+  ev.preventDefault();
+  ev.stopPropagation();
+  isVisible = !isVisible;
+  if (!dataHasBeenLoaded && isVisible && searchValue) {
+    requestServerData();
+  }
+  updatePanelStatus();
+}
+
+function init() {
+  console.log('[search-panel:init]');
+
+  const clearButton = searchPanel.querySelector('#clear-text');
+  const closeButton = searchPanel.querySelector('#close-button');
+  const goToResultsButton = searchPanel.querySelector('#go-to-results');
+  const searchPanelButtonButton = searchPanel.querySelector('#search-panel-button');
+
+  const urlParams = new URLSearchParams(window.location.search);
+  searchValue = urlParams.get('q') || '';
+
+  triggerForm.addEventListener('click', onTriggerClick);
+  clearButton && clearButton.addEventListener('click', clearText);
+  closeButton && closeButton.addEventListener('click', closePanel);
+  goToResultsButton && goToResultsButton.addEventListener('click', goToResults);
+  searchPanelButtonButton && searchPanelButtonButton.addEventListener('click', goToResults);
+
+  if (isVisible) {
+    updatePanelStatus();
+  } else {
+    updateSearchValueInDocument();
+  }
+}
+
+window.addEventListener('load', init);

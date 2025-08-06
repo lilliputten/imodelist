@@ -87,9 +87,6 @@ const webpackConfig = merge(baseWebpackConfig, {
       mangle: true,
       parallel: true,
     }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
-    }),
   ],
 });
 

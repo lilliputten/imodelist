@@ -13,7 +13,7 @@ PUBLISH_FOLDER="publish"
 PUBLISH_BRANCH="publish"
 # DIST_REPO comes from the actual git configuration
 
-VERSION_FILE="version.txt"
+VERSION_FILE="project-version.txt"
 PROJECT_INFO_FILE="src/app-info.txt"
 PROJECT_INFO_JSON_FILE="src/app-info.json"
 

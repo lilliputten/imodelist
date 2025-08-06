@@ -9,9 +9,10 @@
           data-url="./assets/search.json"
           autocomplete="off"
         />
-        <span class="loader-wrapper">
+        <span class="icons-wrapper">
           <span class="loader"></span>
           <span class="waiter"></span>
+          <span class="clear" id="clear-text" title="Очистить текст"><span>×</span></span>
         </span>
         <button class="action" id="search-panel-button" title="Показать все результаты поиска">
           <img src="./assets/vectors/loupe-w.svg" width="20" height="20" />
@@ -57,7 +58,8 @@
 
       <div class="bottom">
         <div class="bottom-summary">
-          Найдено результатов: <span id="results-count">0</span>
+          <div class="with-results">Найдено результатов: <span id="results-count">0</span></div>
+          <div class="without-results">Нет результатов</div>
         </div>
         <div class="bottom-actions">
           <button class="btn ghost" id="close-button">
@@ -70,6 +72,8 @@
           </button>
         </div>
       </div>
+
+      <div class="curtain"></div>
 
     </div>
   </div>
