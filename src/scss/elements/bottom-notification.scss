@@ -5,7 +5,7 @@
 
 .bottom-notification {
   position: relative;
-  z-index: 10;
+  z-index: 99; // Make it above all other elements
   &:not(.visible) {
     display: none;
   }
